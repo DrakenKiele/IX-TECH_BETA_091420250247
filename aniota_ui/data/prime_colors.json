@@ -1,0 +1,207 @@
+{
+  "red_orange": [
+    "#e81416",
+    "#ea1e15",
+    "#eb2713",
+    "#ed3112",
+    "#ee3b10",
+    "#f0440f",
+    "#f14e0d",
+    "#f3580c",
+    "#f4610a",
+    "#f66b09",
+    "#f77507",
+    "#f97e06",
+    "#fa8804",
+    "#fc9203",
+    "#fd9b01",
+    "#ffa500"
+  ],
+  "orange_yellow": [
+    "#ffa500",
+    "#ffaa04",
+    "#feae07",
+    "#feb30b",
+    "#feb80e",
+    "#fdbc12",
+    "#fdc116",
+    "#fdc619",
+    "#fcca1d",
+    "#fccf20",
+    "#fcd424",
+    "#fbd828",
+    "#fbdd2b",
+    "#fbe22f",
+    "#fae632",
+    "#faeb36"
+  ],
+  "yellow_green": [
+    "#faeb36",
+    "#f1e834",
+    "#e9e631",
+    "#e0e32f",
+    "#d8e02d",
+    "#cfde2b",
+    "#c6db28",
+    "#bed826",
+    "#b5d624",
+    "#add322",
+    "#a4d01f",
+    "#9bce1d",
+    "#93cb1b",
+    "#8ac819",
+    "#82c616",
+    "#79c314"
+  ],
+  "green_blue": [
+    "#79c314",
+    "#76be22",
+    "#72ba30",
+    "#6fb53e",
+    "#6cb04c",
+    "#69ac5a",
+    "#65a768",
+    "#62a276",
+    "#5f9e85",
+    "#5c9993",
+    "#5894a1",
+    "#5590af",
+    "#528bbd",
+    "#4f86cb",
+    "#4b82d9",
+    "#487de7"
+  ],
+  "blue_indigo": [
+    "#487de7",
+    "#4878e2",
+    "#4874dd",
+    "#496fd8",
+    "#496ad3",
+    "#4965ce",
+    "#4961c9",
+    "#495cc4",
+    "#4a57c0",
+    "#4a52bb",
+    "#4a4eb6",
+    "#4a49b1",
+    "#4a44ac",
+    "#4b3fa7",
+    "#4b3ba2",
+    "#4b369d"
+  ],
+  "indigo_violet": [
+    "#4b369d",
+    "#4d369d",
+    "#50369d",
+    "#52369d",
+    "#55369d",
+    "#57369d",
+    "#5a369d",
+    "#5c369d",
+    "#5f369d",
+    "#61369d",
+    "#64369d",
+    "#66369d",
+    "#69369d",
+    "#6b369d",
+    "#6e369d",
+    "#70369d"
+  ],
+  "violet_red": [
+    "#70369d",
+    "#783494",
+    "#80318b",
+    "#882f82",
+    "#902d79",
+    "#982b70",
+    "#a02867",
+    "#a8265e",
+    "#b02455",
+    "#b8224c",
+    "#c01f43",
+    "#c81d3a",
+    "#d01b31",
+    "#d81928",
+    "#e0161f",
+    "#e81416"
+  ],
+  "grayscale": [
+    "#000000",
+    "#111111",
+    "#222222",
+    "#333333",
+    "#444444",
+    "#555555",
+    "#666666",
+    "#777777",
+    "#888888",
+    "#999999",
+    "#aaaaaa",
+    "#bbbbbb",
+    "#cccccc",
+    "#dddddd",
+    "#eeeeee",
+    "#ffffff"
+  ]
+}
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------
+
+# File: package.json
+# Purpose: Central entry point and orchestrator for the system.
+#
+# Type: Main launcher script (not a class file, but acts as a system controller)
+#
+# Responsibilities:
+#   - Loads configuration and resolves paths for all major dependencies ([List dependencies])
+#   - Checks and manages the status of critical services (starts/stops as needed)
+#   - Launches and monitors all core services:
+#       * [Service 1] ([Tech/Port])
+#       * [Service 2] ([Tech/Port])
+#       * [Service 3] ([Tech/Port])
+#       * [Service 4] ([Tech/Port])
+#   - Provides command-line flags for status reporting and service termination ([flags])
+#   - Handles process cleanup and error reporting
+#
+# Key Functions:
+#   - main(): Orchestrates the full launch sequence and handles CLI flags
+#   - launch_service(): Starts a subprocess for a given service
+#   - stream_logs(): Streams and truncates logs from subprocesses
+#   - run_static_server(): Runs the static file server (if applicable)
+#   - is_port_in_use(): Checks if a TCP port is active
+#   - get_service_status(): Returns a dict of service statuses
+#   - check_service(): Ensures a service is running, starts if not
+#   - resolve_path(): Finds the first valid path for a dependency from config
+#   - find_dependency_path(): Locates the executable for a dependency
+#
+# Relationships:
+#   - Reads from configuration files for dependency paths
+#   - Launches and monitors other scripts and processes
+#   - Interacts with the OS for process and port management
+#
+# Usefulness & Execution Path:
+#   - main() is the required entry point and is always used.
+#   - [List of essential functions] are all actively used and essential for orchestrating the system.
+#   - [Legacy/optional functions] may become obsolete as the system evolves.
+#
+# Suggestions:
+#   - **Performance:** [Performance notes]
+#   - **Code Cleanliness:** [Code cleanliness notes]
+#   - **Location:** [Location notes]
+#   - **Function:** [Function notes]
+#   - **Legacy:** [Legacy notes]
+#   - **Config:** [Config notes]
+#   - **Error Handling:** [Error handling notes]
+#   - **Cross-Platform:** [Cross-platform notes]
+#
+# Summary:
+#   - This file is essential, well-placed, and mostly clean.
+#   - All major functions are used and support the requirements for modularity, orchestration, and portability.
+#   - Minor cleanup (removing redundant code, legacy functions) is recommended to enhance maintainability.
+#   - Overall, it effectively serves as the central controller for the system.
+#
+# CHANGE MANAGEMENT LOG
+# Date        | Initials | Description of Change                | Reason for Change
+# -----------------------------------------------------------------------------
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------

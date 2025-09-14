@@ -1,0 +1,2 @@
+*** REVIEW AND ADHERE TO files in the /docs folder with "+" in the filename. ***
+My Rules are in Code Style Contract.md. My Requirements are in ALL REQUIREMENTS.md. Read these and adhere to them as you proceed.

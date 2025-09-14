@@ -1,0 +1,16 @@
+{
+  "choices": [
+    { "label": "Choice A", "subject": "math", "row": 0, "col": 0 },
+    { "label": "Choice B", "subject": "science", "row": 0, "col": 1 },
+    { "label": "Choice C", "subject": "lang", "row": 0, "col": 2 },
+    { "label": "Choice D", "subject": "math", "row": 0, "col": 3 },
+    { "label": "True",    "subject": "science", "row": 0, "col": 4 },
+    { "label": "False",   "subject": "lang", "row": 0, "col": 5 },
+    { "label": "Aniota?", "subject": "math", "row": 1, "col": 0 },
+    { "label": "Expand",  "subject": "science", "row": 1, "col": 1 },
+    { "label": "Extend",  "subject": "lang", "row": 1, "col": 2 },
+    { "label": "Explore", "subject": "math", "row": 1, "col": 3 },
+    { "label": "Review",  "subject": "science", "row": 1, "col": 4 },
+    { "label": "Exit",    "subject": "lang", "row": 1, "col": 5 }
+  ]
+}

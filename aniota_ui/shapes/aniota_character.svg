@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Aniota character design - Bell shaped with animated bottom -->
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Animated sine wave for bottom edge -->
+    <path id="waveBottom">
+      <animate attributeName="d" 
+               values="M30 150 Q50 140, 70 150 T110 150 T150 150 T170 150;
+                       M30 150 Q50 160, 70 150 T110 150 T150 150 T170 150;
+                       M30 150 Q50 140, 70 150 T110 150 T150 150 T170 150"
+               dur="3s" 
+               repeatCount="indefinite"/>
+    </path>
+  </defs>
+  
+  <!-- Main bell body shape -->
+  <path d="M100 20 
+           C130 20, 160 40, 170 80
+           C175 100, 170 120, 165 140
+           Q150 155, 130 150
+           Q110 145, 100 150
+           Q90 145, 70 150
+           Q50 155, 35 140
+           C30 120, 25 100, 30 80
+           C40 40, 70 20, 100 20 Z" 
+        fill="#FF69B4" 
+        stroke="#FF1493" 
+        stroke-width="2" 
+        filter="url(#glow)"/>
+  
+  <!-- Animated bottom edge with sine wave -->
+  <path d="M35 140 Q50 155, 70 150 T110 150 T150 150 Q165 155, 165 140" 
+        fill="#FF69B4" 
+        stroke="#FF1493" 
+        stroke-width="2">
+    <animate attributeName="d" 
+             values="M35 140 Q50 155, 70 150 T110 150 T150 150 Q165 155, 165 140;
+                     M35 140 Q50 145, 70 155 T110 145 T150 155 Q165 145, 165 140;
+                     M35 140 Q50 155, 70 150 T110 150 T150 150 Q165 155, 165 140"
+             dur="2.5s" 
+             repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Left eye -->
+  <circle cx="80" cy="75" r="12" fill="#000000"/>
+  <ellipse cx="82" cy="72" rx="4" ry="6" fill="#FFFFFF"/>
+  
+  <!-- Right eye -->
+  <circle cx="120" cy="75" r="12" fill="#000000"/>
+  <ellipse cx="122" cy="72" rx="4" ry="6" fill="#FFFFFF"/>
+  
+  <!-- Color patches for mood indication -->
+  <ellipse cx="90" cy="110" rx="15" ry="12" fill="#32CD32" opacity="0.7"/>
+  <ellipse cx="125" cy="115" rx="15" ry="12" fill="#FFD700" opacity="0.7"/>
+  <ellipse cx="65" cy="95" rx="12" ry="8" fill="#FF4500" opacity="0.7"/>
+  
+  <!-- Animated sparkles -->
+  <circle cx="60" cy="60" r="2" fill="#FFFF00" opacity="0.9">
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="1.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="140" cy="65" r="2" fill="#FFFF00" opacity="0.9">
+    <animate attributeName="opacity" values="1;0.3;1" dur="2.2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="100" cy="45" r="2" fill="#FFFF00" opacity="0.9">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Subtle heartbeat pulse animation on the whole character -->
+  <animateTransform attributeName="transform" 
+                    type="scale" 
+                    values="1;1.05;1" 
+                    dur="2s" 
+                    repeatCount="indefinite"/>
+</svg>

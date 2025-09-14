@@ -1,0 +1,117 @@
+/*
+BREADCRUMB: aniota_ui/biome > splash_content.json
+This file defines the splash screen content and layout for Aniota's welcome/intro UI.
+
+Program Flow Placement:
+  - Used by: aniota_ui/biome/AniotaBiome_modular.js and splash screen renderer
+  - Consumed by: Splash UI modules at application launch
+
+Purpose:
+  - Centralizes mission statement, call-to-action, and background info for the splash screen
+  - Ensures consistent messaging and branding on app launch
+
+Key Structure:
+  - splash_content: Title, mission, attribution, call-to-action
+  - background: Image and fallback color
+  - layout: Content width, padding, alignment
+
+Suggestions:
+  - Update content for new releases or campaigns
+  - Document any changes in the change log below
+
+CHANGE MANAGEMENT LOG
+Date        | Initials | Description of Change                | Reason for Change
+-------------------------------------------------------------------------------
+2025-09-05  | GH       | Added modular file header with program flow info | Enable traceable, modular documentation
+-------------------------------------------------------------------------------
+*/
+
+{
+  "splash_content": {
+    "title": "Welcome!",
+    "mission_statement": {
+      "introduction": "On behalf of DK Softworks, I am proud to introduce you to Aniota!",
+      "definition": "Aniota—from \"an iota\"—means the smallest spark, capable of changing everything. We believe that spark is hope. It's what keeps us reaching, asking, striving.",
+      "purpose": "Aniota is not just for students, but for anyone who wants to learn, grow, and become. Whether you're five or fifty-five, learning is how we grow—and growth begins with hope.",
+      "philosophy": "In becoming better learners, we become better thinkers—and vessels of hope. Aniota was built for the learner in all of us. She wants to help you succeed and knows when you do.",
+      "greeting": "Aniota gently guides learning avenues, and when you struggle, she offers encouragement. \"Hi! I'm Aniota, let's work together?\""
+    },
+    "attribution": "Doug Keely, Owner of DK Softworks LLC, creator of IX-TECH and Aniota!",
+    "call_to_action": {
+      "text": "Click the Hope Button Below to Begin.",
+      "button_text": "HOPE"
+    }
+  },
+  "background": {
+    "image": "new_kids_background1959.png",
+    "position": "center bottom",
+    "size": "cover",
+    "fallback_color": "#000000"
+  },
+  "layout": {
+    "content_max_width": "900px",
+    "padding": "32px",
+    "text_alignment": "center"
+  }
+}
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------
+
+# File: package.json
+# Purpose: Central entry point and orchestrator for the system.
+#
+# Type: Main launcher script (not a class file, but acts as a system controller)
+#
+# Responsibilities:
+#   - Loads configuration and resolves paths for all major dependencies ([List dependencies])
+#   - Checks and manages the status of critical services (starts/stops as needed)
+#   - Launches and monitors all core services:
+#       * [Service 1] ([Tech/Port])
+#       * [Service 2] ([Tech/Port])
+#       * [Service 3] ([Tech/Port])
+#       * [Service 4] ([Tech/Port])
+#   - Provides command-line flags for status reporting and service termination ([flags])
+#   - Handles process cleanup and error reporting
+#
+# Key Functions:
+#   - main(): Orchestrates the full launch sequence and handles CLI flags
+#   - launch_service(): Starts a subprocess for a given service
+#   - stream_logs(): Streams and truncates logs from subprocesses
+#   - run_static_server(): Runs the static file server (if applicable)
+#   - is_port_in_use(): Checks if a TCP port is active
+#   - get_service_status(): Returns a dict of service statuses
+#   - check_service(): Ensures a service is running, starts if not
+#   - resolve_path(): Finds the first valid path for a dependency from config
+#   - find_dependency_path(): Locates the executable for a dependency
+#
+# Relationships:
+#   - Reads from configuration files for dependency paths
+#   - Launches and monitors other scripts and processes
+#   - Interacts with the OS for process and port management
+#
+# Usefulness & Execution Path:
+#   - main() is the required entry point and is always used.
+#   - [List of essential functions] are all actively used and essential for orchestrating the system.
+#   - [Legacy/optional functions] may become obsolete as the system evolves.
+#
+# Suggestions:
+#   - **Performance:** [Performance notes]
+#   - **Code Cleanliness:** [Code cleanliness notes]
+#   - **Location:** [Location notes]
+#   - **Function:** [Function notes]
+#   - **Legacy:** [Legacy notes]
+#   - **Config:** [Config notes]
+#   - **Error Handling:** [Error handling notes]
+#   - **Cross-Platform:** [Cross-platform notes]
+#
+# Summary:
+#   - This file is essential, well-placed, and mostly clean.
+#   - All major functions are used and support the requirements for modularity, orchestration, and portability.
+#   - Minor cleanup (removing redundant code, legacy functions) is recommended to enhance maintainability.
+#   - Overall, it effectively serves as the central controller for the system.
+#
+# CHANGE MANAGEMENT LOG
+# Date        | Initials | Description of Change                | Reason for Change
+# -----------------------------------------------------------------------------
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------

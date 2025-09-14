@@ -1,0 +1,400 @@
+[
+  {
+    "id": "sq1",
+    "cssFile": "dksoftworks.css",
+    "isSelectable": true,
+    "isDeletable": true,
+    "isDraggable": true,
+    "isScalable": true,
+    "label": "TEXT | Company Infor",
+    "type": "TEXT",
+    "purpose": "Company Infor",
+    "sourceData": "DK Softworks | IX-TECH",
+    "background": "firebrick",
+    "width": "484px",
+    "height": "113px",
+    "snapPoint": null,
+    "x": 0,
+    "y": 0,
+    "zIndex": 3,
+    "locked": false,
+    "selected": false,
+    "group": null,
+    "shape": "rectangle",
+    "meta": {},
+    "created": "2025-07-16T00:00:00Z",
+    "updated": "2025-07-24T17:52:13.871Z",
+    "vectorFromCenter": {
+      "x": -220,
+      "y": -220,
+      "magnitude": 311.1269837220809,
+      "angleDeg": -135,
+      "angleRad": -2.356194490192345
+    },
+    "area": 1,
+    "state": "active"
+  },
+  {
+    "id": "sq2",
+    "cssFile": "dksoftworks.css",
+    "isSelectable": true,
+    "isDeletable": true,
+    "isDraggable": true,
+    "isScalable": true,
+    "label": "NAVIGATION_HORIZONTAL | top bar navigation",
+    "type": "NAVIGATION_HORIZONTAL",
+    "purpose": "top bar navigation",
+    "sourceData": [
+      "navbar_hierachy.json#topBar"
+    ],
+    "background": "gold",
+    "width": "960px",
+    "height": "113px",
+    "snapPoint": null,
+    "x": 480,
+    "y": 0,
+    "zIndex": 3,
+    "locked": false,
+    "selected": false,
+    "group": null,
+    "shape": "rectangle",
+    "meta": {},
+    "created": "2025-07-16T00:00:00Z",
+    "updated": "2025-07-24T17:52:13.872Z",
+    "vectorFromCenter": {
+      "x": 0,
+      "y": -220,
+      "magnitude": 220,
+      "angleDeg": -90,
+      "angleRad": -1.5707963267948966
+    },
+    "area": 1,
+    "state": "active"
+  },
+  {
+    "id": "sq3",
+    "cssFile": "dksoftworks.css",
+    "isSelectable": true,
+    "isDeletable": true,
+    "isDraggable": true,
+    "isScalable": true,
+    "label": "logo image | asset",
+    "type": "IMAGE",
+    "purpose": "asset",
+    "sourceData": "assets/maqnetix.png",
+    "background": "khaki",
+    "width": "448px",
+    "height": "104px",
+    "snapPoint": null,
+    "x": 1439,
+    "y": 8,
+    "zIndex": 3,
+    "locked": false,
+    "selected": false,
+    "group": null,
+    "shape": "rectangle",
+    "meta": {},
+    "created": "2025-07-16T00:00:00Z",
+    "updated": "2025-07-24T17:52:13.872Z",
+    "vectorFromCenter": {
+      "x": 220,
+      "y": -220,
+      "magnitude": 311.1269837220809,
+      "angleDeg": -45,
+      "angleRad": -0.7853981633974483
+    },
+    "area": 1,
+    "state": "active"
+  },
+  {
+    "id": "sq4",
+    "cssFile": "dksoftworks.css",
+    "isSelectable": true,
+    "isDeletable": true,
+    "isDraggable": true,
+    "isScalable": true,
+    "label": "NAVIGATION_VERTICAL | side bar navigation",
+    "type": "NAVIGATION_VERTICAL",
+    "purpose": "side bar navigation",
+    "sourceData": [
+      "navbar_hierachy.json#sideBar"
+    ],
+    "background": "chartreuse",
+    "width": "477px",
+    "height": "560px",
+    "snapPoint": null,
+    "x": 0,
+    "y": 118,
+    "zIndex": 3,
+    "locked": false,
+    "selected": false,
+    "group": null,
+    "shape": "rectangle",
+    "meta": {},
+    "created": "2025-07-16T00:00:00Z",
+    "updated": "2025-07-24T17:52:13.872Z",
+    "vectorFromCenter": {
+      "x": -220,
+      "y": 0,
+      "magnitude": 220,
+      "angleDeg": 180,
+      "angleRad": 3.141592653589793
+    },
+    "area": 1,
+    "state": "active"
+  },
+  {
+    "id": "sq5",
+    "cssFile": "dksoftworks.css",
+    "isSelectable": true,
+    "isDeletable": true,
+    "isDraggable": true,
+    "isScalable": true,
+    "label": "sidePanel render props | properties",
+    "type": "FUNCTION_SIDEPANEL",
+    "purpose": "properties",
+    "sourceData": "function:renderProperties",
+    "background": "teal",
+    "width": "472px",
+    "height": "572px",
+    "snapPoint": null,
+    "x": 1440,
+    "y": 113,
+    "zIndex": 3,
+    "locked": false,
+    "selected": false,
+    "group": null,
+    "shape": "rectangle",
+    "meta": {},
+    "created": "2025-07-16T00:00:00Z",
+    "updated": "2025-07-24T17:52:13.872Z",
+    "vectorFromCenter": {
+      "x": 220,
+      "y": 0,
+      "magnitude": 220,
+      "angleDeg": 0,
+      "angleRad": 0
+    },
+    "area": 1,
+    "state": "active"
+  },
+  {
+    "id": "sq6",
+    "cssFile": "dksoftworks.css",
+    "isSelectable": true,
+    "isDeletable": true,
+    "isDraggable": true,
+    "isScalable": true,
+    "label": "TEXT | mauica status",
+    "type": "FUNCTION_SIDEPANEL",
+    "purpose": "mauica status",
+    "sourceData": "function:getmauicaStatus",
+    "background": "turquoise",
+    "width": "479px",
+    "height": "233px",
+    "snapPoint": null,
+    "x": 0,
+    "y": 683,
+    "zIndex": 3,
+    "locked": false,
+    "selected": false,
+    "group": null,
+    "shape": "rectangle",
+    "meta": {},
+    "created": "2025-07-16T00:00:00Z",
+    "updated": "2025-07-24T17:52:13.872Z",
+    "vectorFromCenter": {
+      "x": -220,
+      "y": 220,
+      "magnitude": 311.1269837220809,
+      "angleDeg": 135,
+      "angleRad": 2.356194490192345
+    },
+    "area": 1,
+    "state": "active"
+  },
+  {
+    "id": "sq7",
+    "cssFile": "dksoftworks.css",
+    "isSelectable": true,
+    "isDeletable": true,
+    "isDraggable": true,
+    "isScalable": true,
+    "label": "mauica_CHAT_BOX | mauica chat",
+    "type": "FUNCTION_CHAT_BOX",
+    "purpose": "mauica chat",
+    "sourceData": "function:setmauicaChatBox",
+    "background": "dodgerblue",
+    "width": "960px",
+    "height": "238px",
+    "snapPoint": null,
+    "x": 480,
+    "y": 678,
+    "zIndex": 3,
+    "locked": false,
+    "selected": false,
+    "group": null,
+    "shape": "rectangle",
+    "meta": {},
+    "created": "2025-07-16T00:00:00Z",
+    "updated": "2025-07-24T17:52:13.872Z",
+    "vectorFromCenter": {
+      "x": 0,
+      "y": 220,
+      "magnitude": 220,
+      "angleDeg": 90,
+      "angleRad": 1.5707963267948966
+    },
+    "area": 1,
+    "state": "active"
+  },
+  {
+    "id": "sq8",
+    "cssFile": "dksoftworks.css",
+    "isSelectable": true,
+    "isDeletable": true,
+    "isDraggable": true,
+    "isScalable": true,
+    "label": "sidePanel | mauica stats",
+    "type": "FUNCTION_SIDEPANEL",
+    "purpose": "mauica stats",
+    "sourceData": "function:getmauicaStats",
+    "background": "navy",
+    "width": "486px",
+    "height": "234px",
+    "snapPoint": null,
+    "x": 1440,
+    "y": 683,
+    "zIndex": 3,
+    "locked": false,
+    "selected": false,
+    "group": null,
+    "shape": "rectangle",
+    "meta": {},
+    "created": "2025-07-16T00:00:00Z",
+    "updated": "2025-07-24T17:52:13.872Z",
+    "vectorFromCenter": {
+      "x": 220,
+      "y": 220,
+      "magnitude": 311.1269837220809,
+      "angleDeg": 45,
+      "angleRad": 0.7853981633974483
+    },
+    "area": 1,
+    "state": "active"
+  },
+  {
+    "id": "aniota1",
+    "cssFile": "dksoftworks.css",
+    "isSelectable": true,
+    "isDeletable": false,
+    "isDraggable": true,
+    "isScalable": true,
+    "isSnapable": true,
+    "label": "ANIOTA_ORB | AI Learning Companion",
+    "type": "ANIOTA_ORB",
+    "purpose": "AI Learning Companion with full personality",
+    "sourceData": "Aniota MAUICA - Modular AI User Interface Component Architecture",
+    "background": "#77dd77",
+    "width": "72px",
+    "height": "72px",
+    "snapPoint": null,
+    "x": 400,
+    "y": 300,
+    "zIndex": 1000,
+    "locked": false,
+    "selected": false,
+    "group": null,
+    "shape": "circle",
+    "meta": {
+      "behaviorMode": "observing",
+      "attentionLevel": 0,
+      "heartbeatRate": 800,
+      "currentMood": "calm",
+      "moodColors": {
+        "calm": "#77dd77",
+        "thinking": "#487de7",
+        "excited": "#faeb36",
+        "guiding": "#ffb300",
+        "celebrating": "#79c314",
+        "alert": "#e81416"
+      },
+      "personalityTraits": ["curious", "helpful", "playful", "intelligent", "adaptive"],
+      "learningCapable": true,
+      "guidanceBehaviors": true,
+      "emotionalIntelligence": true
+    },
+    "created": "2025-08-04T00:00:00Z",
+    "updated": "2025-08-04T00:00:00Z",
+    "vectorFromCenter": {
+      "x": 160,
+      "y": 60,
+      "magnitude": 170.88,
+      "angleDeg": 20.6,
+      "angleRad": 0.36
+    },
+    "area": 1,
+    "state": "active"
+  }
+]
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------
+
+# File: package.json
+# Purpose: Central entry point and orchestrator for the system.
+#
+# Type: Main launcher script (not a class file, but acts as a system controller)
+#
+# Responsibilities:
+#   - Loads configuration and resolves paths for all major dependencies ([List dependencies])
+#   - Checks and manages the status of critical services (starts/stops as needed)
+#   - Launches and monitors all core services:
+#       * [Service 1] ([Tech/Port])
+#       * [Service 2] ([Tech/Port])
+#       * [Service 3] ([Tech/Port])
+#       * [Service 4] ([Tech/Port])
+#   - Provides command-line flags for status reporting and service termination ([flags])
+#   - Handles process cleanup and error reporting
+#
+# Key Functions:
+#   - main(): Orchestrates the full launch sequence and handles CLI flags
+#   - launch_service(): Starts a subprocess for a given service
+#   - stream_logs(): Streams and truncates logs from subprocesses
+#   - run_static_server(): Runs the static file server (if applicable)
+#   - is_port_in_use(): Checks if a TCP port is active
+#   - get_service_status(): Returns a dict of service statuses
+#   - check_service(): Ensures a service is running, starts if not
+#   - resolve_path(): Finds the first valid path for a dependency from config
+#   - find_dependency_path(): Locates the executable for a dependency
+#
+# Relationships:
+#   - Reads from configuration files for dependency paths
+#   - Launches and monitors other scripts and processes
+#   - Interacts with the OS for process and port management
+#
+# Usefulness & Execution Path:
+#   - main() is the required entry point and is always used.
+#   - [List of essential functions] are all actively used and essential for orchestrating the system.
+#   - [Legacy/optional functions] may become obsolete as the system evolves.
+#
+# Suggestions:
+#   - **Performance:** [Performance notes]
+#   - **Code Cleanliness:** [Code cleanliness notes]
+#   - **Location:** [Location notes]
+#   - **Function:** [Function notes]
+#   - **Legacy:** [Legacy notes]
+#   - **Config:** [Config notes]
+#   - **Error Handling:** [Error handling notes]
+#   - **Cross-Platform:** [Cross-platform notes]
+#
+# Summary:
+#   - This file is essential, well-placed, and mostly clean.
+#   - All major functions are used and support the requirements for modularity, orchestration, and portability.
+#   - Minor cleanup (removing redundant code, legacy functions) is recommended to enhance maintainability.
+#   - Overall, it effectively serves as the central controller for the system.
+#
+# CHANGE MANAGEMENT LOG
+# Date        | Initials | Description of Change                | Reason for Change
+# -----------------------------------------------------------------------------
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------

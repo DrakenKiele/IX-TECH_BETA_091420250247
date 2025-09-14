@@ -1,0 +1,119 @@
+{
+  "theme": {
+    "name": "jewel_tones",
+    "colors": {
+      "jewel_red": "#DC143C",
+      "jewel_green": "#228B22", 
+      "jewel_blue": "#4169E1",
+      "accent_red": "#B22222",
+      "accent_green": "#006400",
+      "accent_blue": "#191970",
+      "gray_light": "#F5F5F5",
+      "gray_medium": "#C0C0C0",
+      "gray_dark": "#696969",
+      "gray_darker": "#2F2F2F",
+      "text_white": "#FFFFFF",
+      "text_black": "#000000",
+      "background_overlay": "rgba(47, 47, 47, 0.85)"
+    },
+    "gradients": {
+      "jewel_primary": "linear-gradient(135deg, #DC143C 0%, #228B22 50%, #4169E1 100%)",
+      "gray_backdrop": "linear-gradient(180deg, #2F2F2F 0%, #696969 100%)",
+      "content_glass": "rgba(245, 245, 245, 0.1)"
+    }
+  },
+  "splash_content": {
+    "greeting": "Welcome!",
+    "mission_text": [
+      "On behalf of DK Softworks, I am proud to introduce you to Aniota!",
+      "Aniota—from \"an iota\"—means the smallest spark, capable of changing everything. We believe that spark is hope. It's what keeps us reaching, asking, striving.",
+      "Aniota is not just for students, but for anyone who wants to learn, grow, and become. Whether you're five or fifty-five, learning is how we grow—and growth begins with hope.",
+      "In becoming better learners, we become better thinkers—and vessels of hope. Aniota was built for the learner in all of us. She wants to help you succeed and knows when you do.",
+      "Aniota gently guides learning avenues, and when you struggle, she offers encouragement. \"Hi! I'm Aniota, let's work together?\""
+    ],
+    "author": "Doug Keely, Owner of DK Softworks LLC, creator of IX-TECH and Aniota!",
+    "call_to_action": "Click the Hope Button Below to Begin.",
+    "button_text": "HOPE",
+    "background_image": "new_kids_background1959.png"
+  },
+  "ui_elements": {
+    "content_box": {
+      "background": "content_glass",
+      "border_color": "jewel_blue",
+      "text_color": "text_white",
+      "accent_color": "jewel_green"
+    },
+    "button": {
+      "background": "jewel_red",
+      "hover_background": "accent_red", 
+      "text_color": "text_white",
+      "border_color": "jewel_blue"
+    },
+    "greeting": {
+      "color": "jewel_green",
+      "size": "2.5em",
+      "weight": "bold"
+    }
+  }
+}
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------
+
+# File: package.json
+# Purpose: Central entry point and orchestrator for the system.
+#
+# Type: Main launcher script (not a class file, but acts as a system controller)
+#
+# Responsibilities:
+#   - Loads configuration and resolves paths for all major dependencies ([List dependencies])
+#   - Checks and manages the status of critical services (starts/stops as needed)
+#   - Launches and monitors all core services:
+#       * [Service 1] ([Tech/Port])
+#       * [Service 2] ([Tech/Port])
+#       * [Service 3] ([Tech/Port])
+#       * [Service 4] ([Tech/Port])
+#   - Provides command-line flags for status reporting and service termination ([flags])
+#   - Handles process cleanup and error reporting
+#
+# Key Functions:
+#   - main(): Orchestrates the full launch sequence and handles CLI flags
+#   - launch_service(): Starts a subprocess for a given service
+#   - stream_logs(): Streams and truncates logs from subprocesses
+#   - run_static_server(): Runs the static file server (if applicable)
+#   - is_port_in_use(): Checks if a TCP port is active
+#   - get_service_status(): Returns a dict of service statuses
+#   - check_service(): Ensures a service is running, starts if not
+#   - resolve_path(): Finds the first valid path for a dependency from config
+#   - find_dependency_path(): Locates the executable for a dependency
+#
+# Relationships:
+#   - Reads from configuration files for dependency paths
+#   - Launches and monitors other scripts and processes
+#   - Interacts with the OS for process and port management
+#
+# Usefulness & Execution Path:
+#   - main() is the required entry point and is always used.
+#   - [List of essential functions] are all actively used and essential for orchestrating the system.
+#   - [Legacy/optional functions] may become obsolete as the system evolves.
+#
+# Suggestions:
+#   - **Performance:** [Performance notes]
+#   - **Code Cleanliness:** [Code cleanliness notes]
+#   - **Location:** [Location notes]
+#   - **Function:** [Function notes]
+#   - **Legacy:** [Legacy notes]
+#   - **Config:** [Config notes]
+#   - **Error Handling:** [Error handling notes]
+#   - **Cross-Platform:** [Cross-platform notes]
+#
+# Summary:
+#   - This file is essential, well-placed, and mostly clean.
+#   - All major functions are used and support the requirements for modularity, orchestration, and portability.
+#   - Minor cleanup (removing redundant code, legacy functions) is recommended to enhance maintainability.
+#   - Overall, it effectively serves as the central controller for the system.
+#
+# CHANGE MANAGEMENT LOG
+# Date        | Initials | Description of Change                | Reason for Change
+# -----------------------------------------------------------------------------
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------

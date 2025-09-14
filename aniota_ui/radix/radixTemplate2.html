@@ -1,0 +1,124 @@
+<!-- radixTemplate2.html -->
+<!-- RADIX Mental Map with Central Bubble and Interactive Nodes -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RADIX Mental Map</title>
+  <style>
+    body { margin: 0; background: #181c20; color: #fff; font-family: 'Noto Sans Rounded', Arial, sans-serif; }
+    .map-container { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
+    .bubble-center {
+      position: absolute;
+      left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      width: 220px; height: 220px;
+      background: #00B8D9;
+      border-radius: 50%;
+      box-shadow: 0 0 48px #00B8D9aa;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; font-weight: bold; color: #fff;
+      z-index: 2;
+      cursor: pointer;
+    }
+    .bubble-node {
+      position: absolute;
+      width: 120px; height: 120px;
+      background: #FFB300;
+      border-radius: 50%;
+      box-shadow: 0 0 24px #FFB30088;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; font-weight: 600; color: #222;
+      z-index: 1;
+      cursor: pointer;
+      transition: box-shadow 0.2s;
+    }
+    .bubble-node:hover { box-shadow: 0 0 32px #FFB300cc; }
+    .overlay { position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.7); padding: 10px; border-radius: 8px; z-index: 10; }
+  </style>
+</head>
+<body>
+  <div class="map-container" id="map">
+    <div class="bubble-center" id="centerBubble">Main Concept</div>
+    <div class="bubble-node" style="left:calc(50% - 180px);top:calc(50% - 120px);">Topic A</div>
+    <div class="bubble-node" style="left:calc(50% + 80px);top:calc(50% - 120px);">Topic B</div>
+    <div class="bubble-node" style="left:calc(50% - 220px);top:calc(50% + 60px);">Topic C</div>
+    <div class="bubble-node" style="left:calc(50% + 120px);top:calc(50% + 80px);">Topic D</div>
+    <div class="bubble-node" style="left:calc(50% - 40px);top:calc(50% + 180px);">Topic E</div>
+    <div class="overlay">
+      <h2>RADIX Mental Map</h2>
+      <p>Click the center bubble or any node to explore deeper information.<br>Designed for recursive, interactive learning.</p>
+    </div>
+  </div>
+  <script>
+    // JS stub for interactivity
+    document.querySelectorAll('.bubble-node, .bubble-center').forEach(el => {
+      el.onclick = function() {
+        alert('Expand: ' + el.textContent);
+      };
+    });
+  </script>
+</body>
+</html>
+
+
+<!--
+  File: package.json
+  Purpose: Central entry point and orchestrator for the system.
+
+  Type: Main launcher script (not a class file, but acts as a system controller)
+
+  Responsibilities:
+    - Loads configuration and resolves paths for all major dependencies ([List dependencies])
+    - Checks and manages the status of critical services (starts/stops as needed)
+    - Launches and monitors all core services:
+        * [Service 1] ([Tech/Port])
+        * [Service 2] ([Tech/Port])
+        * [Service 3] ([Tech/Port])
+        * [Service 4] ([Tech/Port])
+    - Provides command-line flags for status reporting and service termination ([flags])
+    - Handles process cleanup and error reporting
+
+  Key Functions:
+    - main(): Orchestrates the full launch sequence and handles CLI flags
+    - launch_service(): Starts a subprocess for a given service
+    - stream_logs(): Streams and truncates logs from subprocesses
+    - run_static_server(): Runs the static file server (if applicable)
+    - is_port_in_use(): Checks if a TCP port is active
+    - get_service_status(): Returns a dict of service statuses
+    - check_service(): Ensures a service is running, starts if not
+    - resolve_path(): Finds the first valid path for a dependency from config
+    - find_dependency_path(): Locates the executable for a dependency
+
+  Relationships:
+    - Reads from configuration files for dependency paths
+    - Launches and monitors other scripts and processes
+    - Interacts with the OS for process and port management
+
+  Usefulness & Execution Path:
+    - main() is the required entry point and is always used.
+    - [List of essential functions] are all actively used and essential for orchestrating the system.
+    - [Legacy/optional functions] may become obsolete as the system evolves.
+
+  Suggestions:
+    - **Performance:** [Performance notes]
+    - **Code Cleanliness:** [Code cleanliness notes]
+    - **Location:** [Location notes]
+    - **Function:** [Function notes]
+    - **Legacy:** [Legacy notes]
+    - **Config:** [Config notes]
+    - **Error Handling:** [Error handling notes]
+    - **Cross-Platform:** [Cross-platform notes]
+
+  Summary:
+    - This file is essential, well-placed, and mostly clean.
+    - All major functions are used and support the requirements for modularity, orchestration, and portability.
+    - Minor cleanup (removing redundant code, legacy functions) is recommended to enhance maintainability.
+    - Overall, it effectively serves as the central controller for the system.
+
+  CHANGE MANAGEMENT LOG
+  Date        | Initials | Description of Change                | Reason for Change
+  -----------------------------------------------------------------------------
+  2025-09-11 | [XX]    | [Description]                        | [Reason]
+  -----------------------------------------------------------------------------

@@ -1,0 +1,157 @@
+{
+  "character": {
+    "name": "Aniota",
+    "type": "learning_companion",
+    "biome_type": "desktop_aquarium",
+    "personality": {
+      "curious": 0.9,
+      "helpful": 0.95,
+      "playful": 0.7,
+      "patient": 0.8,
+      "encouraging": 0.9
+    }
+  },
+  "visual": {
+    "base_shape": "bell",
+    "size": {
+      "width": 80,
+      "height": 80,
+      "scale_range": [0.5, 2.0]
+    },
+    "colors": {
+      "primary": "#FF69B4",
+      "secondary": "#FF1493",
+      "accent": "#FFB6C1",
+      "mood_indicators": {
+        "happy": "#32CD32",
+        "neutral": "#FFD700", 
+        "focused": "#FF4500",
+        "excited": "#00BFFF"
+      }
+    },
+    "animations": {
+      "idle": {
+        "type": "sine_wave_bottom",
+        "duration": 2500,
+        "amplitude": 3
+      },
+      "heartbeat": {
+        "type": "scale_pulse",
+        "duration": 2000,
+        "scale_range": [1.0, 1.05]
+      },
+      "sparkles": {
+        "type": "opacity_twinkle",
+        "count": 3,
+        "duration_range": [1800, 2200]
+      }
+    }
+  },
+  "behavior": {
+    "idle_positions": [
+      {"x": "screen.width - 100", "y": "20", "preference": 0.8},
+      {"x": "screen.width - 100", "y": "screen.height * 0.3", "preference": 0.6},
+      {"x": "20", "y": "20", "preference": 0.4}
+    ],
+    "movement": {
+      "speed": "gentle",
+      "easing": "cubic-bezier(0.7, 1.7, 0.5, 1)",
+      "duration": 500
+    },
+    "responses": {
+      "user_idle": "move_to_corner",
+      "user_active": "observe_quietly",
+      "user_struggling": "offer_help",
+      "user_successful": "celebrate"
+    }
+  },
+  "interactions": {
+    "click": {
+      "action": "show_mood_pulse",
+      "sound": null,
+      "cooldown": 1000
+    },
+    "hover": {
+      "action": "gentle_glow",
+      "scale": 1.1
+    },
+    "right_click": {
+      "action": "show_context_menu",
+      "options": ["Chat", "Settings", "About"]
+    }
+  },
+  "ui_elements": {
+    "chat_bubble": {
+      "theme": "aquarium_glass",
+      "position": "adaptive",
+      "max_width": 300,
+      "auto_hide": 5000
+    },
+    "mood_indicator": {
+      "type": "color_orbs",
+      "positions": "smile_formation",
+      "fade_duration": 800
+    }
+  }
+}
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------
+
+# File: package.json
+# Purpose: Central entry point and orchestrator for the system.
+#
+# Type: Main launcher script (not a class file, but acts as a system controller)
+#
+# Responsibilities:
+#   - Loads configuration and resolves paths for all major dependencies ([List dependencies])
+#   - Checks and manages the status of critical services (starts/stops as needed)
+#   - Launches and monitors all core services:
+#       * [Service 1] ([Tech/Port])
+#       * [Service 2] ([Tech/Port])
+#       * [Service 3] ([Tech/Port])
+#       * [Service 4] ([Tech/Port])
+#   - Provides command-line flags for status reporting and service termination ([flags])
+#   - Handles process cleanup and error reporting
+#
+# Key Functions:
+#   - main(): Orchestrates the full launch sequence and handles CLI flags
+#   - launch_service(): Starts a subprocess for a given service
+#   - stream_logs(): Streams and truncates logs from subprocesses
+#   - run_static_server(): Runs the static file server (if applicable)
+#   - is_port_in_use(): Checks if a TCP port is active
+#   - get_service_status(): Returns a dict of service statuses
+#   - check_service(): Ensures a service is running, starts if not
+#   - resolve_path(): Finds the first valid path for a dependency from config
+#   - find_dependency_path(): Locates the executable for a dependency
+#
+# Relationships:
+#   - Reads from configuration files for dependency paths
+#   - Launches and monitors other scripts and processes
+#   - Interacts with the OS for process and port management
+#
+# Usefulness & Execution Path:
+#   - main() is the required entry point and is always used.
+#   - [List of essential functions] are all actively used and essential for orchestrating the system.
+#   - [Legacy/optional functions] may become obsolete as the system evolves.
+#
+# Suggestions:
+#   - **Performance:** [Performance notes]
+#   - **Code Cleanliness:** [Code cleanliness notes]
+#   - **Location:** [Location notes]
+#   - **Function:** [Function notes]
+#   - **Legacy:** [Legacy notes]
+#   - **Config:** [Config notes]
+#   - **Error Handling:** [Error handling notes]
+#   - **Cross-Platform:** [Cross-platform notes]
+#
+# Summary:
+#   - This file is essential, well-placed, and mostly clean.
+#   - All major functions are used and support the requirements for modularity, orchestration, and portability.
+#   - Minor cleanup (removing redundant code, legacy functions) is recommended to enhance maintainability.
+#   - Overall, it effectively serves as the central controller for the system.
+#
+# CHANGE MANAGEMENT LOG
+# Date        | Initials | Description of Change                | Reason for Change
+# -----------------------------------------------------------------------------
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------

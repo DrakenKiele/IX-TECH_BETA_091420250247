@@ -1,0 +1,420 @@
+# File: aniota_subscribix.css
+ * # Purpose: Central entry point and orchestrator for the system.
+ * #
+ * # Type: Main launcher script (not a class file, but acts as a system controller)
+ * #
+ * # Responsibilities:
+ * #   - Loads configuration and resolves paths for all major dependencies ([List dependencies])
+ * #   - Checks and manages the status of critical services (starts/stops as needed)
+ * #   - Launches and monitors all core services:
+ * #       * [Service 1] ([Tech/Port])
+ * #       * [Service 2] ([Tech/Port])
+ * #       * [Service 3] ([Tech/Port])
+ * #       * [Service 4] ([Tech/Port])
+ * #   - Provides command-line flags for status reporting and service termination ([flags])
+ * #   - Handles process cleanup and error reporting
+ * #
+ * # Key Functions:
+ * #   - main(): Orchestrates the full launch sequence and handles CLI flags
+ * #   - launch_service(): Starts a subprocess for a given service
+ * #   - stream_logs(): Streams and truncates logs from subprocesses
+ * #   - run_static_server(): Runs the static file server (if applicable)
+ * #   - is_port_in_use(): Checks if a TCP port is active
+ * #   - get_service_status(): Returns a dict of service statuses
+ * #   - check_service(): Ensures a service is running, starts if not
+ * #   - resolve_path(): Finds the first valid path for a dependency from config
+ * #   - find_dependency_path(): Locates the executable for a dependency
+ * #
+ * # Relationships:
+ * #   - Reads from configuration files for dependency paths
+ * #   - Launches and monitors other scripts and processes
+ * #   - Interacts with the OS for process and port management
+ * #
+ * # Usefulness & Execution Path:
+ * #   - main() is the required entry point and is always used.
+ * #   - [List of essential functions] are all actively used and essential for orchestrating the system.
+ * #   - [Legacy/optional functions] may become obsolete as the system evolves.
+ * #
+ * # Suggestions:
+ * #   - **Performance:** [Performance notes]
+ * #   - **Code Cleanliness:** [Code cleanliness notes]
+ * #   - **Location:** [Location notes]
+ * #   - **Function:** [Function notes]
+ * #   - **Legacy:** [Legacy notes]
+ * #   - **Config:** [Config notes]
+ * #   - **Error Handling:** [Error handling notes]
+ * #   - **Cross-Platform:** [Cross-platform notes]
+ * #
+ * # Summary:
+ * #   - This file is essential, well-placed, and mostly clean.
+ * #   - All major functions are used and support the requirements for modularity, orchestration, and portability.
+ * #   - Minor cleanup (removing redundant code, legacy functions) is recommended to enhance maintainability.
+ * #   - Overall, it effectively serves as the central controller for the system.
+ * #
+ * # CHANGE MANAGEMENT LOG
+ * # Date        | Initials | Description of Change                | Reason for Change
+ * # -----------------------------------------------------------------------------
+ * # 2025-09-11 | [XX]    | [Description]                        | [Reason]
+ * # -----------------------------------------------------------------------------
+ * 
+ */
+ * # 2025-09-11 | [XX]    | [Description]                        | [Reason]
+ * # -----------------------------------------------------------------------------
+ * 
+ */
+@import url('../stylesheets/base.css');
+
+.main-content {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.textbox {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.greeting {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.intro-section {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    color: #34495e;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.subscription-tiers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.tier-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.tier-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.tier-card.starter {
+    border-color: #28a745;
+}
+
+.tier-card.companion {
+    border-color: #007bff;
+}
+
+.tier-card.symbie {
+    border-color: #fd7e14;
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b3 100%);
+}
+
+.tier-card.ecosystem {
+    border-color: #6f42c1;
+    background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+}
+
+.tier-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.tier-header h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.price span {
+    font-size: 1rem;
+    color: #7f8c8d;
+}
+
+.popular-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transform: rotate(15deg);
+}
+
+.tier-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tier-features li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    color: #2c3e50;
+}
+
+.tier-features li:last-child {
+    border-bottom: none;
+}
+
+.tier-button {
+    width: 100%;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+}
+
+.tier-button.selected {
+    background: #28a745;
+    color: white;
+}
+
+.tier-button.selected:hover {
+    background: #218838;
+}
+
+.tier-button:not(.selected) {
+    background: #007bff;
+    color: white;
+}
+
+.tier-button:not(.selected):hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+}
+
+.tier-button.premium {
+    background: linear-gradient(45deg, #fd7e14, #e55100);
+    color: white;
+}
+
+.tier-button.premium:hover {
+    background: linear-gradient(45deg, #e55100, #d84315);
+}
+
+.tier-button.enterprise {
+    background: linear-gradient(45deg, #6f42c1, #5a32a3);
+    color: white;
+}
+
+.tier-button.enterprise:hover {
+    background: linear-gradient(45deg, #5a32a3, #4c2a85);
+}
+
+.module-access-section {
+    margin-bottom: 3rem;
+}
+
+.module-access-section h3 {
+    font-size: 1.8rem;
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+}
+
+.access-matrix {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.matrix-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+.matrix-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    padding: 1rem;
+    border-bottom: 1px solid #ecf0f1;
+    align-items: center;
+}
+
+.matrix-row:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.module-name {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.tier-access {
+    text-align: center;
+    font-weight: 600;
+}
+
+.access-indicator {
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.access-indicator.none {
+    background: #e74c3c;
+    color: white;
+}
+
+.access-indicator.basic {
+    background: #f39c12;
+    color: white;
+}
+
+.access-indicator.full {
+    background: #27ae60;
+    color: white;
+}
+
+/* Navigation */
+.navigation-section {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid #ecf0f1;
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.nav-btn {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.nav-btn.secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.nav-btn.secondary:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+
+.nav-btn.primary {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: white;
+}
+
+.nav-btn.primary:hover {
+    background: linear-gradient(45deg, #0056b3, #004085);
+    transform: translateY(-2px);
+}
+
+/* Mood Circle Integration */
+#aniota-mood-circle {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    box-shadow: 0 4px 20px rgba(52, 152, 219, 0.3);
+    z-index: 1000;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 1rem;
+    }
+    
+    .textbox {
+        padding: 1.5rem;
+    }
+    
+    .greeting {
+        font-size: 2rem;
+    }
+    
+    .subscription-tiers {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .matrix-header,
+    .matrix-row {
+        grid-template-columns: 2fr 0.8fr 0.8fr 0.8fr 0.8fr;
+        font-size: 0.9rem;
+    }
+    
+    .nav-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------

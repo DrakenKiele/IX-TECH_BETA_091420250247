@@ -1,0 +1,99 @@
+[0ms] [SYSTEM] 🔍 EXECUTION AUDIT STARTED
+[17ms] [AUDIT] 📋 Goal: Identify unused code for streamlining
+[18ms] [MODULE_LOAD] 🚀 AniotaBiome module loaded
+[19ms] [FUNCTION] ➡️  ENTRY: constructor (constructor) in AniotaBiome.js
+[0ms] [SYSTEM] 🔍 EXECUTION AUDIT STARTED
+[2ms] [AUDIT] 📋 Goal: Identify unused code for streamlining
+[3ms] [MODULE_LOAD] 🚀 AniotaBiome module loaded
+[9458ms] [FUNCTION] ➡️  ENTRY: constructor (constructor) in AniotaBiome.js
+[9469ms] [FUNCTION] ➡️  ENTRY: createBiome (createBiome) in AniotaBiome.js
+[0ms] [SYSTEM] 🔍 EXECUTION AUDIT STARTED
+[2ms] [AUDIT] 📋 Goal: Identify unused code for streamlining
+[3ms] [MODULE_LOAD] 🚀 AniotaBiome module loaded
+[2801ms] [FUNCTION] ➡️  ENTRY: constructor (constructor) in AniotaBiome.js
+[2809ms] [FUNCTION] ➡️  ENTRY: createBiome (createBiome) in AniotaBiome.js
+[0ms] [SYSTEM] 🔍 EXECUTION AUDIT STARTED
+[2ms] [AUDIT] 📋 Goal: Identify unused code for streamlining
+[3ms] [MODULE_LOAD] 🚀 AniotaBiome module loaded
+[2985ms] [FUNCTION] ➡️  ENTRY: constructor (constructor) in AniotaBiome.js
+[2987ms] [FUNCTION] ➡️  ENTRY: createBiome (createBiome) in AniotaBiome.js
+[0ms] [SYSTEM] 🔍 EXECUTION AUDIT STARTED
+[3ms] [AUDIT] 📋 Goal: Identify unused code for streamlining
+[4ms] [MODULE_LOAD] 🚀 AniotaBiome module loaded
+[3444ms] [FUNCTION] ➡️  ENTRY: constructor (constructor) in AniotaBiome.js
+[3452ms] [FUNCTION] ➡️  ENTRY: createBiome (createBiome) in AniotaBiome.js
+[0ms] [SYSTEM] 🔍 EXECUTION AUDIT STARTED
+[8ms] [AUDIT] 📋 Goal: Identify unused code for streamlining
+[9ms] [MODULE_LOAD] 🚀 AniotaBiome module loaded
+[10250ms] [FUNCTION] ➡️  ENTRY: constructor (constructor) in AniotaBiome.js
+[10258ms] [FUNCTION] ➡️  ENTRY: createBiome (createBiome) in AniotaBiome.js
+[0ms] [SYSTEM] 🔍 EXECUTION AUDIT STARTED
+[3ms] [AUDIT] 📋 Goal: Identify unused code for streamlining
+[5ms] [MODULE_LOAD] 🚀 AniotaBiome module loaded
+[4376ms] [FUNCTION] ➡️  ENTRY: constructor (constructor) in AniotaBiome.js
+[4390ms] [FUNCTION] ➡️  ENTRY: createBiome (createBiome) in AniotaBiome.js
+[0ms] [SYSTEM] 🔍 EXECUTION AUDIT STARTED
+[8ms] [AUDIT] 📋 Goal: Identify unused code for streamlining
+[9ms] [MODULE_LOAD] 🚀 AniotaBiome module loaded
+[10355ms] [FUNCTION] ➡️  ENTRY: constructor (constructor) in AniotaBiome.js
+[10370ms] [FUNCTION] ➡️  ENTRY: createBiome (createBiome) in AniotaBiome.js
+[0ms] [SYSTEM] 🔍 EXECUTION AUDIT STARTED
+[2ms] [AUDIT] 📋 Goal: Identify unused code for streamlining
+[3ms] [MODULE_LOAD] 🚀 AniotaBiome module loaded
+[10434ms] [FUNCTION] ➡️  ENTRY: constructor (constructor) in AniotaBiome.js
+[10449ms] [FUNCTION] ➡️  ENTRY: createBiome (createBiome) in AniotaBiome.js
+[0ms] [SYSTEM] 🔍 EXECUTION AUDIT STARTED
+[2ms] [AUDIT] 📋 Goal: Identify unused code for streamlining
+[3ms] [MODULE_LOAD] 🚀 AniotaBiome module loaded
+[4880ms] [FUNCTION] ➡️  ENTRY: constructor (constructor) in AniotaBiome.js
+[4894ms] [FUNCTION] ➡️  ENTRY: createBiome (createBiome) in AniotaBiome.js
+[0ms] [SYSTEM] 🔍 EXECUTION AUDIT STARTED
+[3ms] [AUDIT] 📋 Goal: Identify unused code for streamlining
+[4ms] [MODULE_LOAD] 🚀 AniotaBiome module loaded
+[10618ms] [FUNCTION] ➡️  ENTRY: constructor (constructor) in AniotaBiome.js
+[10621ms] [FUNCTION] ➡️  ENTRY: createBiome (createBiome) in AniotaBiome.js
+[0ms] [SYSTEM] 🔍 EXECUTION AUDIT STARTED
+[2ms] [AUDIT] 📋 Goal: Identify unused code for streamlining
+[3ms] [MODULE_LOAD] 🚀 AniotaBiome module loaded
+[9847ms] [FUNCTION] ➡️  ENTRY: constructor (constructor) in AniotaBiome.js
+[9854ms] [FUNCTION] ➡️  ENTRY: createBiome (createBiome) in AniotaBiome.js
+[0ms] [SYSTEM] 🔍 EXECUTION AUDIT STARTED
+[2ms] [AUDIT] 📋 Goal: Identify unused code for streamlining
+[3ms] [MODULE_LOAD] 🚀 AniotaBiome module loaded
+[2445ms] [FUNCTION] ➡️  ENTRY: constructor (constructor) in AniotaBiome.js
+[2460ms] [FUNCTION] ➡️  ENTRY: createBiome (createBiome) in AniotaBiome.js
+[0ms] [SYSTEM] 🔍 EXECUTION AUDIT STARTED
+[4ms] [AUDIT] 📋 Goal: Identify unused code for streamlining
+[5ms] [MODULE_LOAD] 🚀 AniotaBiome module loaded
+[10252ms] [FUNCTION] ➡️  ENTRY: constructor (constructor) in AniotaBiome.js
+[10259ms] [FUNCTION] ➡️  ENTRY: createBiome (createBiome) in AniotaBiome.js
+[0ms] [SYSTEM] 🔍 EXECUTION AUDIT STARTED
+[4ms] [AUDIT] 📋 Goal: Identify unused code for streamlining
+[6ms] [MAIN] 🔍 Starting complete Aniota code analysis
+[7ms] [ANALYZER] 🔧 Starting Aniota code instrumentation
+[11ms] [INSTRUMENT] ✅ Instrumented: aniota_ui/biome/AniotaBiome.js
+[14ms] [INSTRUMENT] ✅ Instrumented: aniota_ui/biome/modules/aniotaBiome_petBehavior.js
+[17ms] [INSTRUMENT] ✅ Instrumented: aniota_ui/biome/modules/aniotaBiome_userTokenEconomy.js
+[19ms] [INSTRUMENT] ✅ Instrumented: aniota_ui/biome/modules/aniotaBiome_tokenInterface.js
+[21ms] [INSTRUMENT] ✅ Instrumented: aniota_ui/biome/modules/aniotaBiome_trustTokenLearning.js
+[23ms] [INSTRUMENT] ✅ Instrumented: aniota_ui/biome/modules/aniotaBiome_petMood.js
+[26ms] [INSTRUMENT] ✅ Instrumented: aniota_ui/biome/modules/aniotaBiome_pointerExtension.js
+[27ms] [ANALYZER] ✅ Instrumented 7 Aniota files
+[28ms] [SIMULATOR] 🎮 Starting user interaction simulation
+[28ms] [SIM_STARTUP] 🚀 Simulating Aniota startup sequence
+[29ms] [PATH_RECORD] 📍 Recorded code path: startup (7 steps)
+[30ms] [SIM_TRAINING] 🎓 Simulating training session
+[31ms] [PATH_RECORD] 📍 Recorded code path: training_session (7 steps)
+[31ms] [SIM_TOKENS] 🪙 Simulating token economy interactions
+[32ms] [PATH_RECORD] 📍 Recorded code path: token_economy (5 steps)
+[33ms] [SIM_BEHAVIOR] 👁️ Simulating behavior observation
+[33ms] [PATH_RECORD] 📍 Recorded code path: behavior_observation (6 steps)
+[34ms] [SIMULATOR] ✅ User interaction simulation complete
+[35ms] [ANALYZER] 📊 Analyzing execution patterns
+[36ms] [PARSE] 📈 Parsed 93 log entries, found 2 unique functions
+[37ms] [UNUSED] 🔍 Found 26 potentially unused functions
+[37ms] [OPTIMIZE] ⚡ Identified 2 optimization opportunities
+[38ms] [DOCUMENTATION] 📝 Generating updated program flow documentation
+[41ms] [DOCS] ✅ Documentation generated: H:\DK_Softworks_LLC_Application_Projects\DK_SOFTWORKS_LLC\IX-TECH\ANIOTA_PROGRAM_FLOW_UPDATED.md
+[42ms] [DOCS] ✅ Analysis report: H:\DK_Softworks_LLC_Application_Projects\DK_SOFTWORKS_LLC\IX-TECH\ANIOTA_CODE_ANALYSIS_REPORT.json
+[42ms] [MAIN] ✅ Complete code analysis finished successfully

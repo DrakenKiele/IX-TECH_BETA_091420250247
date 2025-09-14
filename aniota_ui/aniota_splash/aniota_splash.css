@@ -1,0 +1,211 @@
+# File: aniota_splash.css
+ * # Purpose: Central entry point and orchestrator for the system.
+ * #
+ * # Type: Main launcher script (not a class file, but acts as a system controller)
+ * #
+ * # Responsibilities:
+ * #   - Loads configuration and resolves paths for all major dependencies ([List dependencies])
+ * #   - Checks and manages the status of critical services (starts/stops as needed)
+ * #   - Launches and monitors all core services:
+ * #       * [Service 1] ([Tech/Port])
+ * #       * [Service 2] ([Tech/Port])
+ * #       * [Service 3] ([Tech/Port])
+ * #       * [Service 4] ([Tech/Port])
+ * #   - Provides command-line flags for status reporting and service termination ([flags])
+ * #   - Handles process cleanup and error reporting
+ * #
+ * # Key Functions:
+ * #   - main(): Orchestrates the full launch sequence and handles CLI flags
+ * #   - launch_service(): Starts a subprocess for a given service
+ * #   - stream_logs(): Streams and truncates logs from subprocesses
+ * #   - run_static_server(): Runs the static file server (if applicable)
+ * #   - is_port_in_use(): Checks if a TCP port is active
+ * #   - get_service_status(): Returns a dict of service statuses
+ * #   - check_service(): Ensures a service is running, starts if not
+ * #   - resolve_path(): Finds the first valid path for a dependency from config
+ * #   - find_dependency_path(): Locates the executable for a dependency
+ * #
+ * # Relationships:
+ * #   - Reads from configuration files for dependency paths
+ * #   - Launches and monitors other scripts and processes
+ * #   - Interacts with the OS for process and port management
+ * #
+ * # Usefulness & Execution Path:
+ * #   - main() is the required entry point and is always used.
+ * #   - [List of essential functions] are all actively used and essential for orchestrating the system.
+ * #   - [Legacy/optional functions] may become obsolete as the system evolves.
+ * #
+ * # Suggestions:
+ * #   - **Performance:** [Performance notes]
+ * #   - **Code Cleanliness:** [Code cleanliness notes]
+ * #   - **Location:** [Location notes]
+ * #   - **Function:** [Function notes]
+ * #   - **Legacy:** [Legacy notes]
+ * #   - **Config:** [Config notes]
+ * #   - **Error Handling:** [Error handling notes]
+ * #   - **Cross-Platform:** [Cross-platform notes]
+ * #
+ * # Summary:
+ * #   - This file is essential, well-placed, and mostly clean.
+ * #   - All major functions are used and support the requirements for modularity, orchestration, and portability.
+ * #   - Minor cleanup (removing redundant code, legacy functions) is recommended to enhance maintainability.
+ * #   - Overall, it effectively serves as the central controller for the system.
+ * #
+ * # CHANGE MANAGEMENT LOG
+ * # Date        | Initials | Description of Change                | Reason for Change
+ * # -----------------------------------------------------------------------------
+ * # 2025-09-11 | [XX]    | [Description]                        | [Reason]
+ * # -----------------------------------------------------------------------------
+ * 
+ */
+ * # 2025-09-11 | [XX]    | [Description]                        | [Reason]
+ * # -----------------------------------------------------------------------------
+ * 
+ */
+@import url('../GRAFIX/glow-train-border.css');
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body {
+    background: url('new_kids_background1959.png') center bottom / cover no-repeat, #000;
+    font-family: 'Noto Sans Rounded', Arial, Helvetica, sans-serif;
+    color: #ffb300;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-content {
+    width: 100%;
+    max-width: 900px;
+    margin: 32px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: none;
+    border-radius: 18px;
+    box-shadow: 0 4px 32px #000a;
+    padding: 32px 18px 24px 18px;
+    gap: 32px;
+    position: relative;
+}
+
+.main-content.glow-train-border::before,
+.main-content::before {
+    border-radius: 18px;
+}
+
+.textbox {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 18px;
+    box-shadow: 0 2px 18px #000a;
+    padding: 18px 18px;
+    margin: 18 auto 18px auto;
+    max-width: 900px;
+    min-width: 300px;
+    width: 100vw;
+    border: 1.5px solid #ffb300;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+    transition: max-width 0.3s, min-width 0.3s, flex-direction 0.3s;
+}
+
+.greeting {
+    margin-top: 0;
+    color: #ffb300;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 2px 16px #000, 0 0 4px #222;
+}
+
+.aniota-mission {
+    margin: 8px auto 0 auto;
+    color: inherit;
+    font-size: 1.13em;
+    text-align: left;
+    text-shadow: 0 2px 8px #000;
+}
+
+.subtitle {
+    color: inherit;
+    font-size: 1.10em;
+    margin-bottom: 8px;
+    text-align: center;
+    text-shadow: 0 2px 8px #000;
+    text-decoration: none !important;
+}
+
+.hope-btn {
+    min-width: 0;
+    width: auto;
+    height: auto;
+    padding: 6px 24px;
+    border: 1px solid #ffb300;
+    background: none;
+    color: #ffb300;
+    font-size: 1.8em;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px #000a;
+    margin: 12px auto 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.hope-btn:hover,
+.hope-btn:focus {
+    background: #ffb300;
+    color: #222;
+    box-shadow: 0 4px 24px #000a;
+    outline: 1px solid #ffb300;
+}
+
+.flashing {
+    animation: flash-fade 2.2s infinite;
+}
+
+@keyframes flash-fade {
+    0% { opacity: 1; }
+    40% { opacity: 1; }
+    60% { opacity: 0.2; }
+    100% { opacity: 1; }
+}
+
+@media (max-width: 900px) {
+    .main-content {
+        flex-direction: column;
+        max-width: 98vw;
+        padding: 12px 2vw 12px 2vw;
+        gap: 0;
+    }
+    .textbox {
+        max-width: 98vw;
+        min-width: 0;
+        width: 96vw;
+        font-size: 1em;
+        padding: 12px 2vw;
+        align-items: center;
+    }
+}
+
+#aniota-mood-circle {
+    /* Base container - graphics handled by JS */
+}
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------

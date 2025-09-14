@@ -1,0 +1,406 @@
+{
+  "PRINT": {
+    "type": "output",
+    "definition": "Displays text or numbers on the screen",
+    "syntax": "PRINT \"message\" or PRINT variable",
+    "purpose": "Show information to the user",
+    "examples": [
+      "PRINT \"Hello World\"",
+      "PRINT X",
+      "PRINT \"Your score is: \"; SCORE"
+    ],
+    "teaching_connection": "Like writing a message for someone to read"
+  },
+  "INPUT": {
+    "type": "input",
+    "definition": "Gets information from the user",
+    "syntax": "INPUT variable or INPUT \"prompt\"; variable",
+    "purpose": "Allow user to provide data to the program",
+    "examples": [
+      "INPUT NAME$",
+      "INPUT \"What is your age? \"; AGE",
+      "INPUT X"
+    ],
+    "teaching_connection": "Like asking someone a question and waiting for their answer"
+  },
+  "LET": {
+    "type": "assignment",
+    "definition": "Assigns a value to a variable (often optional in modern BASIC)",
+    "syntax": "LET variable = value or variable = value",
+    "purpose": "Store a value in memory for later use",
+    "examples": [
+      "LET X = 5",
+      "NAME$ = \"John\"",
+      "LET TOTAL = PRICE * QUANTITY"
+    ],
+    "teaching_connection": "Like putting something in a labeled box for safekeeping"
+  },
+  "IF": {
+    "type": "control_flow",
+    "definition": "Makes decisions by testing conditions",
+    "syntax": "IF condition THEN action",
+    "purpose": "Make the program do different things based on circumstances",
+    "examples": [
+      "IF X > 10 THEN PRINT \"Big number\"",
+      "IF NAME$ = \"QUIT\" THEN END",
+      "IF SCORE >= 90 THEN PRINT \"A grade!\""
+    ],
+    "teaching_connection": "Like deciding what to do based on the weather or other conditions"
+  },
+  "THEN": {
+    "type": "control_flow",
+    "definition": "Specifies what action to take when an IF condition is true",
+    "syntax": "Used with IF: IF condition THEN action",
+    "purpose": "Complete the decision-making structure",
+    "examples": [
+      "IF X > 0 THEN Y = X * 2",
+      "IF PASSWORD$ = \"SECRET\" THEN GOTO 100",
+      "IF TEMPERATURE > 80 THEN PRINT \"Hot day!\""
+    ],
+    "teaching_connection": "The 'then' in 'if it's raining, then take an umbrella'"
+  },
+  "ELSE": {
+    "type": "control_flow", 
+    "definition": "Specifies alternative action when IF condition is false",
+    "syntax": "IF condition THEN action1 ELSE action2",
+    "purpose": "Handle the 'otherwise' case in decisions",
+    "examples": [
+      "IF X > 0 THEN PRINT \"Positive\" ELSE PRINT \"Not positive\"",
+      "IF GRADE >= 60 THEN PRINT \"Pass\" ELSE PRINT \"Fail\""
+    ],
+    "teaching_connection": "The 'otherwise' in decision making"
+  },
+  "GOTO": {
+    "type": "control_flow",
+    "definition": "Jumps to a specific line number in the program",
+    "syntax": "GOTO line_number",
+    "purpose": "Change the order in which program lines execute",
+    "examples": [
+      "GOTO 100",
+      "IF X = 0 THEN GOTO 50",
+      "GOTO START"
+    ],
+    "teaching_connection": "Like saying 'skip to page 25' in a book"
+  },
+  "GOSUB": {
+    "type": "control_flow",
+    "definition": "Jumps to a subroutine and remembers where to return",
+    "syntax": "GOSUB line_number",
+    "purpose": "Use a piece of code multiple times without rewriting it",
+    "examples": [
+      "GOSUB 1000",
+      "GOSUB CALCULATE_TAX",
+      "IF ERROR THEN GOSUB ERROR_HANDLER"
+    ],
+    "teaching_connection": "Like asking someone to do a specific task and then come back"
+  },
+  "RETURN": {
+    "type": "control_flow",
+    "definition": "Returns from a subroutine to where GOSUB was called",
+    "syntax": "RETURN",
+    "purpose": "Complete the subroutine and go back to main program",
+    "examples": [
+      "1000 PRINT \"Error occurred\": RETURN",
+      "CALCULATE: RESULT = X * Y: RETURN"
+    ],
+    "teaching_connection": "Like finishing a task and going back to what you were doing before"
+  },
+  "FOR": {
+    "type": "loop",
+    "definition": "Starts a counting loop that repeats a specific number of times",
+    "syntax": "FOR variable = start TO end STEP increment",
+    "purpose": "Repeat actions a known number of times",
+    "examples": [
+      "FOR I = 1 TO 10",
+      "FOR COUNT = 0 TO 100 STEP 5",
+      "FOR X = 10 TO 1 STEP -1"
+    ],
+    "teaching_connection": "Like saying 'do this 10 times' or 'count from 1 to 10'"
+  },
+  "TO": {
+    "type": "loop",
+    "definition": "Specifies the ending value in a FOR loop",
+    "syntax": "FOR variable = start TO end",
+    "purpose": "Set the boundary for counting loops",
+    "examples": [
+      "FOR I = 1 TO 100",
+      "FOR COUNT = START TO FINISH"
+    ],
+    "teaching_connection": "The destination in 'count from 1 to 10'"
+  },
+  "STEP": {
+    "type": "loop",
+    "definition": "Specifies how much to change the loop variable each time",
+    "syntax": "FOR variable = start TO end STEP increment",
+    "purpose": "Control how the counting progresses",
+    "examples": [
+      "FOR I = 1 TO 10 STEP 2",
+      "FOR X = 100 TO 0 STEP -5",
+      "FOR COUNT = 0 TO 1 STEP 0.1"
+    ],
+    "teaching_connection": "How big steps to take when counting"
+  },
+  "NEXT": {
+    "type": "loop",
+    "definition": "Marks the end of a FOR loop and increments the loop variable",
+    "syntax": "NEXT variable or just NEXT",
+    "purpose": "Complete the loop structure and control repetition",
+    "examples": [
+      "FOR I = 1 TO 10: PRINT I: NEXT I",
+      "FOR COUNT = 1 TO 5: PRINT COUNT: NEXT"
+    ],
+    "teaching_connection": "Like saying 'now do it again with the next number'"
+  },
+  "WHILE": {
+    "type": "loop",
+    "definition": "Starts a loop that continues as long as a condition is true",
+    "syntax": "WHILE condition",
+    "purpose": "Repeat actions until something changes",
+    "examples": [
+      "WHILE X < 100",
+      "WHILE NOT FINISHED",
+      "WHILE COUNT > 0"
+    ],
+    "teaching_connection": "Like 'keep doing this as long as it's still raining'"
+  },
+  "WEND": {
+    "type": "loop",
+    "definition": "Marks the end of a WHILE loop",
+    "syntax": "WEND",
+    "purpose": "Complete the WHILE loop structure",
+    "examples": [
+      "WHILE X < 10: X = X + 1: WEND",
+      "WHILE NOT DONE: INPUT RESPONSE$: WEND"
+    ],
+    "teaching_connection": "The end of 'keep doing this while...'"
+  },
+  "REM": {
+    "type": "documentation",
+    "definition": "Adds comments or remarks that the computer ignores",
+    "syntax": "REM comment text",
+    "purpose": "Document what the program does for human readers",
+    "examples": [
+      "REM This calculates the total",
+      "REM Author: John Smith",
+      "REM Version 1.0"
+    ],
+    "teaching_connection": "Like writing notes in the margin of a book"
+  },
+  "END": {
+    "type": "control_flow",
+    "definition": "Terminates the program",
+    "syntax": "END",
+    "purpose": "Stop the program from running",
+    "examples": [
+      "END",
+      "IF QUIT$ = \"Y\" THEN END",
+      "PRINT \"Goodbye\": END"
+    ],
+    "teaching_connection": "Like saying 'the end' at the end of a story"
+  },
+  "DIM": {
+    "type": "declaration",
+    "definition": "Declares an array and specifies its size",
+    "syntax": "DIM array_name(size)",
+    "purpose": "Create a list or table to store multiple values",
+    "examples": [
+      "DIM SCORES(10)",
+      "DIM NAMES$(50)",
+      "DIM MATRIX(10,10)"
+    ],
+    "teaching_connection": "Like setting up a filing cabinet with numbered drawers"
+  },
+  "READ": {
+    "type": "data",
+    "definition": "Reads values from DATA statements in order",
+    "syntax": "READ variable",
+    "purpose": "Get pre-stored values from within the program",
+    "examples": [
+      "READ NAME$",
+      "READ X, Y, Z",
+      "FOR I = 1 TO 5: READ SCORES(I): NEXT"
+    ],
+    "teaching_connection": "Like reading items from a prepared list"
+  },
+  "DATA": {
+    "type": "data",
+    "definition": "Stores values that can be read by READ statements",
+    "syntax": "DATA value1, value2, value3...",
+    "purpose": "Store information inside the program",
+    "examples": [
+      "DATA John, Mary, Bob",
+      "DATA 10, 20, 30, 40, 50",
+      "DATA \"Red\", \"Blue\", \"Green\""
+    ],
+    "teaching_connection": "Like a shopping list or ingredient list"
+  },
+  "RESTORE": {
+    "type": "data",
+    "definition": "Resets the READ pointer to the beginning of DATA statements",
+    "syntax": "RESTORE or RESTORE line_number",
+    "purpose": "Start reading DATA from the beginning again",
+    "examples": [
+      "RESTORE",
+      "RESTORE 1000",
+      "IF START_OVER THEN RESTORE"
+    ],
+    "teaching_connection": "Like going back to the top of a list to start reading again"
+  },
+  "DEF_FN": {
+    "type": "function",
+    "definition": "Defines a custom function for calculations",
+    "syntax": "DEF FN name(parameter) = formula",
+    "purpose": "Create reusable calculations",
+    "examples": [
+      "DEF FN SQUARE(X) = X * X",
+      "DEF FN AREA(R) = 3.14159 * R * R",
+      "DEF FN MAX(A,B) = (A > B) * A + (B >= A) * B"
+    ],
+    "teaching_connection": "Like creating a formula you can use over and over"
+  },
+  "STOP": {
+    "type": "control_flow",
+    "definition": "Pauses program execution temporarily",
+    "syntax": "STOP",
+    "purpose": "Pause the program for debugging or user interaction",
+    "examples": [
+      "STOP",
+      "IF DEBUG THEN STOP",
+      "PRINT \"Checkpoint\": STOP"
+    ],
+    "teaching_connection": "Like pausing a video to think about what's happening"
+  },
+  "RND": {
+    "type": "function",
+    "definition": "Generates random numbers",
+    "syntax": "RND(1) or RND",
+    "purpose": "Create unpredictable values for games or simulations",
+    "examples": [
+      "X = RND(1)",
+      "DICE = INT(RND(1) * 6) + 1",
+      "IF RND(1) > 0.5 THEN PRINT \"Heads\""
+    ],
+    "teaching_connection": "Like rolling dice or flipping a coin"
+  },
+  "CLS": {
+    "type": "screen_control",
+    "definition": "Clears the screen",
+    "syntax": "CLS",
+    "purpose": "Start with a clean display",
+    "examples": [
+      "CLS",
+      "CLS: PRINT \"New Game\"",
+      "IF START_OVER THEN CLS"
+    ],
+    "teaching_connection": "Like erasing a whiteboard to start fresh"
+  },
+  "LIST": {
+    "type": "development",
+    "definition": "Displays the program code",
+    "syntax": "LIST or LIST start-end",
+    "purpose": "See what's in your program",
+    "examples": [
+      "LIST",
+      "LIST 100-200",
+      "LIST 50"
+    ],
+    "teaching_connection": "Like looking at your written notes"
+  },
+  "RUN": {
+    "type": "development",
+    "definition": "Starts executing the program",
+    "syntax": "RUN or RUN line_number",
+    "purpose": "Make the program do its job",
+    "examples": [
+      "RUN",
+      "RUN 100",
+      "SAVE \"GAME\": RUN"
+    ],
+    "teaching_connection": "Like pressing play on a music player"
+  },
+  "LOAD": {
+    "type": "file_operation",
+    "definition": "Loads a program from storage",
+    "syntax": "LOAD \"filename\"",
+    "purpose": "Get a saved program back",
+    "examples": [
+      "LOAD \"GAME\"",
+      "LOAD \"HOMEWORK.BAS\"",
+      "LOAD \"BUDGET\""
+    ],
+    "teaching_connection": "Like taking a document out of a file cabinet"
+  },
+  "SAVE": {
+    "type": "file_operation", 
+    "definition": "Saves the current program to storage",
+    "syntax": "SAVE \"filename\"",
+    "purpose": "Keep your program so you don't lose it",
+    "examples": [
+      "SAVE \"MYGAME\"",
+      "SAVE \"PROJECT.BAS\"",
+      "SAVE \"BACKUP\""
+    ],
+    "teaching_connection": "Like putting a document in a file cabinet for safekeeping"
+  }
+}
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------
+
+# File: package.json
+# Purpose: Central entry point and orchestrator for the system.
+#
+# Type: Main launcher script (not a class file, but acts as a system controller)
+#
+# Responsibilities:
+#   - Loads configuration and resolves paths for all major dependencies ([List dependencies])
+#   - Checks and manages the status of critical services (starts/stops as needed)
+#   - Launches and monitors all core services:
+#       * [Service 1] ([Tech/Port])
+#       * [Service 2] ([Tech/Port])
+#       * [Service 3] ([Tech/Port])
+#       * [Service 4] ([Tech/Port])
+#   - Provides command-line flags for status reporting and service termination ([flags])
+#   - Handles process cleanup and error reporting
+#
+# Key Functions:
+#   - main(): Orchestrates the full launch sequence and handles CLI flags
+#   - launch_service(): Starts a subprocess for a given service
+#   - stream_logs(): Streams and truncates logs from subprocesses
+#   - run_static_server(): Runs the static file server (if applicable)
+#   - is_port_in_use(): Checks if a TCP port is active
+#   - get_service_status(): Returns a dict of service statuses
+#   - check_service(): Ensures a service is running, starts if not
+#   - resolve_path(): Finds the first valid path for a dependency from config
+#   - find_dependency_path(): Locates the executable for a dependency
+#
+# Relationships:
+#   - Reads from configuration files for dependency paths
+#   - Launches and monitors other scripts and processes
+#   - Interacts with the OS for process and port management
+#
+# Usefulness & Execution Path:
+#   - main() is the required entry point and is always used.
+#   - [List of essential functions] are all actively used and essential for orchestrating the system.
+#   - [Legacy/optional functions] may become obsolete as the system evolves.
+#
+# Suggestions:
+#   - **Performance:** [Performance notes]
+#   - **Code Cleanliness:** [Code cleanliness notes]
+#   - **Location:** [Location notes]
+#   - **Function:** [Function notes]
+#   - **Legacy:** [Legacy notes]
+#   - **Config:** [Config notes]
+#   - **Error Handling:** [Error handling notes]
+#   - **Cross-Platform:** [Cross-platform notes]
+#
+# Summary:
+#   - This file is essential, well-placed, and mostly clean.
+#   - All major functions are used and support the requirements for modularity, orchestration, and portability.
+#   - Minor cleanup (removing redundant code, legacy functions) is recommended to enhance maintainability.
+#   - Overall, it effectively serves as the central controller for the system.
+#
+# CHANGE MANAGEMENT LOG
+# Date        | Initials | Description of Change                | Reason for Change
+# -----------------------------------------------------------------------------
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------

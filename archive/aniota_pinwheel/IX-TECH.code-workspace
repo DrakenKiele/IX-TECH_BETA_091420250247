@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "D:/DKSOFTWORKSLLC_BACKUP_FOLDER"
+		}
+	],
+	"settings": {
+		"powershell.cwd": "IX-TECH"
+	}
+}

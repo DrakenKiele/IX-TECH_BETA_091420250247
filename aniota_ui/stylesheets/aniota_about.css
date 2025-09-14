@@ -1,0 +1,173 @@
+# File: aniota_about.css
+ * # Purpose: Central entry point and orchestrator for the system.
+ * #
+ * # Type: Main launcher script (not a class file, but acts as a system controller)
+ * #
+ * # Responsibilities:
+ * #   - Loads configuration and resolves paths for all major dependencies ([List dependencies])
+ * #   - Checks and manages the status of critical services (starts/stops as needed)
+ * #   - Launches and monitors all core services:
+ * #       * [Service 1] ([Tech/Port])
+ * #       * [Service 2] ([Tech/Port])
+ * #       * [Service 3] ([Tech/Port])
+ * #       * [Service 4] ([Tech/Port])
+ * #   - Provides command-line flags for status reporting and service termination ([flags])
+ * #   - Handles process cleanup and error reporting
+ * #
+ * # Key Functions:
+ * #   - main(): Orchestrates the full launch sequence and handles CLI flags
+ * #   - launch_service(): Starts a subprocess for a given service
+ * #   - stream_logs(): Streams and truncates logs from subprocesses
+ * #   - run_static_server(): Runs the static file server (if applicable)
+ * #   - is_port_in_use(): Checks if a TCP port is active
+ * #   - get_service_status(): Returns a dict of service statuses
+ * #   - check_service(): Ensures a service is running, starts if not
+ * #   - resolve_path(): Finds the first valid path for a dependency from config
+ * #   - find_dependency_path(): Locates the executable for a dependency
+ * #
+ * # Relationships:
+ * #   - Reads from configuration files for dependency paths
+ * #   - Launches and monitors other scripts and processes
+ * #   - Interacts with the OS for process and port management
+ * #
+ * # Usefulness & Execution Path:
+ * #   - main() is the required entry point and is always used.
+ * #   - [List of essential functions] are all actively used and essential for orchestrating the system.
+ * #   - [Legacy/optional functions] may become obsolete as the system evolves.
+ * #
+ * # Suggestions:
+ * #   - **Performance:** [Performance notes]
+ * #   - **Code Cleanliness:** [Code cleanliness notes]
+ * #   - **Location:** [Location notes]
+ * #   - **Function:** [Function notes]
+ * #   - **Legacy:** [Legacy notes]
+ * #   - **Config:** [Config notes]
+ * #   - **Error Handling:** [Error handling notes]
+ * #   - **Cross-Platform:** [Cross-platform notes]
+ * #
+ * # Summary:
+ * #   - This file is essential, well-placed, and mostly clean.
+ * #   - All major functions are used and support the requirements for modularity, orchestration, and portability.
+ * #   - Minor cleanup (removing redundant code, legacy functions) is recommended to enhance maintainability.
+ * #   - Overall, it effectively serves as the central controller for the system.
+ * #
+ * # CHANGE MANAGEMENT LOG
+ * # Date        | Initials | Description of Change                | Reason for Change
+ * # -----------------------------------------------------------------------------
+ * # 2025-09-11 | [XX]    | [Description]                        | [Reason]
+ * # -----------------------------------------------------------------------------
+ * 
+ */
+ * # 2025-09-11 | [XX]    | [Description]                        | [Reason]
+ * # -----------------------------------------------------------------------------
+ * 
+ */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background: #000 url('../assets/hope_background-256.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #ffb300;
+  font-family: 'Notos', 'Noto Sans Rounded', Arial, sans-serif;
+}
+
+.main-content {
+  min-height: 100vh;
+.nav-btn-group {
+  background: rgba(0,0,0,0.45);
+  border-radius: 18px;
+  border: 2.5px solid #ffe082;
+  box-shadow: 0 4px 24px #000a;
+  padding: 22px 16px;
+  margin: 24px 0 24px 0;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  box-sizing: border-box;
+  max-width: 1000px;
+  width: 95vw;
+  min-width: 220px;
+  min-height: 220px;
+  text-align: center;
+  border: 2px solid #ffb300;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.textbox > .greeting {
+  margin: 0;
+  padding: 0 !important;
+  align-self: stretch;
+  margin: 0;
+  padding: 0;
+  color: #ffb300;
+  font-size: 2em;
+  font-weight: bold;
+  text-shadow: 0 2px 16px #000, 0 0 4px #222;
+}
+
+.nav-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 900px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: rgba(0,0,0,0.65);
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+  color: #ffb300;
+  font-size: 1.1em;
+  font-weight: 500;
+  border: 2px solid #ffb300;
+  transition: background 0.2s, color 0.2s;
+  padding: 10px 8px;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+  white-space: normal;
+}
+
+.nav-btn:hover {
+  background: rgba(34,34,34,0.85);
+  color: #ffe082;
+  border-color: #ffe082;
+}
+
+@media (max-width: 700px) {
+  .textbox {
+    max-width: 100vw;
+    width: 100vw;
+    min-width: 0;
+    padding: 4vw 2vw 2vw 2vw;
+  }
+  .nav-grid {
+    grid-template-columns: 1fr;
+    max-width: 100vw;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .nav-btn {
+    font-size: 1em;
+    padding: 10px 4px;
+  }
+}
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------

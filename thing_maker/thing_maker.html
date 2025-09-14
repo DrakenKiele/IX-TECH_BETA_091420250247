@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cave Art Style Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #312E2B; /* A dark, earthy brown */
+        }
+        .loader {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #8B4513; /* SaddleBrown */
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen p-4 sm:p-6">
+    <div class="w-full max-w-2xl bg-[#4A4540] rounded-2xl shadow-2xl p-6 sm:p-8 text-center">
+        <h1 class="text-3xl sm:text-4xl font-bold text-amber-100 mb-4">Game Style: Abstract Cave Art</h1>
+        <p class="text-gray-300 mb-6 sm:mb-8">Here is a generated image to serve as a style guide for your game. It features an abstract design reminiscent of ancient cave paintings.</p>
+        
+        <div id="image-container" class="w-full h-80 sm:h-96 bg-[#312E2B] rounded-lg flex items-center justify-center mb-6 sm:mb-8 border-4 border-[#5a534d]">
+            <div id="loader" class="loader"></div>
+            <img id="generated-image" src="" alt="Generated Cave Art" class="hidden w-full h-full object-contain rounded-md">
+        </div>
+
+        <div class="text-left text-gray-300 space-y-4">
+            <h2 class="text-2xl font-semibold text-amber-200 border-b-2 border-amber-200/30 pb-2">Style Elements</h2>
+            <div>
+                <h3 class="font-bold text-lg text-amber-100">Color Palette:</h3>
+                <p>Earthy tones like ochre, charcoal, sienna, and off-whites create an authentic, ancient feel.</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg text-amber-100">Texture:</h3>
+                <p>The background has a rough, stone-like texture, suggesting the uneven surface of a cave wall.</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg text-amber-100">Shapes & Forms:</h3>
+                <p>Use simple, stylized, and symbolic shapes. Lines should be imperfect and hand-drawn in quality.</p>
+            </div>
+             <div>
+                <h3 class="font-bold text-lg text-amber-100">Atmosphere:</h3>
+                <p>The style should feel mysterious, primal, and timeless.</p>
+            </div>
+        </div>
+
+        <div class="text-left text-gray-300 space-y-4 mt-8">
+            <h2 class="text-2xl font-semibold text-amber-200 border-b-2 border-amber-200/30 pb-2">Symbol & Shape Generator</h2>
+            <p>Enter a description of a basic shape or symbol (e.g., "sharp rock", "curved line", "wooden handle") to generate a component for your game.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 mt-4">
+                <input type="text" id="symbol-prompt" placeholder="Enter symbol description..." class="flex-grow bg-[#312E2B] text-white border-2 border-[#5a534d] rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-amber-400">
+                <button id="generate-symbol-button" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-teal-400">
+                    Generate Symbol
+                </button>
+            </div>
+
+            <div id="symbol-gallery" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-6">
+                <!-- Loader will be placed here by JS -->
+            </div>
+        </div>
+
+        <button id="regenerate-button" class="mt-8 bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-amber-400">
+            Regenerate Background Style
+        </button>
+
+    </div>
+
+    <script>
+        const imageContainer = document.getElementById('image-container');
+        const loader = document.getElementById('loader');
+        const generatedImage = document.getElementById('generated-image');
+        const regenerateButton = document.getElementById('regenerate-button');
+        
+        const symbolPromptInput = document.getElementById('symbol-prompt');
+        const generateSymbolButton = document.getElementById('generate-symbol-button');
+        const symbolGallery = document.getElementById('symbol-gallery');
+
+        const initialSymbolPrompt = "A single, clear symbol of a stone hammer-axe in the style of a prehistoric cave painting. The symbol should have rough, charcoal-like lines and be isolated on a plain, textured, light-colored stone background to be used for a game tile. The symbol is the main focus.";
+
+        const generateImage = async () => {
+            generatedImage.classList.add('hidden');
+            loader.classList.remove('hidden');
+            regenerateButton.disabled = true;
+            regenerateButton.innerText = 'Generating...';
+
+
+            try {
+                 const apiKey = "";
+                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=${apiKey}`;
+                 const payload = { 
+                    instances: { prompt: "An abstract image in the style of a prehistoric cave wall painting, intended for use on a rough-cut, domino-like tile. The image should feature a heavily textured, rough stone look with significant color mixing and blending of various earthy tones like ochre, sienna, charcoal, and umber. The design should be simple and symbolic, with an ancient, hand-painted feel." }, 
+                    parameters: { "sampleCount": 1} 
+                };
+
+                let response;
+                let backoff = 1000; // Start with 1 second
+                for (let i = 0; i < 5; i++) { // Retry up to 5 times
+                    response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (response.status === 200) {
+                        break; 
+                    } else if (response.status === 429 || response.status >= 500) {
+                        await new Promise(resolve => setTimeout(resolve, backoff));
+                        backoff *= 2; // Exponential backoff
+                    } else {
+                        break; // Don't retry for other errors
+                    }
+                }
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                
+                if (result.predictions && result.predictions.length > 0 && result.predictions[0].bytesBase64Encoded) {
+                    const imageUrl = `data:image/png;base64,${result.predictions[0].bytesBase64Encoded}`;
+                    generatedImage.src = imageUrl;
+                    loader.classList.add('hidden');
+                    generatedImage.classList.remove('hidden');
+                } else {
+                   throw new Error('Image data not found in response');
+                }
+
+            } catch (error) {
+                console.error('Error generating image:', error);
+                loader.classList.add('hidden');
+                imageContainer.innerHTML = '<p class="text-red-400">Sorry, the image could not be generated. Please try again.</p>';
+            } finally {
+                regenerateButton.disabled = false;
+                regenerateButton.innerText = 'Regenerate Background Style';
+            }
+        };
+
+        const generateSymbol = async (prompt) => {
+            const loaderContainer = document.createElement('div');
+            loaderContainer.className = 'w-full h-40 bg-[#312E2B] rounded-lg flex items-center justify-center border-4 border-[#5a534d]';
+            const symbolLoader = document.createElement('div');
+            symbolLoader.className = 'loader';
+            loaderContainer.appendChild(symbolLoader);
+            symbolGallery.prepend(loaderContainer);
+            
+            generateSymbolButton.disabled = true;
+            generateSymbolButton.innerText = 'Generating...';
+
+            try {
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=${apiKey}`;
+                const payload = { 
+                    instances: { prompt: prompt }, 
+                    parameters: { "sampleCount": 1 } 
+                };
+
+                let response;
+                let backoff = 1000; // Start with 1 second
+                for (let i = 0; i < 5; i++) { // Retry up to 5 times
+                    response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (response.status === 200) {
+                        break; 
+                    } else if (response.status === 429 || response.status >= 500) {
+                        await new Promise(resolve => setTimeout(resolve, backoff));
+                        backoff *= 2; // Exponential backoff
+                    } else {
+                        break; // Don't retry for other errors
+                    }
+                }
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                
+                if (result.predictions && result.predictions.length > 0 && result.predictions[0].bytesBase64Encoded) {
+                    loaderContainer.remove(); // Remove loader
+                    const imageUrl = `data:image/png;base64,${result.predictions[0].bytesBase64Encoded}`;
+                    const imgElement = document.createElement('img');
+                    imgElement.src = imageUrl;
+                    imgElement.alt = prompt;
+                    imgElement.className = 'w-full h-40 object-contain rounded-md bg-[#312E2B] border-4 border-[#5a534d]';
+                    symbolGallery.prepend(imgElement);
+
+                } else {
+                   throw new Error('Image data not found in response for symbol');
+                }
+
+            } catch (error) {
+                console.error('Error generating symbol:', error);
+                loaderContainer.innerHTML = '<p class="text-red-400 text-sm p-2">Generation failed.</p>';
+            } finally {
+                generateSymbolButton.disabled = false;
+                generateSymbolButton.innerText = 'Generate Symbol';
+            }
+        };
+        
+        regenerateButton.addEventListener('click', generateImage);
+        
+        generateSymbolButton.addEventListener('click', () => {
+            const userPrompt = symbolPromptInput.value.trim();
+            if(userPrompt) {
+                const fullPrompt = `A single, clear symbol of a ${userPrompt} in the style of a prehistoric cave painting. The symbol should have rough, charcoal-like lines and be isolated on a plain, textured, light-colored stone background to be used for a game tile. The symbol is the main focus.`;
+                generateSymbol(fullPrompt);
+                symbolPromptInput.value = '';
+            }
+        });
+
+
+        // Initial image generation on page load
+        generateImage();
+        generateSymbol(initialSymbolPrompt);
+    </script>
+</body>
+</html>
+

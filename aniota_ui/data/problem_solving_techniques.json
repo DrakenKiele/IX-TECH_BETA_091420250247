@@ -1,0 +1,217 @@
+{
+  "divide_and_conquer": {
+    "description": "Break a problem into smaller sub-problems, solve each independently, then combine solutions",
+    "natural_approach": "break it down into pieces and solve each piece",
+    "when_to_use": "When problem can be broken into independent or semi-independent parts",
+    "teaching_steps": [
+      "Identify how the problem can be divided",
+      "Solve each part separately",
+      "Combine the solutions",
+      "Verify the complete solution works"
+    ],
+    "example_domains": [
+      "mathematics",
+      "project_management", 
+      "software_development",
+      "research"
+    ],
+    "real_world_examples": [
+      "cleaning a house room by room",
+      "organizing a large event by breaking into committees",
+      "learning a language by studying grammar, vocabulary, and practice separately"
+    ]
+  },
+  "working_backwards": {
+    "description": "Start from the desired outcome and work backwards to determine required steps",
+    "natural_approach": "start with what you want and figure out how to get there",
+    "when_to_use": "When the goal is clear but the path is uncertain",
+    "teaching_steps": [
+      "Clearly define the end goal",
+      "Identify what must happen just before the goal",
+      "Continue working backwards step by step",
+      "Create a forward plan from the backwards analysis"
+    ],
+    "example_domains": [
+      "career_planning",
+      "financial_planning",
+      "project_deadlines",
+      "academic_goals"
+    ],
+    "real_world_examples": [
+      "planning a party by working backwards from the event time",
+      "retirement planning starting with desired lifestyle",
+      "preparing for an exam by working back from test date"
+    ]
+  },
+  "pattern_matching": {
+    "description": "Recognize similarities between current problem and previously solved problems",
+    "natural_approach": "look for things you've seen before",
+    "when_to_use": "When current situation resembles familiar scenarios",
+    "teaching_steps": [
+      "Identify key features of current problem",
+      "Recall similar problems from past experience",
+      "Analyze what solutions worked before",
+      "Adapt previous solutions to current context"
+    ],
+    "example_domains": [
+      "troubleshooting",
+      "medical_diagnosis",
+      "teaching",
+      "design"
+    ],
+    "real_world_examples": [
+      "fixing a car based on similar symptoms experienced before",
+      "teaching new concepts by relating to familiar ones",
+      "decorating by using successful design patterns"
+    ]
+  },
+  "simplification": {
+    "description": "Remove complexity by focusing on core elements and eliminating non-essentials",
+    "natural_approach": "make it simpler by focusing on what really matters",
+    "when_to_use": "When problem seems overwhelming or unnecessarily complex",
+    "teaching_steps": [
+      "Identify the core problem or goal",
+      "List all current complexities and requirements",
+      "Distinguish between essential and non-essential elements",
+      "Start with a simple version and build complexity gradually"
+    ],
+    "example_domains": [
+      "communication",
+      "decision_making",
+      "learning",
+      "design"
+    ],
+    "real_world_examples": [
+      "explaining complex ideas in simple terms",
+      "choosing a restaurant by focusing on key criteria",
+      "learning to drive by starting in empty parking lots"
+    ]
+  },
+  "trial_and_error_systematic": {
+    "description": "Test different approaches systematically while learning from each attempt",
+    "natural_approach": "try different things and learn from what happens",
+    "when_to_use": "When theoretical analysis is insufficient or problem space is unfamiliar",
+    "teaching_steps": [
+      "Document current approach and expected outcome",
+      "Try the approach and observe results carefully",
+      "Analyze what worked and what didn't",
+      "Modify approach based on learning and try again"
+    ],
+    "example_domains": [
+      "experimentation",
+      "creative_work",
+      "skill_development",
+      "innovation"
+    ],
+    "real_world_examples": [
+      "learning to cook by trying recipes and adjusting",
+      "finding the best route by testing different paths",
+      "developing athletic technique through practice variations"
+    ]
+  },
+  "constraint_analysis": {
+    "description": "Identify and work within limitations to find viable solutions",
+    "natural_approach": "figure out what you can and can't do, then work within those limits",
+    "when_to_use": "When resources, time, or other factors limit possible solutions",
+    "teaching_steps": [
+      "List all known constraints and limitations",
+      "Categorize constraints as hard (unchangeable) or soft (negotiable)",
+      "Explore creative solutions within hard constraints",
+      "Consider if soft constraints can be modified"
+    ],
+    "example_domains": [
+      "resource_management",
+      "engineering",
+      "budgeting",
+      "scheduling"
+    ],
+    "real_world_examples": [
+      "planning a vacation within a budget",
+      "designing a building within zoning restrictions",
+      "organizing an event with limited space and time"
+    ]
+  },
+  "hypothesis_testing": {
+    "description": "Form testable theories about problems and systematically test them",
+    "natural_approach": "make educated guesses and test them carefully",
+    "when_to_use": "When problem cause is unclear or multiple explanations are possible",
+    "teaching_steps": [
+      "Form a clear hypothesis about the problem or solution",
+      "Design a test that would prove or disprove the hypothesis",
+      "Conduct the test and observe results objectively",
+      "Accept, reject, or modify hypothesis based on evidence"
+    ],
+    "example_domains": [
+      "scientific_research",
+      "troubleshooting",
+      "business_strategy",
+      "medical_diagnosis"
+    ],
+    "real_world_examples": [
+      "testing why a plant isn't growing by changing one variable at a time",
+      "determining why website traffic decreased by testing different explanations",
+      "figuring out which ingredient in a recipe causes allergic reactions"
+    ]
+  }
+}
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------
+
+# File: package.json
+# Purpose: Central entry point and orchestrator for the system.
+#
+# Type: Main launcher script (not a class file, but acts as a system controller)
+#
+# Responsibilities:
+#   - Loads configuration and resolves paths for all major dependencies ([List dependencies])
+#   - Checks and manages the status of critical services (starts/stops as needed)
+#   - Launches and monitors all core services:
+#       * [Service 1] ([Tech/Port])
+#       * [Service 2] ([Tech/Port])
+#       * [Service 3] ([Tech/Port])
+#       * [Service 4] ([Tech/Port])
+#   - Provides command-line flags for status reporting and service termination ([flags])
+#   - Handles process cleanup and error reporting
+#
+# Key Functions:
+#   - main(): Orchestrates the full launch sequence and handles CLI flags
+#   - launch_service(): Starts a subprocess for a given service
+#   - stream_logs(): Streams and truncates logs from subprocesses
+#   - run_static_server(): Runs the static file server (if applicable)
+#   - is_port_in_use(): Checks if a TCP port is active
+#   - get_service_status(): Returns a dict of service statuses
+#   - check_service(): Ensures a service is running, starts if not
+#   - resolve_path(): Finds the first valid path for a dependency from config
+#   - find_dependency_path(): Locates the executable for a dependency
+#
+# Relationships:
+#   - Reads from configuration files for dependency paths
+#   - Launches and monitors other scripts and processes
+#   - Interacts with the OS for process and port management
+#
+# Usefulness & Execution Path:
+#   - main() is the required entry point and is always used.
+#   - [List of essential functions] are all actively used and essential for orchestrating the system.
+#   - [Legacy/optional functions] may become obsolete as the system evolves.
+#
+# Suggestions:
+#   - **Performance:** [Performance notes]
+#   - **Code Cleanliness:** [Code cleanliness notes]
+#   - **Location:** [Location notes]
+#   - **Function:** [Function notes]
+#   - **Legacy:** [Legacy notes]
+#   - **Config:** [Config notes]
+#   - **Error Handling:** [Error handling notes]
+#   - **Cross-Platform:** [Cross-platform notes]
+#
+# Summary:
+#   - This file is essential, well-placed, and mostly clean.
+#   - All major functions are used and support the requirements for modularity, orchestration, and portability.
+#   - Minor cleanup (removing redundant code, legacy functions) is recommended to enhance maintainability.
+#   - Overall, it effectively serves as the central controller for the system.
+#
+# CHANGE MANAGEMENT LOG
+# Date        | Initials | Description of Change                | Reason for Change
+# -----------------------------------------------------------------------------
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------

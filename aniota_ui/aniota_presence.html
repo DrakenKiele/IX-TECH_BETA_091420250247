@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Aniota Presence</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Add your CSS and JS links here -->
+  </head>
+  <body style="background: transparent; margin: 0; padding: 0; overflow: hidden;">
+    <!-- Aniota Presence Overlay UIX Implementation -->
+    <div id="aniota-presence-overlay" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 9999;">
+      <div id="aniota-mood-circle" style="position: absolute; left: 40px; top: 40px; width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #ffb300, #ff8f00); box-shadow: 0 4px 32px rgba(255, 179, 0, 0.3); pointer-events: auto; transition: box-shadow 0.3s, background 0.3s; cursor: grab; display: flex; align-items: center; justify-content: center;">
+        <span id="aniota-mood-icon" style="font-size: 3rem; user-select: none;">🐕</span>
+      </div>
+    </div>
+    <!-- Aniota Presence JS: includes state manager and animation logic -->
+    <script src="aniota_presence.js"></script>
+  </body>
+</html>

@@ -1,0 +1,347 @@
+[
+  {
+    "timestamp": "2025-09-01T10:00:00",
+    "version": "0.5-offline-demo",
+    "total_tests": 8,
+    "passed_tests": 5,
+    "failed_tests": 3,
+    "success_rate": 62.5,
+    "test_results": [
+      {
+        "test_name": "Offline Query 1: Multiplication",
+        "statement": "What is multiplication?",
+        "expected_range": [
+          60,
+          100
+        ],
+        "actual_score": 100,
+        "passed": true,
+        "focus_area": "Basic math concepts",
+        "timestamp": "2025-09-01T10:00:00"
+      },
+      {
+        "test_name": "Offline Query 2: Nouns explanation",
+        "statement": "Explain what nouns are",
+        "expected_range": [
+          60,
+          100
+        ],
+        "actual_score": 0,
+        "passed": false,
+        "focus_area": "Grammar concepts",
+        "timestamp": "2025-09-01T10:00:00"
+      },
+      {
+        "test_name": "Offline Query 3: Photosynthesis",
+        "statement": "How does photosynthesis work?",
+        "expected_range": [
+          60,
+          100
+        ],
+        "actual_score": 50,
+        "passed": false,
+        "focus_area": "Science concepts",
+        "timestamp": "2025-09-01T10:00:00"
+      },
+      {
+        "test_name": "Offline Query 4: Gravity",
+        "statement": "What is gravity?",
+        "expected_range": [
+          60,
+          100
+        ],
+        "actual_score": 100,
+        "passed": true,
+        "focus_area": "Physics concepts",
+        "timestamp": "2025-09-01T10:00:00"
+      },
+      {
+        "test_name": "Offline Query 5: Democracy",
+        "statement": "Tell me about democracy",
+        "expected_range": [
+          60,
+          100
+        ],
+        "actual_score": 33,
+        "passed": false,
+        "focus_area": "Social studies",
+        "timestamp": "2025-09-01T10:00:00"
+      },
+      {
+        "test_name": "Offline Query 6: Fractions",
+        "statement": "What are fractions?",
+        "expected_range": [
+          60,
+          100
+        ],
+        "actual_score": 0,
+        "passed": false,
+        "focus_area": "Math concepts",
+        "timestamp": "2025-09-01T10:00:00"
+      },
+      {
+        "test_name": "Offline Query 7: Civil War",
+        "statement": "Explain the Civil War",
+        "expected_range": [
+          60,
+          100
+        ],
+        "actual_score": 33,
+        "passed": false,
+        "focus_area": "History concepts",
+        "timestamp": "2025-09-01T10:00:00"
+      },
+      {
+        "test_name": "Offline Query 8: Atoms",
+        "statement": "What are atoms made of?",
+        "expected_range": [
+          60,
+          100
+        ],
+        "actual_score": 0,
+        "passed": false,
+        "focus_area": "Chemistry concepts",
+        "timestamp": "2025-09-01T10:00:00"
+      }
+    ],
+    "improvements": [
+      "Initial hard-coded knowledge base",
+      "Basic offline operation capability"
+    ],
+    "issues": [
+      "Limited knowledge coverage",
+      "No truth verification system"
+    ]
+  },
+  {
+    "timestamp": "2025-09-01T11:00:00",
+    "version": "1.0-simple-truth",
+    "total_tests": 4,
+    "passed_tests": 3,
+    "failed_tests": 1,
+    "success_rate": 75.0,
+    "test_results": [
+      {
+        "test_name": "Simple Truth Test 1: Photosynthesis fact",
+        "statement": "Plants use sunlight to make food through photosynthesis",
+        "expected_range": [
+          85,
+          100
+        ],
+        "actual_score": 100,
+        "passed": true,
+        "focus_area": "Science accuracy",
+        "timestamp": "2025-09-01T11:00:00"
+      },
+      {
+        "test_name": "Simple Truth Test 2: Gravity misconception",
+        "statement": "Gravity makes objects fall upward",
+        "expected_range": [
+          0,
+          30
+        ],
+        "actual_score": 71,
+        "passed": false,
+        "focus_area": "Contradiction detection",
+        "timestamp": "2025-09-01T11:00:00"
+      },
+      {
+        "test_name": "Simple Truth Test 3: Addition fact",
+        "statement": "Addition combines numbers to get a sum",
+        "expected_range": [
+          80,
+          100
+        ],
+        "actual_score": 79,
+        "passed": true,
+        "focus_area": "Math accuracy",
+        "timestamp": "2025-09-01T11:00:00"
+      },
+      {
+        "test_name": "Simple Truth Test 4: Noun misconception",
+        "statement": "Nouns are action words",
+        "expected_range": [
+          10,
+          40
+        ],
+        "actual_score": 42,
+        "passed": true,
+        "focus_area": "Grammar contradiction",
+        "timestamp": "2025-09-01T11:00:00"
+      }
+    ],
+    "improvements": [
+      "Added Truth Engine with keyword correlation",
+      "Simple fact verification"
+    ],
+    "issues": [
+      "Gravity contradiction not detected properly",
+      "Need better contradiction logic"
+    ]
+  },
+  {
+    "timestamp": "2025-09-01T12:00:00",
+    "version": "1.1-enhanced-proximity",
+    "total_tests": 7,
+    "passed_tests": 5,
+    "failed_tests": 2,
+    "success_rate": 71.4,
+    "test_results": [
+      {
+        "test_name": "Enhanced Test 1: High truth good proximity",
+        "statement": "Plants use photosynthesis to make food from sunlight",
+        "expected_range": [
+          85,
+          100
+        ],
+        "actual_score": 100,
+        "passed": true,
+        "focus_area": "Basic science accuracy",
+        "timestamp": "2025-09-01T12:00:00"
+      },
+      {
+        "test_name": "Enhanced Test 2: Major contradiction",
+        "statement": "Gravity makes objects fall upward into the sky",
+        "expected_range": [
+          0,
+          30
+        ],
+        "actual_score": 0,
+        "passed": true,
+        "focus_area": "Contradiction detection",
+        "timestamp": "2025-09-01T12:00:00"
+      },
+      {
+        "test_name": "Enhanced Test 3: Math terms proximity",
+        "statement": "Addition combines numbers to get a sum total",
+        "expected_range": [
+          80,
+          100
+        ],
+        "actual_score": 79,
+        "passed": false,
+        "focus_area": "Mathematics accuracy",
+        "timestamp": "2025-09-01T12:00:00"
+      },
+      {
+        "test_name": "Enhanced Test 4: Grammar contradiction",
+        "statement": "Nouns are action words that show movement",
+        "expected_range": [
+          10,
+          40
+        ],
+        "actual_score": 15,
+        "passed": true,
+        "focus_area": "Grammar contradiction detection",
+        "timestamp": "2025-09-01T12:00:00"
+      },
+      {
+        "test_name": "Enhanced Test 5: Social studies consistency",
+        "statement": "Democracy involves citizens voting to choose leaders",
+        "expected_range": [
+          75,
+          95
+        ],
+        "actual_score": 92,
+        "passed": true,
+        "focus_area": "Social studies accuracy",
+        "timestamp": "2025-09-01T12:00:00"
+      },
+      {
+        "test_name": "Enhanced Test 6: Mixed domains",
+        "statement": "Atoms have electrons but democracy uses votes",
+        "expected_range": [
+          30,
+          60
+        ],
+        "actual_score": 46,
+        "passed": true,
+        "focus_area": "Cross-domain consistency",
+        "timestamp": "2025-09-01T12:00:00"
+      },
+      {
+        "test_name": "Enhanced Test 7: Poor proximity",
+        "statement": "Plants photosynthesis sunlight water democracy",
+        "expected_range": [
+          20,
+          50
+        ],
+        "actual_score": 69,
+        "passed": false,
+        "focus_area": "Unrelated terms detection",
+        "timestamp": "2025-09-01T12:00:00"
+      }
+    ],
+    "improvements": [
+      "Added proximity analysis with word distance calculations",
+      "Implemented subject consistency scoring",
+      "Enhanced contradiction detection for physics and grammar",
+      "Added penalty system for contradictions"
+    ],
+    "issues": [
+      "Math statement just below threshold (79/100 vs 80+ needed)",
+      "Unrelated terms scoring too high (69/100 vs 20-50 expected)",
+      "Need to fine-tune proximity bonus calculations"
+    ]
+  }
+]# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------
+
+# File: package.json
+# Purpose: Central entry point and orchestrator for the system.
+#
+# Type: Main launcher script (not a class file, but acts as a system controller)
+#
+# Responsibilities:
+#   - Loads configuration and resolves paths for all major dependencies ([List dependencies])
+#   - Checks and manages the status of critical services (starts/stops as needed)
+#   - Launches and monitors all core services:
+#       * [Service 1] ([Tech/Port])
+#       * [Service 2] ([Tech/Port])
+#       * [Service 3] ([Tech/Port])
+#       * [Service 4] ([Tech/Port])
+#   - Provides command-line flags for status reporting and service termination ([flags])
+#   - Handles process cleanup and error reporting
+#
+# Key Functions:
+#   - main(): Orchestrates the full launch sequence and handles CLI flags
+#   - launch_service(): Starts a subprocess for a given service
+#   - stream_logs(): Streams and truncates logs from subprocesses
+#   - run_static_server(): Runs the static file server (if applicable)
+#   - is_port_in_use(): Checks if a TCP port is active
+#   - get_service_status(): Returns a dict of service statuses
+#   - check_service(): Ensures a service is running, starts if not
+#   - resolve_path(): Finds the first valid path for a dependency from config
+#   - find_dependency_path(): Locates the executable for a dependency
+#
+# Relationships:
+#   - Reads from configuration files for dependency paths
+#   - Launches and monitors other scripts and processes
+#   - Interacts with the OS for process and port management
+#
+# Usefulness & Execution Path:
+#   - main() is the required entry point and is always used.
+#   - [List of essential functions] are all actively used and essential for orchestrating the system.
+#   - [Legacy/optional functions] may become obsolete as the system evolves.
+#
+# Suggestions:
+#   - **Performance:** [Performance notes]
+#   - **Code Cleanliness:** [Code cleanliness notes]
+#   - **Location:** [Location notes]
+#   - **Function:** [Function notes]
+#   - **Legacy:** [Legacy notes]
+#   - **Config:** [Config notes]
+#   - **Error Handling:** [Error handling notes]
+#   - **Cross-Platform:** [Cross-platform notes]
+#
+# Summary:
+#   - This file is essential, well-placed, and mostly clean.
+#   - All major functions are used and support the requirements for modularity, orchestration, and portability.
+#   - Minor cleanup (removing redundant code, legacy functions) is recommended to enhance maintainability.
+#   - Overall, it effectively serves as the central controller for the system.
+#
+# CHANGE MANAGEMENT LOG
+# Date        | Initials | Description of Change                | Reason for Change
+# -----------------------------------------------------------------------------
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------

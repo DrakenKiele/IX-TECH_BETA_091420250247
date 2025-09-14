@@ -1,0 +1,84 @@
+:root {
+  /* Jewel Tones */
+  --dk-ruby-red: #800020;
+  --dk-emerald-green: #355E3B;
+  --dk-sapphire-blue: #082567;
+  --dk-ruby-dark: #5D001E;
+  --dk-emerald-dark: #2A4A2F;
+  --dk-sapphire-dark: #061A4E;
+
+  /* Grays */
+  --dk-charcoal: #2C2C2C;
+  --dk-slate: #484848;
+  --dk-silver: #808080;
+  --dk-light-gray: #BDBDBD;
+  --dk-pearl: #E8E8E8;
+  --dk-white-smoke: #F5F5F5;
+
+  /* Text */
+  --dk-text-primary-dark: #000000;
+  --dk-text-primary-light: #FFFFFF;
+  --dk-text-secondary-dark: #2C2C2C;
+  --dk-text-secondary-light: #F5F5F5;
+  --dk-text-accent: #800020;
+
+  /* Backgrounds */
+  --dk-bg-primary: linear-gradient(135deg, #2C2C2C 0%, #484848 50%, #2C2C2C 100%);
+  --dk-bg-secondary: linear-gradient(45deg, #0F52BA 0%, #50C878 50%, #D73527 100%);
+  --dk-bg-overlay: rgba(44, 44, 44, 0.9);
+  --dk-bg-glass: rgba(245, 245, 245, 0.1);
+
+  /* Typography */
+  --dk-font-primary: 'Noto Sans Rounded', Arial, Helvetica, sans-serif;
+  --dk-font-heading: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --dk-font-monospace: 'Consolas', 'Monaco', 'Courier New', monospace;
+  --dk-size-heading-large: 2.5em;
+  --dk-size-heading-medium: 1.8em;
+  --dk-size-heading-small: 1.2em;
+  --dk-size-body: 1em;
+  --dk-size-caption: 0.85em;
+
+  /* Effects: Shadows */
+  --dk-shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --dk-shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.25);
+  --dk-shadow-strong: 0 8px 32px rgba(0, 0, 0, 0.35);
+
+  /* Effects: Glows */
+  --dk-glow-ruby: 0 0 20px rgba(128, 0, 32, 0.6);
+  --dk-glow-emerald: 0 0 20px rgba(53, 94, 59, 0.6);
+  --dk-glow-sapphire: 0 0 20px rgba(8, 37, 103, 0.6);
+
+  /* Effects: Borders */
+  --dk-border-jewel-gradient: linear-gradient(45deg, #800020, #355E3B, #082567);
+  --dk-border-subtle: 1px solid rgba(255, 255, 255, 0.2);
+  --dk-border-prominent: 2px solid rgba(255, 255, 255, 0.4);
+
+  /* UI Elements: Buttons */
+  --dk-btn-primary-bg: linear-gradient(135deg, #800020, #5D001E);
+  --dk-btn-primary-text: #FFFFFF;
+  --dk-btn-primary-border: none;
+  --dk-btn-primary-shadow: 0 4px 16px rgba(128, 0, 32, 0.4);
+  --dk-btn-primary-hover-scale: 1.05;
+
+  --dk-btn-secondary-bg: linear-gradient(135deg, #355E3B, #2A4A2F);
+  --dk-btn-secondary-text: #FFFFFF;
+  --dk-btn-secondary-border: none;
+  --dk-btn-secondary-shadow: 0 4px 16px rgba(53, 94, 59, 0.4);
+  --dk-btn-secondary-hover-scale: 1.05;
+
+  --dk-btn-accent-bg: linear-gradient(135deg, #082567, #061A4E);
+  --dk-btn-accent-text: #FFFFFF;
+  --dk-btn-accent-border: none;
+  --dk-btn-accent-shadow: 0 4px 16px rgba(8, 37, 103, 0.4);
+  --dk-btn-accent-hover-scale: 1.05;
+
+  /* UI Elements: Panels */
+  --dk-panel-glass-bg: rgba(245, 245, 245, 0.1);
+  --dk-panel-glass-border: 1px solid rgba(255, 255, 255, 0.2);
+  --dk-panel-glass-backdrop-filter: blur(10px);
+  --dk-panel-glass-border-radius: 12px;
+
+  --dk-panel-solid-bg: rgba(44, 44, 44, 0.95);
+  --dk-panel-solid-border: 1px solid rgba(255, 255, 255, 0.1);
+  --dk-panel-solid-border-radius: 8px;
+}

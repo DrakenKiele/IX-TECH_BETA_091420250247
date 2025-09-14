@@ -1,0 +1,135 @@
+{
+  "concept_definitions": {
+    "programming_paradigms": "Fundamental approaches to thinking about and solving problems, originally from computer programming but applicable to any systematic problem-solving",
+    "problem_solving_techniques": "Specific methods for approaching different types of problems based on their characteristics and constraints",
+    "behavioral_rules": "Binary guidelines for making ethical choices in daily life and professional interactions",
+    "basic_keywords": "Fundamental commands from the BASIC programming language that represent core computational concepts",
+    "cognitive_patterns": "Mental models and thinking approaches that help organize and apply problem-solving knowledge"
+  },
+  "meta_concepts": {
+    "systematic_thinking": "Approaching challenges in an organized, methodical way that can be repeated and improved over time",
+    "abstraction": "The ability to focus on essential features while temporarily ignoring irrelevant details",
+    "decomposition": "Breaking complex problems or systems into smaller, more manageable components",
+    "pattern_recognition": "Identifying similarities and recurring structures across different situations or problems",
+    "iteration": "Repeating a process with gradual improvements based on feedback and learning",
+    "modularity": "Designing solutions using independent, reusable components that work together",
+    "debugging": "Systematically identifying and fixing problems through evidence gathering and hypothesis testing"
+  },
+  "ethical_concepts": {
+    "honesty": "Being truthful and sincere in words and actions, building trust through authenticity",
+    "responsibility": "Taking ownership of one's actions and their consequences, learning from mistakes",
+    "respect": "Treating others with dignity and consideration, regardless of differences",
+    "cooperation": "Working together effectively and helping others when possible",
+    "empathy": "Understanding and considering how others feel, treating them as you'd want to be treated",
+    "perseverance": "Continuing to work toward goals despite obstacles or setbacks",
+    "stewardship": "Using resources responsibly and considering long-term impacts",
+    "inclusion": "Valuing diversity and creating environments where everyone can contribute"
+  },
+  "computational_concepts": {
+    "algorithm": "A step-by-step procedure for solving a problem or completing a task",
+    "variable": "A storage location with a name that holds data that can change",
+    "condition": "A test that evaluates to true or false, used for making decisions",
+    "loop": "A structure that repeats a set of instructions multiple times",
+    "function": "A reusable piece of code that performs a specific task",
+    "data": "Information that programs work with, such as numbers, text, or lists",
+    "input": "Information provided to a program from outside sources",
+    "output": "Information that a program produces or displays",
+    "sequence": "Instructions executed one after another in order",
+    "selection": "Choosing different paths through a program based on conditions",
+    "repetition": "Executing the same instructions multiple times"
+  },
+  "problem_solving_concepts": {
+    "constraint": "A limitation or requirement that must be considered when solving a problem",
+    "hypothesis": "An educated guess about why something happens or how to solve it",
+    "evidence": "Facts or observations that support or contradict a hypothesis",
+    "solution_space": "The range of possible approaches or answers to a problem",
+    "trade_off": "Giving up one thing to get something else, balancing competing priorities",
+    "optimization": "Making something work as effectively or efficiently as possible",
+    "validation": "Checking whether a solution actually works and solves the intended problem",
+    "root_cause": "The fundamental reason why a problem occurs, not just its symptoms"
+  },
+  "learning_concepts": {
+    "scaffolding": "Temporary support provided while learning a new skill, gradually removed as competence grows",
+    "transfer": "Applying knowledge or skills learned in one context to a different situation",
+    "metacognition": "Thinking about your own thinking and learning processes",
+    "feedback": "Information about performance that helps improve future attempts",
+    "practice": "Repeated exercise of a skill to build competence and confidence",
+    "reflection": "Thinking carefully about what was learned and how it was learned",
+    "connection": "Linking new information to existing knowledge and understanding",
+    "application": "Using learned concepts or skills in practical, real-world situations"
+  },
+  "student_success_concepts": {
+    "attendance": "Being present and on time for learning opportunities, showing commitment to education",
+    "punctuality": "Arriving on time and being ready to begin when scheduled, respecting others' time",
+    "resourcefulness": "Taking initiative to find information and solve problems independently",
+    "excellence": "Striving to do your best work rather than settling for minimal effort",
+    "academic_integrity": "Being honest in academic work and learning, avoiding cheating or plagiarism",
+    "time_management": "Planning and organizing your time effectively to meet deadlines and goals",
+    "grade_awareness": "Monitoring your academic progress and understanding how it reflects your learning",
+    "respect_for_authority": "Showing appropriate respect for teachers and adults who guide your learning",
+    "learning_values": "Understanding that education is both a privilege and responsibility in a free society",
+    "self_monitoring": "Keeping track of your own progress and adjusting your approach when needed",
+    "civic_responsibility": "Understanding your role as an educated citizen in a democratic society"
+  }
+}
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------
+
+# File: package.json
+# Purpose: Central entry point and orchestrator for the system.
+#
+# Type: Main launcher script (not a class file, but acts as a system controller)
+#
+# Responsibilities:
+#   - Loads configuration and resolves paths for all major dependencies ([List dependencies])
+#   - Checks and manages the status of critical services (starts/stops as needed)
+#   - Launches and monitors all core services:
+#       * [Service 1] ([Tech/Port])
+#       * [Service 2] ([Tech/Port])
+#       * [Service 3] ([Tech/Port])
+#       * [Service 4] ([Tech/Port])
+#   - Provides command-line flags for status reporting and service termination ([flags])
+#   - Handles process cleanup and error reporting
+#
+# Key Functions:
+#   - main(): Orchestrates the full launch sequence and handles CLI flags
+#   - launch_service(): Starts a subprocess for a given service
+#   - stream_logs(): Streams and truncates logs from subprocesses
+#   - run_static_server(): Runs the static file server (if applicable)
+#   - is_port_in_use(): Checks if a TCP port is active
+#   - get_service_status(): Returns a dict of service statuses
+#   - check_service(): Ensures a service is running, starts if not
+#   - resolve_path(): Finds the first valid path for a dependency from config
+#   - find_dependency_path(): Locates the executable for a dependency
+#
+# Relationships:
+#   - Reads from configuration files for dependency paths
+#   - Launches and monitors other scripts and processes
+#   - Interacts with the OS for process and port management
+#
+# Usefulness & Execution Path:
+#   - main() is the required entry point and is always used.
+#   - [List of essential functions] are all actively used and essential for orchestrating the system.
+#   - [Legacy/optional functions] may become obsolete as the system evolves.
+#
+# Suggestions:
+#   - **Performance:** [Performance notes]
+#   - **Code Cleanliness:** [Code cleanliness notes]
+#   - **Location:** [Location notes]
+#   - **Function:** [Function notes]
+#   - **Legacy:** [Legacy notes]
+#   - **Config:** [Config notes]
+#   - **Error Handling:** [Error handling notes]
+#   - **Cross-Platform:** [Cross-platform notes]
+#
+# Summary:
+#   - This file is essential, well-placed, and mostly clean.
+#   - All major functions are used and support the requirements for modularity, orchestration, and portability.
+#   - Minor cleanup (removing redundant code, legacy functions) is recommended to enhance maintainability.
+#   - Overall, it effectively serves as the central controller for the system.
+#
+# CHANGE MANAGEMENT LOG
+# Date        | Initials | Description of Change                | Reason for Change
+# -----------------------------------------------------------------------------
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------

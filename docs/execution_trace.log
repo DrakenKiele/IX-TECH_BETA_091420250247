@@ -1,0 +1,6 @@
+
+> aniota-biome@1.0.0 start
+> electron aniota_ui/biome/main.js
+
+'electron' is not recognized as an internal or external command,
+operable program or batch file.

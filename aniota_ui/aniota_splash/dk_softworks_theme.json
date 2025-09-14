@@ -1,0 +1,109 @@
+{
+  "theme": {
+    "name": "DK Softworks LLC Official",
+    "version": "1.0.0",
+    "trademark": true,
+    "description": "Official DK Softworks LLC trademarked color theme for serious/professional interfaces",
+    "usage": "All serious nature pages and professional interfaces"
+  },
+  "colors": {
+    "jewel_tones": {
+      "ruby_red": "#800020",
+      "emerald_green": "#355E3B", 
+      "sapphire_blue": "#082567",
+      "ruby_dark": "#5D001E",
+      "emerald_dark": "#2A4A2F",
+      "sapphire_dark": "#061A4E"
+    },
+    "grays": {
+      "charcoal": "#2C2C2C",
+      "slate": "#484848",
+      "silver": "#808080",
+      "light_gray": "#BDBDBD",
+      "pearl": "#E8E8E8",
+      "white_smoke": "#F5F5F5"
+    },
+    "text": {
+      "primary_dark": "#000000",
+      "primary_light": "#FFFFFF",
+      "secondary_dark": "#2C2C2C",
+      "secondary_light": "#F5F5F5",
+      "accent": "#800020"
+    },
+    "backgrounds": {
+      "primary": "linear-gradient(135deg, #2C2C2C 0%, #484848 50%, #2C2C2C 100%)",
+      "secondary": "linear-gradient(45deg, #0F52BA 0%, #50C878 50%, #D73527 100%)",
+      "overlay": "rgba(44, 44, 44, 0.9)",
+      "glass": "rgba(245, 245, 245, 0.1)"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "primary": "'Noto Sans Rounded', Arial, Helvetica, sans-serif",
+      "heading": "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+      "monospace": "'Consolas', 'Monaco', 'Courier New', monospace"
+    },
+    "sizes": {
+      "heading_large": "2.5em",
+      "heading_medium": "1.8em", 
+      "heading_small": "1.2em",
+      "body": "1em",
+      "caption": "0.85em"
+    }
+  },
+  "effects": {
+    "shadows": {
+      "soft": "0 2px 8px rgba(0, 0, 0, 0.15)",
+      "medium": "0 4px 16px rgba(0, 0, 0, 0.25)",
+      "strong": "0 8px 32px rgba(0, 0, 0, 0.35)"
+    },
+    "glows": {
+      "ruby": "0 0 20px rgba(128, 0, 32, 0.6)",
+      "emerald": "0 0 20px rgba(53, 94, 59, 0.6)",
+      "sapphire": "0 0 20px rgba(8, 37, 103, 0.6)"
+    },
+    "borders": {
+      "jewel_gradient": "linear-gradient(45deg, #800020, #355E3B, #082567)",
+      "subtle": "1px solid rgba(255, 255, 255, 0.2)",
+      "prominent": "2px solid rgba(255, 255, 255, 0.4)"
+    }
+  },
+  "ui_elements": {
+    "buttons": {
+      "primary": {
+        "background": "linear-gradient(135deg, #800020, #5D001E)",
+        "text": "#FFFFFF",
+        "border": "none",
+        "shadow": "0 4px 16px rgba(128, 0, 32, 0.4)",
+        "hover_scale": 1.05
+      },
+      "secondary": {
+        "background": "linear-gradient(135deg, #355E3B, #2A4A2F)", 
+        "text": "#FFFFFF",
+        "border": "none",
+        "shadow": "0 4px 16px rgba(53, 94, 59, 0.4)",
+        "hover_scale": 1.05
+      },
+      "accent": {
+        "background": "linear-gradient(135deg, #082567, #061A4E)",
+        "text": "#FFFFFF", 
+        "border": "none",
+        "shadow": "0 4px 16px rgba(8, 37, 103, 0.4)",
+        "hover_scale": 1.05
+      }
+    },
+    "panels": {
+      "glass": {
+        "background": "rgba(245, 245, 245, 0.1)",
+        "border": "1px solid rgba(255, 255, 255, 0.2)",
+        "backdrop_filter": "blur(10px)",
+        "border_radius": "12px"
+      },
+      "solid": {
+        "background": "rgba(44, 44, 44, 0.95)",
+        "border": "1px solid rgba(255, 255, 255, 0.1)",
+        "border_radius": "8px"
+      }
+    }
+  }
+}

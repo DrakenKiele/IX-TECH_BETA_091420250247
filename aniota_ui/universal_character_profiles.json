@@ -1,0 +1,227 @@
+{
+  "character_profiles": {
+    "universal_core": {
+      "name_variants": {
+        "global": "Aniota",
+        "phonetic_simple": "Ani",
+        "neutral": "Companion",
+        "custom": "{{user_defined}}"
+      },
+      "type": "adaptive_learning_companion",
+      "core_values": {
+        "curiosity": 0.9,
+        "helpfulness": 0.95,
+        "patience": 0.8,
+        "encouragement": 0.9,
+        "cultural_sensitivity": 1.0
+      }
+    },
+    
+    "age_adaptations": {
+      "early_childhood": {
+        "age_range": "3-6",
+        "personality_adjustments": {
+          "playful": 0.95,
+          "simple_language": true,
+          "attention_span": "short",
+          "reward_frequency": "high"
+        },
+        "visual_preferences": {
+          "bright_colors": true,
+          "simple_shapes": true,
+          "animation_speed": "slow"
+        }
+      },
+      "elementary": {
+        "age_range": "7-12", 
+        "personality_adjustments": {
+          "playful": 0.8,
+          "explanatory": 0.7,
+          "patience": 0.9,
+          "challenge_level": "moderate"
+        }
+      },
+      "adolescent": {
+        "age_range": "13-18",
+        "personality_adjustments": {
+          "playful": 0.6,
+          "respectful": 0.9,
+          "independence_supporting": 0.8,
+          "peer_awareness": 0.7
+        }
+      },
+      "adult": {
+        "age_range": "18+",
+        "personality_adjustments": {
+          "professional": 0.8,
+          "efficient": 0.85,
+          "depth_focused": 0.9,
+          "context_aware": 0.95
+        }
+      }
+    },
+    
+    "cultural_adaptations": {
+      "color_schemes": {
+        "universal_safe": {
+          "primary": "#4A90E2",
+          "secondary": "#7ED321", 
+          "accent": "#F5A623",
+          "description": "Blue/green/orange - universally positive"
+        },
+        "earth_tones": {
+          "primary": "#8B4513",
+          "secondary": "#228B22",
+          "accent": "#DAA520",
+          "description": "Natural colors - cross-culturally neutral"
+        },
+        "monochrome_accessible": {
+          "primary": "#666666",
+          "secondary": "#999999",
+          "accent": "#CCCCCC",
+          "description": "High contrast for accessibility"
+        },
+        "warm_minimal": {
+          "primary": "#FF6B35",
+          "secondary": "#F7931E", 
+          "accent": "#FFD23F",
+          "description": "Warm but not gendered"
+        }
+      },
+      
+      "shape_variants": {
+        "geometric_circle": {
+          "base_shape": "circle",
+          "cultural_note": "Universal symbol of completeness"
+        },
+        "organic_blob": {
+          "base_shape": "organic",
+          "cultural_note": "Natural, non-threatening form"
+        },
+        "minimal_square": {
+          "base_shape": "rounded_square", 
+          "cultural_note": "Modern, professional appearance"
+        },
+        "nature_inspired": {
+          "base_shape": "leaf",
+          "cultural_note": "Growth and learning metaphor"
+        }
+      },
+      
+      "communication_styles": {
+        "direct": {
+          "feedback_style": "clear_and_immediate",
+          "cultural_fit": ["northern_european", "german", "dutch"]
+        },
+        "gentle": {
+          "feedback_style": "soft_and_encouraging",
+          "cultural_fit": ["east_asian", "scandinavian"]
+        },
+        "expressive": {
+          "feedback_style": "animated_and_enthusiastic", 
+          "cultural_fit": ["mediterranean", "latin_american"]
+        },
+        "formal": {
+          "feedback_style": "respectful_and_structured",
+          "cultural_fit": ["many_asian", "formal_business"]
+        }
+      }
+    },
+    
+    "learning_style_adaptations": {
+      "visual": {
+        "emphasis": "enhanced_animations",
+        "features": ["color_coding", "shape_changes", "movement_patterns"]
+      },
+      "auditory": {
+        "emphasis": "sound_feedback", 
+        "features": ["tone_variations", "rhythm_patterns", "voice_synthesis"]
+      },
+      "kinesthetic": {
+        "emphasis": "interaction_response",
+        "features": ["drag_response", "click_feedback", "proximity_awareness"]
+      },
+      "reading_writing": {
+        "emphasis": "text_based_guidance",
+        "features": ["written_hints", "documentation", "progress_notes"]
+      }
+    }
+  },
+  
+  "adaptive_algorithm": {
+    "detection_methods": {
+      "language_detection": "browser_language",
+      "age_estimation": "user_input_or_behavior_analysis", 
+      "learning_style": "interaction_pattern_analysis",
+      "cultural_cues": "timezone_and_interaction_patterns"
+    },
+    
+    "adaptation_triggers": {
+      "initial_setup": "comprehensive_profile_creation",
+      "ongoing_adjustment": "learning_pattern_analysis",
+      "user_feedback": "explicit_preference_updates",
+      "performance_based": "success_rate_optimization"
+    }
+  }
+}
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------
+
+# File: package.json
+# Purpose: Central entry point and orchestrator for the system.
+#
+# Type: Main launcher script (not a class file, but acts as a system controller)
+#
+# Responsibilities:
+#   - Loads configuration and resolves paths for all major dependencies ([List dependencies])
+#   - Checks and manages the status of critical services (starts/stops as needed)
+#   - Launches and monitors all core services:
+#       * [Service 1] ([Tech/Port])
+#       * [Service 2] ([Tech/Port])
+#       * [Service 3] ([Tech/Port])
+#       * [Service 4] ([Tech/Port])
+#   - Provides command-line flags for status reporting and service termination ([flags])
+#   - Handles process cleanup and error reporting
+#
+# Key Functions:
+#   - main(): Orchestrates the full launch sequence and handles CLI flags
+#   - launch_service(): Starts a subprocess for a given service
+#   - stream_logs(): Streams and truncates logs from subprocesses
+#   - run_static_server(): Runs the static file server (if applicable)
+#   - is_port_in_use(): Checks if a TCP port is active
+#   - get_service_status(): Returns a dict of service statuses
+#   - check_service(): Ensures a service is running, starts if not
+#   - resolve_path(): Finds the first valid path for a dependency from config
+#   - find_dependency_path(): Locates the executable for a dependency
+#
+# Relationships:
+#   - Reads from configuration files for dependency paths
+#   - Launches and monitors other scripts and processes
+#   - Interacts with the OS for process and port management
+#
+# Usefulness & Execution Path:
+#   - main() is the required entry point and is always used.
+#   - [List of essential functions] are all actively used and essential for orchestrating the system.
+#   - [Legacy/optional functions] may become obsolete as the system evolves.
+#
+# Suggestions:
+#   - **Performance:** [Performance notes]
+#   - **Code Cleanliness:** [Code cleanliness notes]
+#   - **Location:** [Location notes]
+#   - **Function:** [Function notes]
+#   - **Legacy:** [Legacy notes]
+#   - **Config:** [Config notes]
+#   - **Error Handling:** [Error handling notes]
+#   - **Cross-Platform:** [Cross-platform notes]
+#
+# Summary:
+#   - This file is essential, well-placed, and mostly clean.
+#   - All major functions are used and support the requirements for modularity, orchestration, and portability.
+#   - Minor cleanup (removing redundant code, legacy functions) is recommended to enhance maintainability.
+#   - Overall, it effectively serves as the central controller for the system.
+#
+# CHANGE MANAGEMENT LOG
+# Date        | Initials | Description of Change                | Reason for Change
+# -----------------------------------------------------------------------------
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------

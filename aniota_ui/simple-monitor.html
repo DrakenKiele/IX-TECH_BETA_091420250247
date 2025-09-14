@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ANIOTA - Learning Monitor</title>
+    <style>
+      :root {
+        --dk-gray: #404040;
+        --dk-white: #ffffff;
+        --dk-black: #000000;
+        --ekg-green: #00ff88;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: var(--dk-gray);
+        color: var(--dk-white);
+        margin: 0;
+        padding: 20px;
+      }
+
+      .access-panel {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: var(--dk-black);
+        border: 2px solid var(--ekg-green);
+        border-radius: 10px;
+        padding: 15px;
+        min-width: 250px;
+        box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
+      }
+
+      .monitoring-status {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .status-indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin-right: 10px;
+        animation: pulse 2s infinite;
+      }
+
+      .status-active {
+        background: var(--ekg-green);
+      }
+
+      .status-inactive {
+        background: #666;
+        animation: none;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+
+      .toggle-btn {
+        background: var(--ekg-green);
+        color: var(--dk-black);
+        border: none;
+        padding: 8px 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+
+      .toggle-btn:hover {
+        background: #00cc6a;
+      }
+
+      .event-log {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+        padding: 10px;
+        max-height: 200px;
+        overflow-y: auto;
+        font-size: 12px;
+        margin-top: 10px;
+      }
+
+      .event-item {
+        margin-bottom: 5px;
+        padding: 2px 5px;
+        background: rgba(0, 255, 136, 0.1);
+        border-radius: 3px;
+      }
+
+      .main-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        margin-top: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Easy Visible Access Point -->
+    <div class="access-panel" id="accessPanel">
+      <div class="monitoring-status">
+        <div class="status-indicator" id="statusIndicator"></div>
+        <span id="statusText">Monitoring: OFF</span>
+      </div>
+
+      <button class="toggle-btn" onclick="toggleMonitoring()">
+        Toggle Monitor
+      </button>
+      <button class="toggle-btn" onclick="clearLog()">Clear Log</button>
+
+      <div class="event-log" id="eventLog">
+        <div style="text-align: center; color: #888">
+          Click "Toggle Monitor" to start tracking
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Area for Testing -->
+    <div class="main-content">
+      <h1>🌱 ANIOTA Learning Environment</h1>
+      <p>
+        This is your learning space. The monitor in the top-right corner tracks
+        your interactions when enabled.
+      </p>
+
+      <textarea
+        placeholder="Type something here to test input monitoring..."
+        style="
+          width: 100%;
+          height: 100px;
+          margin: 10px 0;
+          padding: 10px;
+          background: #333;
+          color: white;
+          border: 1px solid var(--ekg-green);
+          border-radius: 5px;
+        "
+      ></textarea>
+
+      <button
+        style="
+          padding: 10px 20px;
+          background: var(--ekg-green);
+          color: black;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        "
+      >
+        Test Button
+      </button>
+    </div>
+
+    <script>
+      // Core State Management
+      let monitoringActive = false;
+      let eventLog = [];
+
+      // DOM Elements
+      const statusIndicator = document.getElementById("statusIndicator");
+      const statusText = document.getElementById("statusText");
+      const eventLogDiv = document.getElementById("eventLog");
+
+      // Toggle Monitoring Function
+      function toggleMonitoring() {
+        monitoringActive = !monitoringActive;
+
+        if (monitoringActive) {
+          startMonitoring();
+          statusIndicator.className = "status-indicator status-active";
+          statusText.textContent = "Monitoring: ON";
+          logEvent("system", "Monitoring started");
+        } else {
+          stopMonitoring();
+          statusIndicator.className = "status-indicator status-inactive";
+          statusText.textContent = "Monitoring: OFF";
+          logEvent("system", "Monitoring stopped");
+        }
+      }
+
+      // Event Logging Function
+      function logEvent(type, description, data = null) {
+        const timestamp = new Date().toLocaleTimeString();
+        const event = {
+          timestamp,
+          type,
+          description,
+          data,
+        };
+
+        eventLog.push(event);
+
+        // Keep only last 50 events
+        if (eventLog.length > 50) {
+          eventLog.shift();
+        }
+
+        updateEventDisplay();
+      }
+
+      // Update Event Display
+      function updateEventDisplay() {
+        if (eventLog.length === 0) {
+          eventLogDiv.innerHTML =
+            '<div style="text-align: center; color: #888;">No events logged yet</div>';
+          return;
+        }
+
+        eventLogDiv.innerHTML = eventLog
+          .slice(-10) // Show last 10 events
+          .reverse()
+          .map(
+            (event) => `
+                    <div class="event-item">
+                        <strong>${event.timestamp}</strong> [${event.type}]: ${event.description}
+                    </div>
+                `
+          )
+          .join("");
+      }
+
+      // Clear Log Function
+      function clearLog() {
+        eventLog = [];
+        updateEventDisplay();
+      }
+
+      // User Input Monitoring Functions
+      let mouseMonitor, keyboardMonitor, focusMonitor;
+
+      function startMonitoring() {
+        // Mouse Movement Monitoring
+        mouseMonitor = (e) => {
+          // Only log every 10th mouse move to avoid spam
+          if (Math.random() < 0.1) {
+            logEvent("mouse", `Move to (${e.clientX}, ${e.clientY})`);
+          }
+        };
+
+        // Keyboard Monitoring
+        keyboardMonitor = (e) => {
+          const key = e.key.length === 1 ? "*" : e.key; // Hide actual characters for privacy
+          logEvent("keyboard", `Key: ${key}`);
+        };
+
+        // Focus Monitoring
+        focusMonitor = (e) => {
+          const tagName = e.target.tagName.toLowerCase();
+          logEvent("focus", `Focus on ${tagName} element`);
+        };
+
+        // Add Event Listeners
+        document.addEventListener("mousemove", mouseMonitor);
+        document.addEventListener("keydown", keyboardMonitor);
+        document.addEventListener("focusin", focusMonitor);
+        document.addEventListener("click", (e) => {
+          const tagName = e.target.tagName.toLowerCase();
+          logEvent("click", `Clicked ${tagName} element`);
+        });
+      }
+
+      function stopMonitoring() {
+        // Remove Event Listeners
+        if (mouseMonitor)
+          document.removeEventListener("mousemove", mouseMonitor);
+        if (keyboardMonitor)
+          document.removeEventListener("keydown", keyboardMonitor);
+        if (focusMonitor) document.removeEventListener("focusin", focusMonitor);
+      }
+
+      // Initialize
+      updateEventDisplay();
+    </script>
+  </body>
+</html>

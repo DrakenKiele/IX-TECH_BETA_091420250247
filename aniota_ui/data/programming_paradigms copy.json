@@ -1,0 +1,217 @@
+{
+  "decomposition": {
+    "core_principle": "Break complex problems into smaller, manageable parts",
+    "natural_language": "break big problems into smaller pieces",
+    "teaching_approach": "What if we broke this into smaller parts?",
+    "applications": [
+      "software_development",
+      "project_management", 
+      "research_analysis",
+      "problem_solving"
+    ],
+    "real_world_examples": [
+      "building a house room by room",
+      "cooking a complex meal step by step",
+      "writing a book chapter by chapter"
+    ],
+    "questions_to_ask": [
+      "What are the main parts of this problem?",
+      "Which part should we tackle first?",
+      "How can we break this down further?",
+      "What's the simplest version of this?"
+    ]
+  },
+  "pattern_recognition": {
+    "core_principle": "Identify recurring structures, behaviors, or solutions",
+    "natural_language": "look for things that repeat or are similar",
+    "teaching_approach": "Have you seen something like this before?",
+    "applications": [
+      "algorithm_design",
+      "data_analysis",
+      "troubleshooting",
+      "learning_acceleration"
+    ],
+    "real_world_examples": [
+      "recognizing weather patterns",
+      "following recipe patterns",
+      "noticing traffic patterns"
+    ],
+    "questions_to_ask": [
+      "What patterns do you notice?",
+      "Does this remind you of anything?",
+      "What's similar about these situations?",
+      "How have you solved similar problems before?"
+    ]
+  },
+  "abstraction": {
+    "core_principle": "Focus on essential features while hiding irrelevant details",
+    "natural_language": "focus on what matters most",
+    "teaching_approach": "What's the key idea here?",
+    "applications": [
+      "system_design",
+      "mathematical_modeling",
+      "communication",
+      "decision_making"
+    ],
+    "real_world_examples": [
+      "using a map instead of aerial photos",
+      "following a recipe without knowing chemistry",
+      "driving without understanding engine mechanics"
+    ],
+    "questions_to_ask": [
+      "What's the main idea?",
+      "What details can we ignore for now?",
+      "What's the essential concept?",
+      "How would you explain this simply?"
+    ]
+  },
+  "algorithmic_thinking": {
+    "core_principle": "Create clear, step-by-step procedures to solve problems",
+    "natural_language": "make clear step-by-step instructions",
+    "teaching_approach": "What steps would you follow?",
+    "applications": [
+      "process_design",
+      "instruction_writing",
+      "automation",
+      "systematic_problem_solving"
+    ],
+    "real_world_examples": [
+      "following a recipe exactly",
+      "assembly instructions for furniture",
+      "emergency evacuation procedures"
+    ],
+    "questions_to_ask": [
+      "What's the first step?",
+      "What comes next?",
+      "How would you explain this to someone else?",
+      "What if this step fails?"
+    ]
+  },
+  "iteration": {
+    "core_principle": "Improve solutions through repeated cycles of testing and refinement",
+    "natural_language": "try, learn, and improve repeatedly",
+    "teaching_approach": "How can we make this better?",
+    "applications": [
+      "product_development",
+      "skill_improvement",
+      "research",
+      "creative_work"
+    ],
+    "real_world_examples": [
+      "practicing a musical instrument",
+      "editing a written document",
+      "perfecting a recipe"
+    ],
+    "questions_to_ask": [
+      "How did that work?",
+      "What could be improved?",
+      "What would you try differently?",
+      "What did you learn from that attempt?"
+    ]
+  },
+  "modularity": {
+    "core_principle": "Build systems from interchangeable, reusable components",
+    "natural_language": "build with reusable pieces",
+    "teaching_approach": "What parts can be reused?",
+    "applications": [
+      "system_architecture",
+      "code_organization",
+      "team_management",
+      "process_design"
+    ],
+    "real_world_examples": [
+      "LEGO building blocks",
+      "modular furniture",
+      "standardized parts in manufacturing"
+    ],
+    "questions_to_ask": [
+      "What parts can be reused?",
+      "How can we make this more flexible?",
+      "What would happen if we changed just this part?",
+      "Can this be broken into independent pieces?"
+    ]
+  },
+  "debugging": {
+    "core_principle": "Systematically identify and fix problems in solutions",
+    "natural_language": "systematically find and fix problems",
+    "teaching_approach": "Where might the problem be?",
+    "applications": [
+      "troubleshooting",
+      "quality_assurance",
+      "problem_diagnosis",
+      "system_maintenance"
+    ],
+    "real_world_examples": [
+      "diagnosing car problems",
+      "troubleshooting internet connectivity",
+      "finding why a recipe didn't work"
+    ],
+    "questions_to_ask": [
+      "What exactly is going wrong?",
+      "When did it last work correctly?",
+      "What changed recently?",
+      "Can you reproduce the problem?"
+    ]
+  }
+}
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------
+
+# File: package.json
+# Purpose: Central entry point and orchestrator for the system.
+#
+# Type: Main launcher script (not a class file, but acts as a system controller)
+#
+# Responsibilities:
+#   - Loads configuration and resolves paths for all major dependencies ([List dependencies])
+#   - Checks and manages the status of critical services (starts/stops as needed)
+#   - Launches and monitors all core services:
+#       * [Service 1] ([Tech/Port])
+#       * [Service 2] ([Tech/Port])
+#       * [Service 3] ([Tech/Port])
+#       * [Service 4] ([Tech/Port])
+#   - Provides command-line flags for status reporting and service termination ([flags])
+#   - Handles process cleanup and error reporting
+#
+# Key Functions:
+#   - main(): Orchestrates the full launch sequence and handles CLI flags
+#   - launch_service(): Starts a subprocess for a given service
+#   - stream_logs(): Streams and truncates logs from subprocesses
+#   - run_static_server(): Runs the static file server (if applicable)
+#   - is_port_in_use(): Checks if a TCP port is active
+#   - get_service_status(): Returns a dict of service statuses
+#   - check_service(): Ensures a service is running, starts if not
+#   - resolve_path(): Finds the first valid path for a dependency from config
+#   - find_dependency_path(): Locates the executable for a dependency
+#
+# Relationships:
+#   - Reads from configuration files for dependency paths
+#   - Launches and monitors other scripts and processes
+#   - Interacts with the OS for process and port management
+#
+# Usefulness & Execution Path:
+#   - main() is the required entry point and is always used.
+#   - [List of essential functions] are all actively used and essential for orchestrating the system.
+#   - [Legacy/optional functions] may become obsolete as the system evolves.
+#
+# Suggestions:
+#   - **Performance:** [Performance notes]
+#   - **Code Cleanliness:** [Code cleanliness notes]
+#   - **Location:** [Location notes]
+#   - **Function:** [Function notes]
+#   - **Legacy:** [Legacy notes]
+#   - **Config:** [Config notes]
+#   - **Error Handling:** [Error handling notes]
+#   - **Cross-Platform:** [Cross-platform notes]
+#
+# Summary:
+#   - This file is essential, well-placed, and mostly clean.
+#   - All major functions are used and support the requirements for modularity, orchestration, and portability.
+#   - Minor cleanup (removing redundant code, legacy functions) is recommended to enhance maintainability.
+#   - Overall, it effectively serves as the central controller for the system.
+#
+# CHANGE MANAGEMENT LOG
+# Date        | Initials | Description of Change                | Reason for Change
+# -----------------------------------------------------------------------------
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------

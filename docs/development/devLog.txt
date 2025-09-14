@@ -1,0 +1,65 @@
+[2025-07-30 08:18:36] --- Starting service centralization script ---
+[2025-07-30 08:18:36] Moved folder: backend -> IX-TECH/backend
+[2025-07-30 08:18:36] Not found: db (no action)
+[2025-07-30 08:18:36] Moved file: docker-compose.yml -> IX-TECH/docker-compose.yml
+[2025-07-30 08:18:36] Not found: .env (no action)
+[2025-07-30 08:18:36] Moved file: setup_and_launch.py -> IX-TECH/setup_and_launch.py
+[2025-07-30 08:18:36] Moved file: test_stack.py -> IX-TECH/test_stack.py
+[2025-07-30 08:18:36] --- Service centralization complete. Please update your app configs to use the new service locations in IX-TECH. ---
+[2025-07-30 08:18:42] --- Starting service centralization script ---
+[2025-07-30 08:18:42] Not found: backend (no action)
+[2025-07-30 08:18:42] Not found: db (no action)
+[2025-07-30 08:18:42] Not found: docker-compose.yml (no action)
+[2025-07-30 08:18:42] Not found: .env (no action)
+[2025-07-30 08:18:42] Not found: setup_and_launch.py (no action)
+[2025-07-30 08:18:42] Not found: test_stack.py (no action)
+[2025-07-30 08:18:42] --- Service centralization complete. Please update your app configs to use the new service locations in IX-TECH. ---
+[2025-07-30 08:19:44] --- Starting service centralization script ---
+[2025-07-30 08:19:44] Not found: backend (no action)
+[2025-07-30 08:19:44] Not found: db (no action)
+[2025-07-30 08:19:44] Not found: docker-compose.yml (no action)
+[2025-07-30 08:19:44] Not found: .env (no action)
+[2025-07-30 08:19:44] Not found: setup_and_launch.py (no action)
+[2025-07-30 08:19:44] Not found: test_stack.py (no action)
+[2025-07-30 08:19:44] --- Service centralization complete. Please update your app configs to use the new service locations in IX-TECH. ---
+[2025-07-30 08:22:39] --- Starting recursive service centralization script ---
+[2025-07-30 08:22:39] Skipped: backend already exists in IX-TECH.
+[2025-07-30 08:22:39] Skipped: backend already exists in IX-TECH.
+[2025-07-30 08:22:39] Moved folder: BACKUP\db -> IX-TECH/db
+[2025-07-30 08:22:39] Skipped: db already exists in IX-TECH.
+[2025-07-30 08:22:39] Not found: docker-compose.yml (no action)
+[2025-07-30 08:22:40] Not found: .env (no action)
+[2025-07-30 08:22:40] Skipped: setup_and_launch.py already exists in IX-TECH.
+[2025-07-30 08:22:40] Not found: test_stack.py (no action)
+[2025-07-30 08:22:40] --- Recursive service centralization complete. Please update your app configs to use the new service locations in IX-TECH. ---
+[2025-07-30 08:24:50] --- Starting recursive service centralization script ---
+[2025-07-30 08:24:50] Skipped: backend already exists in IX-TECH.
+[2025-07-30 08:24:50] Skipped: backend already exists in IX-TECH.
+[2025-07-30 08:24:50] Skipped: db already exists in IX-TECH.
+[2025-07-30 08:24:51] Not found: docker-compose.yml (no action)
+[2025-07-30 08:24:51] Not found: .env (no action)
+[2025-07-30 08:24:51] Skipped: setup_and_launch.py already exists in IX-TECH.
+[2025-07-30 08:24:51] Not found: test_stack.py (no action)
+[2025-07-30 08:24:51] --- Recursive service centralization complete. Please update your app configs to use the new service locations in IX-TECH. ---
+[2025-07-30 08:25:47] --- Starting recursive service centralization script ---
+[2025-07-30 08:25:47] Skipped: backend already exists in IX-TECH.
+[2025-07-30 08:25:47] Skipped: backend already exists in IX-TECH.
+[2025-07-30 08:25:48] Skipped: db already exists in IX-TECH.
+[2025-07-30 08:25:48] Not found: docker-compose.yml (no action)
+[2025-07-30 08:25:48] Not found: .env (no action)
+[2025-07-30 08:25:48] Skipped: setup_and_launch.py already exists in IX-TECH.
+[2025-07-30 08:25:48] Not found: test_stack.py (no action)
+[2025-07-30 08:25:48] --- Recursive service centralization complete. Please update your app configs to use the new service locations in IX-TECH. ---
+[2025-07-30 08:27:06] --- Starting recursive service centralization script ---
+[2025-07-30 08:27:06] Removed existing folder in IX-TECH: backend
+[2025-07-30 08:27:06] Moved folder: BACKUP\backend -> IX-TECH/backend
+[2025-07-30 08:27:06] Removed existing folder in IX-TECH: backend
+[2025-07-30 08:27:06] Moved folder: BACKUP\aniota\backend -> IX-TECH/backend
+[2025-07-30 08:27:06] Removed existing folder in IX-TECH: db
+[2025-07-30 08:27:06] Moved folder: BACKUP\CHRYSALIX_Project\.git\objects\db -> IX-TECH/db
+[2025-07-30 08:27:06] Not found: docker-compose.yml (no action)
+[2025-07-30 08:27:07] Not found: .env (no action)
+[2025-07-30 08:27:07] Removed existing file in IX-TECH: setup_and_launch.py
+[2025-07-30 08:27:07] Moved file: BACKUP\setup_and_launch.py -> IX-TECH/setup_and_launch.py
+[2025-07-30 08:27:07] Not found: test_stack.py (no action)
+[2025-07-30 08:27:07] --- Recursive service centralization complete. Please update your app configs to use the new service locations in IX-TECH. ---

@@ -1,0 +1,173 @@
+{
+  "reduce_refine_recurse": {
+    "definition": "A systematic approach to problem-solving that involves breaking down problems (reduce), improving solutions iteratively (refine), and applying the same approach to sub-problems (recurse)",
+    "components": {
+      "reduce": "Break complex problems into smaller, more manageable parts",
+      "refine": "Improve solutions through iterative testing and enhancement", 
+      "recurse": "Apply the same problem-solving approach to sub-problems"
+    },
+    "teaching_approach": "The three Rs of systematic problem-solving",
+    "when_to_use": "Any complex problem that seems overwhelming or multi-faceted",
+    "real_world_examples": [
+      "Learning a musical instrument: break into techniques (reduce), practice each (refine), apply learning to songs (recurse)",
+      "Writing a research paper: outline main points (reduce), draft and revise each section (refine), apply same process to subsections (recurse)",
+      "Organizing a large event: break into committees (reduce), improve each area (refine), apply organization to sub-events (recurse)"
+    ]
+  },
+  "systematic_thinking": {
+    "definition": "Approaching problems in an organized, methodical way rather than randomly or chaotically",
+    "characteristics": [
+      "Step-by-step progression",
+      "Documentation of attempts",
+      "Learning from each iteration",
+      "Building on previous knowledge"
+    ],
+    "teaching_approach": "Think like a scientist or engineer",
+    "contrasts_with": "Random trial and error, giving up when first attempt fails",
+    "benefits": [
+      "More efficient problem solving",
+      "Better learning from mistakes", 
+      "Transferable skills to new problems"
+    ]
+  },
+  "abstraction_levels": {
+    "definition": "Different levels of detail when looking at problems, from high-level concepts to specific implementation details",
+    "levels": {
+      "conceptual": "The main idea or purpose",
+      "logical": "How the parts relate to each other",
+      "physical": "The specific details of implementation"
+    },
+    "teaching_approach": "Like a zoom lens - you can focus on the big picture or zoom in on details",
+    "example": {
+      "conceptual": "Transportation from home to school",
+      "logical": "Route planning with decision points",
+      "physical": "Specific streets, traffic lights, and timing"
+    }
+  },
+  "modularity_thinking": {
+    "definition": "Breaking systems into independent, interchangeable parts that work together",
+    "benefits": [
+      "Easier to understand complex systems",
+      "Parts can be improved independently",
+      "Components can be reused in different contexts",
+      "Problems can be isolated and fixed"
+    ],
+    "teaching_approach": "Think like building with LEGO blocks",
+    "examples": [
+      "Modern cars with replaceable parts",
+      "Software with independent functions",
+      "Organizations with different departments"
+    ]
+  },
+  "iterative_improvement": {
+    "definition": "Making repeated cycles of small improvements rather than trying to perfect everything at once",
+    "cycle_steps": [
+      "Try an approach",
+      "Observe what works and what doesn't",
+      "Make adjustments based on learning",
+      "Try the improved approach",
+      "Repeat until satisfied"
+    ],
+    "teaching_approach": "Like sculpting - start rough and gradually refine",
+    "why_effective": [
+      "Reduces risk of major failures",
+      "Provides frequent feedback",
+      "Builds understanding gradually",
+      "Maintains motivation through visible progress"
+    ]
+  },
+  "pattern_recognition_thinking": {
+    "definition": "The ability to identify similarities, regularities, or recurring themes across different situations",
+    "types_of_patterns": [
+      "Structural patterns - how things are organized",
+      "Behavioral patterns - how things typically happen",
+      "Problem patterns - similar challenges across domains",
+      "Solution patterns - approaches that work repeatedly"
+    ],
+    "teaching_approach": "Like becoming a detective who notices clues",
+    "development_stages": [
+      "Notice obvious repetitions",
+      "Recognize variations of the same pattern",
+      "Abstract patterns across different contexts",
+      "Create new solutions based on pattern knowledge"
+    ]
+  },
+  "debugging_mindset": {
+    "definition": "A systematic approach to finding and fixing problems by gathering evidence and testing hypotheses",
+    "key_principles": [
+      "Assume there's a logical explanation",
+      "Gather evidence before jumping to conclusions",
+      "Test one thing at a time",
+      "Document what you try and what happens"
+    ],
+    "teaching_approach": "Think like a medical doctor diagnosing symptoms",
+    "common_debugging_steps": [
+      "Reproduce the problem consistently",
+      "Identify what changed recently",
+      "Form hypotheses about the cause",
+      "Test each hypothesis systematically",
+      "Fix the root cause, not just symptoms"
+    ]
+  }
+}
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------
+
+# File: package.json
+# Purpose: Central entry point and orchestrator for the system.
+#
+# Type: Main launcher script (not a class file, but acts as a system controller)
+#
+# Responsibilities:
+#   - Loads configuration and resolves paths for all major dependencies ([List dependencies])
+#   - Checks and manages the status of critical services (starts/stops as needed)
+#   - Launches and monitors all core services:
+#       * [Service 1] ([Tech/Port])
+#       * [Service 2] ([Tech/Port])
+#       * [Service 3] ([Tech/Port])
+#       * [Service 4] ([Tech/Port])
+#   - Provides command-line flags for status reporting and service termination ([flags])
+#   - Handles process cleanup and error reporting
+#
+# Key Functions:
+#   - main(): Orchestrates the full launch sequence and handles CLI flags
+#   - launch_service(): Starts a subprocess for a given service
+#   - stream_logs(): Streams and truncates logs from subprocesses
+#   - run_static_server(): Runs the static file server (if applicable)
+#   - is_port_in_use(): Checks if a TCP port is active
+#   - get_service_status(): Returns a dict of service statuses
+#   - check_service(): Ensures a service is running, starts if not
+#   - resolve_path(): Finds the first valid path for a dependency from config
+#   - find_dependency_path(): Locates the executable for a dependency
+#
+# Relationships:
+#   - Reads from configuration files for dependency paths
+#   - Launches and monitors other scripts and processes
+#   - Interacts with the OS for process and port management
+#
+# Usefulness & Execution Path:
+#   - main() is the required entry point and is always used.
+#   - [List of essential functions] are all actively used and essential for orchestrating the system.
+#   - [Legacy/optional functions] may become obsolete as the system evolves.
+#
+# Suggestions:
+#   - **Performance:** [Performance notes]
+#   - **Code Cleanliness:** [Code cleanliness notes]
+#   - **Location:** [Location notes]
+#   - **Function:** [Function notes]
+#   - **Legacy:** [Legacy notes]
+#   - **Config:** [Config notes]
+#   - **Error Handling:** [Error handling notes]
+#   - **Cross-Platform:** [Cross-platform notes]
+#
+# Summary:
+#   - This file is essential, well-placed, and mostly clean.
+#   - All major functions are used and support the requirements for modularity, orchestration, and portability.
+#   - Minor cleanup (removing redundant code, legacy functions) is recommended to enhance maintainability.
+#   - Overall, it effectively serves as the central controller for the system.
+#
+# CHANGE MANAGEMENT LOG
+# Date        | Initials | Description of Change                | Reason for Change
+# -----------------------------------------------------------------------------
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------

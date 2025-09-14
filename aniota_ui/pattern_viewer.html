@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pattern Generator Viewer</title>
+
+</head>
+<body>
+
+  
+  <canvas id="patternCanvas"></canvas>
+  <script type="module">
+    import { PatternGenerator } from './patternGenerator.js';
+    
+    const canvas = document.getElementById('patternCanvas');
+    const ctx = canvas.getContext('2d');
+    // Each pattern is 4x3 cells
+    const patternCols = 4;
+    const patternRows = 3;
+    let patternsWide = 1;
+    let patternsHigh = 1;
+    let cellWidth = 1;
+    let cellHeight = 1;
+
+
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      // Calculate the max number of 4x3 patterns that fit horizontally and vertically
+      // Try to fill the screen with as many whole patterns as possible
+      const patternAspect = patternCols / patternRows;
+      // Try all possible numbers of patterns wide, pick the one that fills the screen best
+      let best = { patternsWide: 1, patternsHigh: 1, area: 0 };
+      for (let w = 1; w <= 32; w++) {
+        const h = Math.floor((canvas.height / canvas.width) * w * (patternCols / patternRows));
+        if (h < 1) continue;
+        const cellW = canvas.width / (w * patternCols);
+        const cellH = canvas.height / (h * patternRows);
+        const area = w * h * cellW * cellH;
+        if (area > best.area) {
+          best = { patternsWide: w, patternsHigh: h, area };
+        }
+      }
+      patternsWide = best.patternsWide;
+      patternsHigh = best.patternsHigh;
+      cellWidth = canvas.width / (patternsWide * patternCols);
+      cellHeight = canvas.height / (patternsHigh * patternRows);
+    }
+
+    function drawPatterns() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // Each pattern is 4x3 cells, and we have patternsWide x patternsHigh patterns
+      const gen = new PatternGenerator(Math.min(cellWidth, cellHeight), patternCols);
+      const patterns = gen.generateUniquePatterns(patternsWide * patternsHigh);
+      let i = 0;
+      for (let row = 0; row < patternsHigh; row++) {
+        for (let col = 0; col < patternsWide; col++) {
+          if (i >= patterns.length) break;
+          const x = col * patternCols * cellWidth;
+          const y = row * patternRows * cellHeight;
+          ctx.save();
+          ctx.beginPath();
+          ctx.rect(x, y, patternCols * cellWidth, patternRows * cellHeight);
+          ctx.clip();
+          ctx.translate(x, y);
+          ctx.scale(cellWidth / gen.cellSize, cellHeight / gen.cellSize);
+          gen.renderPatternToCanvas(patterns[i], ctx, 0, 0);
+          ctx.restore();
+          i++;
+        }
+      }
+    }
+
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      drawPatterns();
+    });
+
+    // Initial setup
+    resizeCanvas();
+    drawPatterns();
+  </script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+# File: themes_alt.css
+ * # Purpose: Central entry point and orchestrator for the system.
+ * #
+ * # Type: Main launcher script (not a class file, but acts as a system controller)
+ * #
+ * # Responsibilities:
+ * #   - Loads configuration and resolves paths for all major dependencies ([List dependencies])
+ * #   - Checks and manages the status of critical services (starts/stops as needed)
+ * #   - Launches and monitors all core services:
+ * #       * [Service 1] ([Tech/Port])
+ * #       * [Service 2] ([Tech/Port])
+ * #       * [Service 3] ([Tech/Port])
+ * #       * [Service 4] ([Tech/Port])
+ * #   - Provides command-line flags for status reporting and service termination ([flags])
+ * #   - Handles process cleanup and error reporting
+ * #
+ * # Key Functions:
+ * #   - main(): Orchestrates the full launch sequence and handles CLI flags
+ * #   - launch_service(): Starts a subprocess for a given service
+ * #   - stream_logs(): Streams and truncates logs from subprocesses
+ * #   - run_static_server(): Runs the static file server (if applicable)
+ * #   - is_port_in_use(): Checks if a TCP port is active
+ * #   - get_service_status(): Returns a dict of service statuses
+ * #   - check_service(): Ensures a service is running, starts if not
+ * #   - resolve_path(): Finds the first valid path for a dependency from config
+ * #   - find_dependency_path(): Locates the executable for a dependency
+ * #
+ * # Relationships:
+ * #   - Reads from configuration files for dependency paths
+ * #   - Launches and monitors other scripts and processes
+ * #   - Interacts with the OS for process and port management
+ * #
+ * # Usefulness & Execution Path:
+ * #   - main() is the required entry point and is always used.
+ * #   - [List of essential functions] are all actively used and essential for orchestrating the system.
+ * #   - [Legacy/optional functions] may become obsolete as the system evolves.
+ * #
+ * # Suggestions:
+ * #   - **Performance:** [Performance notes]
+ * #   - **Code Cleanliness:** [Code cleanliness notes]
+ * #   - **Location:** [Location notes]
+ * #   - **Function:** [Function notes]
+ * #   - **Legacy:** [Legacy notes]
+ * #   - **Config:** [Config notes]
+ * #   - **Error Handling:** [Error handling notes]
+ * #   - **Cross-Platform:** [Cross-platform notes]
+ * #
+ * # Summary:
+ * #   - This file is essential, well-placed, and mostly clean.
+ * #   - All major functions are used and support the requirements for modularity, orchestration, and portability.
+ * #   - Minor cleanup (removing redundant code, legacy functions) is recommended to enhance maintainability.
+ * #   - Overall, it effectively serves as the central controller for the system.
+ * #
+ * # CHANGE MANAGEMENT LOG
+ * # Date        | Initials | Description of Change                | Reason for Change
+ * # -----------------------------------------------------------------------------
+ * # 2025-09-11 | [XX]    | [Description]                        | [Reason]
+ * # -----------------------------------------------------------------------------
+ * 
+ */
+ * # 2025-09-11 | [XX]    | [Description]                        | [Reason]
+ * # -----------------------------------------------------------------------------
+ * 
+ */
+:root {
+  --font-family-sans: 'Noto Sans', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --font-family-serif: 'Georgia', 'Times New Roman', serif;
+  --font-family-mono: 'Courier New', 'monospace';
+
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --background-color: #f8f9fa;
+  --surface-color: #ffffff;
+  --text-color: #212529;
+  --border-color: #dee2e6;
+  --border-radius: 8px;
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s;
+}
+
+.theme-primary {
+  --primary-color: #ff6347; /* Tomato Red */
+  --secondary-color: #ffd700; /* Gold */
+  --background-color: #f0f8ff; /* Alice Blue */
+  --surface-color: #ffffff;
+  --text-color: #333333;
+  --border-color: #ffc0cb; /* Pink */
+  --border-radius: 16px;
+  --font-family-sans: 'Comic Sans MS', 'Chalkboard SE', 'Arial Rounded MT Bold', sans-serif;
+}
+
+/* * ============================================================================
+ * 3. Mid Level Theme (Engaging & Modern)
+ * ============================================================================
+ * For middle schoolers. Uses a vibrant but slightly more mature palette.
+ * Clean, modern sans-serif font.
+ */
+
+.theme-mid {
+  --primary-color: #1e90ff; /* Dodger Blue */
+  --secondary-color: #32cd32; /* Lime Green */
+  --background-color: #f5f5f5; /* White Smoke */
+  --surface-color: #ffffff;
+  --text-color: #2a2a2a;
+  --border-color: #e0e0e0;
+  --border-radius: 12px;
+  --font-family-sans: 'Helvetica Neue', 'Arial', sans-serif;
+}
+
+/* * ============================================================================
+ * 4. Secondary Level Theme (Focused & Clean)
+ * ============================================================================
+ * For high school students. A more focused, less distracting theme with a 
+ * professional but approachable feel.
+ */
+
+.theme-secondary {
+  --primary-color: #4682b4; /* Steel Blue */
+  --secondary-color: #9370db; /* Medium Purple */
+  --background-color: #eef2f7;
+  --surface-color: #ffffff;
+  --text-color: #333;
+  --border-color: #dcdcdc;
+  --border-radius: 8px;
+  --font-family-sans: 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* * ============================================================================
+ * 5. Post-Secondary Theme (Academic & Refined)
+ * ============================================================================
+ * For college students and higher education. Uses a serif font for readability
+ * and a muted, professional color palette.
+ */
+
+.theme-post-secondary {
+  --primary-color: #2f4f4f; /* Dark Slate Gray */
+  --secondary-color: #8b4513; /* Saddle Brown */
+  --background-color: #fafafa;
+  --surface-color: #ffffff;
+  --text-color: #1a1a1a;
+  --border-color: #ccc;
+  --border-radius: 4px;
+  --font-family-sans: 'Georgia', 'Times New Roman', serif;
+}
+
+/* * ============================================================================
+ * 6. Adult Theme (Professional & Minimalist)
+ * ============================================================================
+ * A clean, minimalist, and professional theme for adult learners or corporate
+ * environments.
+ */
+
+.theme-adult {
+  --primary-color: #343a40; /* Dark Gray */
+  --secondary-color: #6c757d; /* Gray */
+  --background-color: #ffffff;
+  --surface-color: #f8f9fa;
+  --text-color: #000000;
+  --border-color: #ced4da;
+  --border-radius: 6px;
+  --font-family-sans: 'Helvetica', 'Arial', sans-serif;
+}
+
+/* * ============================================================================
+ * 7. General Component Styling
+ * ============================================================================
+ * These rules apply the variables to common UI elements.
+ */
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-family-sans);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.container {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  margin: 20px;
+}
+
+button, .btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-family: var(--font-family-sans);
+  transition: background-color var(--transition-speed);
+}
+
+button:hover, .btn:hover {
+  opacity: 0.9;
+}
+
+h1, h2, h3 {
+  color: var(--primary-color);
+}
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------

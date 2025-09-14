@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-09-03T14:31:14.707Z",
+  "mainExecutionPaths": [
+    {
+      "name": "startup",
+      "steps": [
+        "unified_launcher.py -> main()",
+        "AniotaBiome.js -> constructor()",
+        "petBehavior.js -> initializeNaturalInstincts()",
+        "userTokenEconomy.js -> constructor()",
+        "tokenInterface.js -> createInterface()",
+        "trustTokenLearning.js -> initializeLearningEngine()",
+        "petMood.js -> initializeMoodSystem()"
+      ],
+      "timestamp": 1756909874731
+    },
+    {
+      "name": "training_session",
+      "steps": [
+        "tokenInterface.js -> observeBehavior()",
+        "petBehavior.js -> receiveCommand(\"sit\")",
+        "petBehavior.js -> evaluateResponse()",
+        "userTokenEconomy.js -> spendToken(\"positive\")",
+        "trustTokenLearning.js -> receiveReward()",
+        "petMood.js -> updateMood(\"positive\")",
+        "petBehavior.js -> reinforceCommand(\"sit\")"
+      ],
+      "timestamp": 1756909874733
+    },
+    {
+      "name": "token_economy",
+      "steps": [
+        "userTokenEconomy.js -> getBalance()",
+        "tokenInterface.js -> giveStrongPositive()",
+        "userTokenEconomy.js -> spendToken(3, \"strong_positive\")",
+        "userTokenEconomy.js -> recordPositiveLearning()",
+        "userTokenEconomy.js -> awardTokens(\"session_completion\", 2)"
+      ],
+      "timestamp": 1756909874734
+    },
+    {
+      "name": "behavior_observation",
+      "steps": [
+        "petBehavior.js -> updateBehavior()",
+        "petBehavior.js -> evaluateNaturalInstincts()",
+        "petMood.js -> getCurrentMood()",
+        "AniotaBiome.js -> drawAniota()",
+        "AniotaBiome.js -> drawPixieSprite()",
+        "pointerExtension.js -> handleMouseInteraction()"
+      ],
+      "timestamp": 1756909874735
+    }
+  ],
+  "userInteractionPaths": [],
+  "backgroundProcessPaths": [],
+  "unusedCode": [
+    {
+      "function": "initializeBiome",
+      "reason": "Never executed during simulation",
+      "recommendation": "Verify if function is needed or add to execution path"
+    },
+    {
+      "function": "drawAniota",
+      "reason": "Never executed during simulation",
+      "recommendation": "Verify if function is needed or add to execution path"
+    },
+    {
+      "function": "drawPixieSprite",
+      "reason": "Never executed during simulation",
+      "recommendation": "Verify if function is needed or add to execution path"
+    },
+    {
+      "function": "updateAnimation",
+      "reason": "Never executed during simulation",
+      "recommendation": "Verify if function is needed or add to execution path"
+    },
+    {
+      "function": "initializeNaturalInstincts",
+      "reason": "Never executed during simulation",
+      "recommendation": "Verify if function is needed or add to execution path"
+    },
+    {
+      "function": "receiveCommand",
+      "reason": "Never executed during simulation",
+      "recommendation": "Verify if function is needed or add to execution path"
+    },
+    {
+      "function": "evaluateResponse",
+      "reason": "Never executed during simulation",
+      "recommendation": "Verify if function is needed or add to execution path"
+    },
+    {
+      "function": "reinforceCommand",
+      "reason": "Never executed during simulation",
+      "recommendation": "Verify if function is needed or add to execution path"
+    },
+    {
+      "function": "updateBehavior",
+      "reason": "Never executed during simulation",
+      "recommendation": "Verify if function is needed or add to execution path"
+    },
+    {
+      "function": "detectTrainingMode",
+      "reason": "Never executed during simulation",
+      "recommendation": "Verify if function is needed or add to execution path"
+    },
+    {
+      "function": "startBehaviorLoop",
+      "reason": "Never executed during simulation",
+      "recommendation": "Verify if function is needed or add to execution path"
+    },
+    {
+      "function": "spendToken",
+      "reason": "Never executed during simulation",
+      "recommendation": "Verify if function is needed or add to execution path"
+    },
+    {
+      "function": "awardTokens",
+      "reason": "Never executed during simulation",
+      "recommendation": "Verify if function is needed or add to execution path"
+    },
+    {
+      "function": "getBalance",
+      "reason": "Never executed during simulation",
+      "recommendation": "Verify if function is needed or add to execution path"
+    },
+    {
+      "function": "recordPositiveLearning",
+      "reason": "Never executed during simulation",
+      "recommendation": "Verify if function is needed or add to execution path"
+    },
+    {
+      "function": "startLearningSession",
+      "reason": "Never executed during simulation",
+      "recommendation": "Verify if function is needed or add to execution path"
+    },
+    {
+      "function": "createInterface",
+      "reason": "Never executed during simulation",
+      "recommendation": "Verify if function is needed or add to execution path"
+    },
+    {
+      "function": "observeBehavior",
+      "reason": "Never executed during simulation",
+      "recommendation": "Verify if function is needed or add to execution path"
+    },
+    {
+      "function": "giveStrongPositive",
+      "reason": "Never executed during simulation",
+      "recommendation": "Verify if function is needed or add to execution path"
+    },
+    {
+      "function": "givePositive",
+      "reason": "Never executed during simulation",
+      "recommendation": "Verify if function is needed or add to execution path"
+    },
+    {
+      "function": "receiveReward",
+      "reason": "Never executed during simulation",
+      "recommendation": "Verify if function is needed or add to execution path"
+    },
+    {
+      "function": "updateTrustLevel",
+      "reason": "Never executed during simulation",
+      "recommendation": "Verify if function is needed or add to execution path"
+    },
+    {
+      "function": "getCurrentPhase",
+      "reason": "Never executed during simulation",
+      "recommendation": "Verify if function is needed or add to execution path"
+    },
+    {
+      "function": "updateMood",
+      "reason": "Never executed during simulation",
+      "recommendation": "Verify if function is needed or add to execution path"
+    },
+    {
+      "function": "getCurrentMood",
+      "reason": "Never executed during simulation",
+      "recommendation": "Verify if function is needed or add to execution path"
+    },
+    {
+      "function": "getRingColor",
+      "reason": "Never executed during simulation",
+      "recommendation": "Verify if function is needed or add to execution path"
+    }
+  ],
+  "optimizationOpportunities": [
+    {
+      "function": "constructor",
+      "callCount": 14,
+      "recommendation": "High-frequency function (14 calls) - consider optimization"
+    },
+    {
+      "function": "createBiome",
+      "callCount": 13,
+      "recommendation": "High-frequency function (13 calls) - consider optimization"
+    }
+  ]
+}

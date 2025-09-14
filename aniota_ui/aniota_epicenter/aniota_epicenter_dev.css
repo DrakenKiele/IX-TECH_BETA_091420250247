@@ -1,0 +1,438 @@
+# File: aniota_epicenter_dev.css
+ * # Purpose: Central entry point and orchestrator for the system.
+ * #
+ * # Type: Main launcher script (not a class file, but acts as a system controller)
+ * #
+ * # Responsibilities:
+ * #   - Loads configuration and resolves paths for all major dependencies ([List dependencies])
+ * #   - Checks and manages the status of critical services (starts/stops as needed)
+ * #   - Launches and monitors all core services:
+ * #       * [Service 1] ([Tech/Port])
+ * #       * [Service 2] ([Tech/Port])
+ * #       * [Service 3] ([Tech/Port])
+ * #       * [Service 4] ([Tech/Port])
+ * #   - Provides command-line flags for status reporting and service termination ([flags])
+ * #   - Handles process cleanup and error reporting
+ * #
+ * # Key Functions:
+ * #   - main(): Orchestrates the full launch sequence and handles CLI flags
+ * #   - launch_service(): Starts a subprocess for a given service
+ * #   - stream_logs(): Streams and truncates logs from subprocesses
+ * #   - run_static_server(): Runs the static file server (if applicable)
+ * #   - is_port_in_use(): Checks if a TCP port is active
+ * #   - get_service_status(): Returns a dict of service statuses
+ * #   - check_service(): Ensures a service is running, starts if not
+ * #   - resolve_path(): Finds the first valid path for a dependency from config
+ * #   - find_dependency_path(): Locates the executable for a dependency
+ * #
+ * # Relationships:
+ * #   - Reads from configuration files for dependency paths
+ * #   - Launches and monitors other scripts and processes
+ * #   - Interacts with the OS for process and port management
+ * #
+ * # Usefulness & Execution Path:
+ * #   - main() is the required entry point and is always used.
+ * #   - [List of essential functions] are all actively used and essential for orchestrating the system.
+ * #   - [Legacy/optional functions] may become obsolete as the system evolves.
+ * #
+ * # Suggestions:
+ * #   - **Performance:** [Performance notes]
+ * #   - **Code Cleanliness:** [Code cleanliness notes]
+ * #   - **Location:** [Location notes]
+ * #   - **Function:** [Function notes]
+ * #   - **Legacy:** [Legacy notes]
+ * #   - **Config:** [Config notes]
+ * #   - **Error Handling:** [Error handling notes]
+ * #   - **Cross-Platform:** [Cross-platform notes]
+ * #
+ * # Summary:
+ * #   - This file is essential, well-placed, and mostly clean.
+ * #   - All major functions are used and support the requirements for modularity, orchestration, and portability.
+ * #   - Minor cleanup (removing redundant code, legacy functions) is recommended to enhance maintainability.
+ * #   - Overall, it effectively serves as the central controller for the system.
+ * #
+ * # CHANGE MANAGEMENT LOG
+ * # Date        | Initials | Description of Change                | Reason for Change
+ * # -----------------------------------------------------------------------------
+ * # 2025-09-11 | [XX]    | [Description]                        | [Reason]
+ * # -----------------------------------------------------------------------------
+ * 
+ */
+ * # 2025-09-11 | [XX]    | [Description]                        | [Reason]
+ * # -----------------------------------------------------------------------------
+ * 
+ */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    overflow: hidden;
+    height: 100vh;
+}
+
+#aniota-mood-circle {
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><defs><filter id="glow"><feGaussianBlur stdDeviation="3" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><path d="M100 20 C130 20, 160 40, 170 80 C175 100, 170 120, 165 140 Q150 155, 130 150 Q110 145, 100 150 Q90 145, 70 150 Q50 155, 35 140 C30 120, 25 100, 30 80 C40 40, 70 20, 100 20 Z" fill="%23FF69B4" stroke="%23FF1493" stroke-width="2" filter="url(%23glow)"/><path d="M35 140 Q50 155, 70 150 T110 150 T150 150 Q165 155, 165 140" fill="%23FF69B4" stroke="%23FF1493" stroke-width="2"><animate attributeName="d" values="M35 140 Q50 155, 70 150 T110 150 T150 150 Q165 155, 165 140;M35 140 Q50 145, 70 155 T110 145 T150 155 Q165 145, 165 140;M35 140 Q50 155, 70 150 T110 150 T150 150 Q165 155, 165 140" dur="2.5s" repeatCount="indefinite"/></path><circle cx="80" cy="75" r="12" fill="%23000000"/><ellipse cx="82" cy="72" rx="4" ry="6" fill="%23FFFFFF"/><circle cx="120" cy="75" r="12" fill="%23000000"/><ellipse cx="122" cy="72" rx="4" ry="6" fill="%23FFFFFF"/><ellipse cx="90" cy="110" rx="15" ry="12" fill="%2332CD32" opacity="0.7"/><ellipse cx="125" cy="115" rx="15" ry="12" fill="%23FFD700" opacity="0.7"/><ellipse cx="65" cy="95" rx="12" ry="8" fill="%23FF4500" opacity="0.7"/><circle cx="60" cy="60" r="2" fill="%23FFFF00" opacity="0.9"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.8s" repeatCount="indefinite"/></circle><circle cx="140" cy="65" r="2" fill="%23FFFF00" opacity="0.9"><animate attributeName="opacity" values="1;0.3;1" dur="2.2s" repeatCount="indefinite"/></circle><circle cx="100" cy="45" r="2" fill="%23FFFF00" opacity="0.9"><animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/></circle><animateTransform attributeName="transform" type="scale" values="1;1.05;1" dur="2s" repeatCount="indefinite"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.6));
+}
+
+#aniota-mood-circle:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 20px rgba(255, 105, 180, 0.9));
+}
+
+.epicenter-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Header */
+.epicenter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+}
+
+.epicenter-header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 300;
+    color: #fff;
+}
+
+.system-status {
+    display: flex;
+    gap: 20px;
+    font-size: 0.9em;
+}
+
+#connection-status {
+    color: #4CAF50;
+}
+
+#learning-mode {
+    color: #FFC107;
+}
+
+/* Main Interface */
+.main-interface {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Selection Display */
+.selection-display {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+#current-path {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#selection-breadcrumb {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+/* Square-based Choice Interface */
+.choice-interface {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 400px;
+}
+
+/* Dynamic Square System */
+.choice-layer {
+    display: flex;
+    gap: 10px;
+    transition: all 0.5s ease;
+}
+
+.choice-square {
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.choice-square:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 179, 0, 0.8);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.choice-square.selected {
+    background: rgba(255, 179, 0, 0.3);
+    border-color: #ffb300;
+    box-shadow: 0 0 20px rgba(255, 179, 0, 0.5);
+}
+
+.choice-square.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: rgba(100, 100, 100, 0.2);
+}
+
+.square-label {
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+.square-coordinate {
+    font-size: 0.7em;
+    opacity: 0.7;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+/* Layer positioning */
+.choice-layer.layer-0 {
+    /* Center position */
+}
+
+.choice-layer.layer-1 {
+    transform: translateX(-140px);
+}
+
+.choice-layer.layer-2 {
+    transform: translateX(-280px);
+}
+
+.choice-layer.layer-3 {
+    transform: translateX(-420px);
+}
+
+.choice-layer.layer-4 {
+    transform: translateX(-560px);
+}
+
+/* 5-square layout for each layer */
+.choice-layer {
+    position: relative;
+    width: 120px;
+}
+
+.choice-square.pos-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.choice-square.pos-top {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.choice-square.pos-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.choice-square.pos-diagonal-top {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    transform: translate(0, -50%);
+}
+
+.choice-square.pos-diagonal-bottom {
+    position: absolute;
+    bottom: 25%;
+    left: 0;
+    transform: translate(0, 50%);
+}
+
+/* Control Panel */
+.control-panel {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.activate-button {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.activate-button:hover:not(:disabled) {
+    background: linear-gradient(135deg, #45a049, #4CAF50);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.activate-button:disabled {
+    background: rgba(100, 100, 100, 0.5);
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.nav-button {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 179, 0, 0.8);
+}
+
+/* Status Panel */
+.status-panel {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.status-item {
+    text-align: center;
+}
+
+.status-item label {
+    display: block;
+    font-size: 0.8em;
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+
+.status-item span {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffb300;
+}
+
+/* Debug Panel */
+.debug-panel {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 0.8em;
+    min-width: 200px;
+    z-index: 500;
+}
+
+.debug-panel h3 {
+    margin: 0 0 10px 0;
+    color: #ffb300;
+}
+
+.debug-panel div {
+    margin: 5px 0;
+    font-family: monospace;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(200px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.choice-layer.new {
+    animation: slideInLeft 0.5s ease;
+}
+
+/* Room left indicator */
+.room-indicator {
+    position: absolute;
+    left: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8em;
+    color: #ff6b6b;
+    font-weight: bold;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .choice-square {
+        width: 80px;
+        height: 80px;
+        font-size: 0.8em;
+    }
+    
+    .epicenter-header h1 {
+        font-size: 1.8em;
+    }
+    
+    .choice-layer.layer-1 { transform: translateX(-90px); }
+    .choice-layer.layer-2 { transform: translateX(-180px); }
+    .choice-layer.layer-3 { transform: translateX(-270px); }
+    .choice-layer.layer-4 { transform: translateX(-360px); }
+}
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------

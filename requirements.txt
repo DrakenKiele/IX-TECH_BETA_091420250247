@@ -1,0 +1,6 @@
+requests
+pytest
+numpy
+pyyaml
+uvicorn
+fastapi

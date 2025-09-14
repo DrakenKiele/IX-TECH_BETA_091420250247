@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aniota Behavior Demo - Dog-like Guidance</title>
+    <link rel="stylesheet" href="stylesheets/themes.css">
+    <style>
+        body {
+            font-family: 'Noto Sans Rounded', sans-serif;
+            background: linear-gradient(135deg, #487de7 0%, #4158d0 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            color: white;
+        }
+        
+        .demo-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .demo-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .demo-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .demo-section {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .guidance-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .demo-button {
+            background: linear-gradient(135deg, #ffb300, #ff8f00);
+            border: none;
+            border-radius: 12px;
+            padding: 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(255,179,0,0.3);
+        }
+        
+        .demo-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255,179,0,0.4);
+        }
+        
+        .demo-button.primary {
+            background: linear-gradient(135deg, #79c314, #4caf50);
+            box-shadow: 0 4px 15px rgba(121,195,20,0.3);
+        }
+        
+        .demo-button.primary:hover {
+            box-shadow: 0 6px 20px rgba(121,195,20,0.4);
+        }
+        
+        .behavior-status {
+            background: rgba(0,0,0,0.2);
+            border-radius: 10px;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .status-item {
+            margin: 5px 0;
+        }
+        
+        .status-label {
+            color: #ffb300;
+            font-weight: bold;
+        }
+        
+        .interactive-element {
+            background: rgba(255,255,255,0.2);
+            border: 2px dashed rgba(255,255,255,0.4);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .interactive-element:hover {
+            background: rgba(255,255,255,0.3);
+            border-color: rgba(255,255,255,0.6);
+        }
+        
+        .instructions {
+            background: rgba(255,255,255,0.1);
+            border-left: 4px solid #ffb300;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Aniota Mood Circle (will be auto-managed by presence system) -->
+    <div id="aniota-mood-circle"></div>
+    
+    <div class="demo-container">
+        <div class="demo-header">
+            <h1>🐕 Aniota Dog-like Behavior Demo</h1>
+            <p>Watch how Aniota behaves like an enthusiastic dog wanting to guide you!</p>
+        </div>
+        
+        <div class="demo-section">
+            <h2>How It Works</h2>
+            <div class="instructions">
+                <p><strong>🎯 Aniota's Behavior Modes:</strong></p>
+                <ul>
+                    <li><strong>Observing:</strong> Calm, watching your activity</li>
+                    <li><strong>Hinting:</strong> Getting a bit excited, subtle movements</li>
+                    <li><strong>Guiding:</strong> Moving toward buttons, bouncing, wanting attention</li>
+                    <li><strong>Celebrating:</strong> Excited spins and color changes when you follow guidance</li>
+                </ul>
+            </div>
+            
+            <div class="instructions">
+                <p><strong>🕐 Time-based Behavior:</strong></p>
+                <ul>
+                    <li>After 30 seconds of inactivity → Aniota starts guiding</li>
+                    <li>After 60 seconds → More insistent behavior (bouncing, flashing)</li>
+                    <li>Click any button → Aniota celebrates your action!</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="demo-section">
+            <h2>Test Buttons (Aniota wants you to click these!)</h2>
+            <div class="guidance-buttons">
+                <button id="continue-button" class="demo-button primary">
+                    Continue Learning
+                </button>
+                <button class="demo-button">
+                    Explore More
+                </button>
+                <button class="demo-button">
+                    Settings
+                </button>
+                <button class="demo-button">
+                    Help & Tips
+                </button>
+            </div>
+        </div>
+        
+        <div class="demo-section">
+            <h2>Interactive Elements</h2>
+            <div class="interactive-element" onclick="handleInteraction('drag_area')">
+                🎨 Drag & Drop Area (Click me!)
+            </div>
+            <div class="interactive-element aniota-icon" onclick="handleInteraction('aniota_icon')">
+                🌟 Special Aniota Feature
+            </div>
+        </div>
+        
+        <div class="demo-section">
+            <h2>Behavior Status (Live Updates)</h2>
+            <div class="behavior-status" id="behavior-status">
+                <div class="status-item">
+                    <span class="status-label">Behavior Mode:</span> 
+                    <span id="behavior-mode">Loading...</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Attention Level:</span> 
+                    <span id="attention-level">0</span>/100
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Points Earned:</span> 
+                    <span id="points-earned">0</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Guidance Target:</span> 
+                    <span id="guidance-target">None</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Last Activity:</span> 
+                    <span id="last-activity">Just now</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="demo-section">
+            <h2>Manual Controls</h2>
+            <div class="guidance-buttons">
+                <button class="demo-button" onclick="triggerGuidance()">
+                    Trigger Guidance Mode
+                </button>
+                <button class="demo-button" onclick="resetBehavior()">
+                    Reset Behavior
+                </button>
+                <button class="demo-button" onclick="simulateIdleness()">
+                    Simulate 60s Idle
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="aniota_unified_presence.js"></script>
+    <script>
+        // Initialize behavior demo
+        let aniotaPresence = null;
+        let statusUpdateInterval = null;
+        
+        // Wait for Aniota presence to initialize
+        setTimeout(() => {
+            if (window.AniotaPresence) {
+                aniotaPresence = new AniotaPresence();
+                startStatusUpdates();
+                console.log('🐕 Aniota behavior demo initialized!');
+            }
+        }, 1000);
+        
+        function startStatusUpdates() {
+            statusUpdateInterval = setInterval(updateStatusDisplay, 2000);
+        }
+        
+        function updateStatusDisplay() {
+            if (!aniotaPresence) return;
+            
+            const state = aniotaPresence.state;
+            const now = Date.now();
+            const timeSinceAction = Math.floor((now - aniotaPresence.lastUserAction) / 1000);
+            
+            document.getElementById('behavior-mode').textContent = state.behavior_mode || 'observing';
+            document.getElementById('attention-level').textContent = state.attention_level || 0;
+            document.getElementById('points-earned').textContent = state.earned_points || 0;
+            document.getElementById('guidance-target').textContent = 
+                state.guidance_target?.selector || 'None';
+            document.getElementById('last-activity').textContent = 
+                timeSinceAction < 60 ? `${timeSinceAction}s ago` : 'Over 1 minute ago';
+        }
+        
+        function handleInteraction(elementType) {
+            console.log(`🎉 User interacted with: ${elementType}`);
+            
+            // Celebrate the interaction
+            if (aniotaPresence && aniotaPresence.celebrateSuccess) {
+                aniotaPresence.celebrateSuccess(elementType);
+            }
+            
+            // Update display
+            setTimeout(updateStatusDisplay, 500);
+        }
+        
+        function triggerGuidance() {
+            if (aniotaPresence && aniotaPresence.startGuidanceBehavior) {
+                aniotaPresence.startGuidanceBehavior();
+                console.log('🐕 Manually triggered guidance behavior');
+            }
+        }
+        
+        function resetBehavior() {
+            if (aniotaPresence) {
+                aniotaPresence.state.behavior_mode = 'observing';
+                aniotaPresence.state.attention_level = 0;
+                aniotaPresence.state.guidance_target = null;
+                aniotaPresence.lastUserAction = Date.now();
+                console.log('🔄 Reset Aniota behavior to observing');
+            }
+        }
+        
+        function simulateIdleness() {
+            if (aniotaPresence) {
+                // Set last action to 60 seconds ago
+                aniotaPresence.lastUserAction = Date.now() - 60000;
+                console.log('⏰ Simulated 60 seconds of idleness');
+                
+                // Trigger the check
+                setTimeout(() => {
+                    if (aniotaPresence.checkForGuidanceOpportunity) {
+                        aniotaPresence.checkForGuidanceOpportunity();
+                    }
+                }, 1000);
+            }
+        }
+        
+        // Add click handlers to all demo buttons
+        document.querySelectorAll('.demo-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                if (!e.target.onclick) {  // Don't double-handle manual control buttons
+                    handleInteraction(this.textContent.trim().toLowerCase().replace(/\s+/g, '_'));
+                }
+            });
+        });
+        
+        // Track page context
+        document.addEventListener('DOMContentLoaded', () => {
+            if (aniotaPresence) {
+                aniotaPresence.state.context = 'behavior_demo';
+            }
+        });
+    </script>
+</body>
+</html>

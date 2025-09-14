@@ -1,0 +1,115 @@
+{
+  "naive_physics": {
+    "cause_and_effect": "Actions have predictable consequences based on physical laws.",
+    "object_permanence": "Objects continue to exist even when not observed."
+  },
+  "naive_psychology": {
+    "help_seeking": "Seeking help is a sign of engagement, not weakness.",
+    "empathy": "Understanding others' feelings improves collaboration."
+  },
+  "problem_solving": {
+    "method_switching": "If a method fails repeatedly, try a different approach.",
+    "reduce": "Break complex problems into smaller, manageable parts.",
+    "refine": "Iteratively improve solutions based on feedback.",
+    "recurse": "Apply solutions recursively to similar subproblems."
+  },
+  "context_reasoning": {
+    "context_dependent": "The meaning of words and actions depends on context."
+  },
+  "incomplete_information": {
+    "fill_gaps": "Make reasonable assumptions to fill missing information."
+  },
+  "safety_first": {
+    "prioritize_safety": "Safety and wellbeing take priority over speed or efficiency."
+  },
+  "learning_ethics": {
+    "honesty": "Honesty builds trust and credibility.",
+    "no_cheating": "Cheating undermines learning and integrity."
+  },
+  "student_habits": {
+    "attendance": "Successful students come to class every day, on time.",
+    "resourcefulness": "Successful students use available tools and resources to access their work.",
+    "strive_for_best": "Successful students do not settle for good enough; they strive for their best work.",
+    "self_monitoring": "Successful students constantly ask themselves if they are learning.",
+    "academic_integrity": "Successful students refuse to cheat or plagiarize, and redirect classmates to the teacher or scaffold if confident.",
+    "no_zeros": "Successful students do not plan for or accept zeros; they complete all work to the best of their ability and turn it in on time.",
+    "grade_awareness": "Successful students are always aware of their grade and know how their work affects it.",
+    "respect_adults": "Successful students honor their teachers and other adults.",
+    "value_learning": "Successful students value learning in themselves and others as a duty of free society."
+  },
+  "adult_behaviors": {
+    "honesty": "Tell the truth, or lie. (Honesty builds trust and credibility.)",
+    "commitment": "Honor your commitments, or break your promises. (Reliability earns respect and maintains relationships.)",
+    "respect": "Treat others with respect, or disrespect them. (Respect is foundational to a healthy workplace and community.)",
+    "accountability": "Take responsibility for your actions, or make excuses. (Accountability drives growth and integrity.)",
+    "helpfulness": "Help others when you can, or ignore those in need. (Cooperation and support create stronger teams and communities.)",
+    "empathy": "Treat others as you want to be treated, or ignore their feelings. (Empathy leads to better collaboration and conflict resolution.)",
+    "stewardship": "Use resources wisely, or waste them. (Stewardship and sustainability are both ethical and practical.)",
+    "perseverance": "Work hard and persist, or give up easily. (Perseverance is key to achieving goals.)",
+    "cleanliness": "Keep yourself and your space clean and orderly, or be careless. (Personal responsibility impacts wellbeing.)",
+    "lawfulness": "Follow laws and rules, or disregard them. (Legal compliance is essential for functioning in society.)",
+    "inclusion": "Respect differences and diversity, or exclude and judge. (Inclusion fosters innovation and harmony.)",
+    "peaceful_conflict": "Resolve conflicts peacefully, or escalate problems. (Peaceful conflict resolution is vital for life.)"
+  }
+}
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------
+
+# File: package.json
+# Purpose: Central entry point and orchestrator for the system.
+#
+# Type: Main launcher script (not a class file, but acts as a system controller)
+#
+# Responsibilities:
+#   - Loads configuration and resolves paths for all major dependencies ([List dependencies])
+#   - Checks and manages the status of critical services (starts/stops as needed)
+#   - Launches and monitors all core services:
+#       * [Service 1] ([Tech/Port])
+#       * [Service 2] ([Tech/Port])
+#       * [Service 3] ([Tech/Port])
+#       * [Service 4] ([Tech/Port])
+#   - Provides command-line flags for status reporting and service termination ([flags])
+#   - Handles process cleanup and error reporting
+#
+# Key Functions:
+#   - main(): Orchestrates the full launch sequence and handles CLI flags
+#   - launch_service(): Starts a subprocess for a given service
+#   - stream_logs(): Streams and truncates logs from subprocesses
+#   - run_static_server(): Runs the static file server (if applicable)
+#   - is_port_in_use(): Checks if a TCP port is active
+#   - get_service_status(): Returns a dict of service statuses
+#   - check_service(): Ensures a service is running, starts if not
+#   - resolve_path(): Finds the first valid path for a dependency from config
+#   - find_dependency_path(): Locates the executable for a dependency
+#
+# Relationships:
+#   - Reads from configuration files for dependency paths
+#   - Launches and monitors other scripts and processes
+#   - Interacts with the OS for process and port management
+#
+# Usefulness & Execution Path:
+#   - main() is the required entry point and is always used.
+#   - [List of essential functions] are all actively used and essential for orchestrating the system.
+#   - [Legacy/optional functions] may become obsolete as the system evolves.
+#
+# Suggestions:
+#   - **Performance:** [Performance notes]
+#   - **Code Cleanliness:** [Code cleanliness notes]
+#   - **Location:** [Location notes]
+#   - **Function:** [Function notes]
+#   - **Legacy:** [Legacy notes]
+#   - **Config:** [Config notes]
+#   - **Error Handling:** [Error handling notes]
+#   - **Cross-Platform:** [Cross-platform notes]
+#
+# Summary:
+#   - This file is essential, well-placed, and mostly clean.
+#   - All major functions are used and support the requirements for modularity, orchestration, and portability.
+#   - Minor cleanup (removing redundant code, legacy functions) is recommended to enhance maintainability.
+#   - Overall, it effectively serves as the central controller for the system.
+#
+# CHANGE MANAGEMENT LOG
+# Date        | Initials | Description of Change                | Reason for Change
+# -----------------------------------------------------------------------------
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------

@@ -1,0 +1,303 @@
+{
+  "honesty": {
+    "binary_choice": "Tell the truth, or lie",
+    "principle": "Honesty builds trust and credibility",
+    "definition": "Being truthful and sincere in words and actions, even when it might be difficult or uncomfortable",
+    "teaching_examples": [
+      "Admitting when you don't know something rather than pretending",
+      "Giving accurate feedback even when it's not what someone wants to hear",
+      "Taking responsibility for mistakes instead of covering them up"
+    ],
+    "why_important": "Trust is the foundation of all relationships and collaboration",
+    "related_concepts": ["integrity", "authenticity", "trustworthiness"]
+  },
+  "commitment": {
+    "binary_choice": "Honor your commitments, or break your promises",
+    "principle": "Reliability earns respect and maintains relationships",
+    "definition": "Following through on promises and obligations you have made to others",
+    "teaching_examples": [
+      "Arriving on time when you've agreed to meet someone",
+      "Completing work by the deadline you promised",
+      "Keeping confidential information private when asked"
+    ],
+    "why_important": "Others need to be able to depend on you for relationships and teamwork to function",
+    "related_concepts": ["reliability", "trustworthiness", "dependability"]
+  },
+  "respect": {
+    "binary_choice": "Treat others with respect, or disrespect them",
+    "principle": "Respect is foundational to a healthy workplace and community",
+    "definition": "Treating others with consideration, dignity, and courtesy regardless of differences",
+    "teaching_examples": [
+      "Listening when others speak instead of interrupting",
+      "Speaking politely even when you disagree",
+      "Acknowledging others' contributions and achievements"
+    ],
+    "why_important": "Respect creates environments where everyone can contribute their best",
+    "related_concepts": ["courtesy", "dignity", "consideration"]
+  },
+  "responsibility": {
+    "binary_choice": "Take responsibility for your actions, or make excuses",
+    "principle": "Accountability drives growth and integrity",
+    "definition": "Owning the consequences of your choices and actions, both positive and negative",
+    "teaching_examples": [
+      "Apologizing when you've made a mistake that affects others",
+      "Learning from failures instead of blaming external factors",
+      "Taking credit appropriately without taking all the credit"
+    ],
+    "why_important": "Personal growth requires honest self-assessment and learning from mistakes",
+    "related_concepts": ["accountability", "ownership", "maturity"]
+  },
+  "cooperation": {
+    "binary_choice": "Help others when you can, or ignore those in need",
+    "principle": "Cooperation and support create stronger teams and communities",
+    "definition": "Working together with others and offering assistance when you're able to help",
+    "teaching_examples": [
+      "Offering to help a colleague who is overwhelmed with work",
+      "Sharing knowledge and resources that could benefit others",
+      "Collaborating effectively on team projects"
+    ],
+    "why_important": "Communities and organizations thrive when members support each other",
+    "related_concepts": ["teamwork", "mutual_aid", "collaboration"]
+  },
+  "empathy": {
+    "binary_choice": "Treat others as you want to be treated, or ignore their feelings",
+    "principle": "Empathy leads to better collaboration and conflict resolution",
+    "definition": "Understanding and considering how others feel and treating them accordingly",
+    "teaching_examples": [
+      "Considering how your words might affect someone before speaking",
+      "Offering comfort to someone who is struggling",
+      "Adjusting your communication style to what works best for different people"
+    ],
+    "why_important": "Understanding others' perspectives prevents conflicts and builds stronger relationships",
+    "related_concepts": ["compassion", "understanding", "emotional_intelligence"]
+  },
+  "stewardship": {
+    "binary_choice": "Use resources wisely, or waste them",
+    "principle": "Stewardship and sustainability are both ethical and practical",
+    "definition": "Taking care of resources, environment, and shared assets responsibly",
+    "teaching_examples": [
+      "Using only what you need and not being wasteful",
+      "Taking care of shared equipment and spaces",
+      "Considering the long-term impact of your resource use"
+    ],
+    "why_important": "Resources are limited and must be preserved for future use and other people",
+    "related_concepts": ["sustainability", "conservation", "responsibility"]
+  },
+  "perseverance": {
+    "binary_choice": "Work hard and persist, or give up easily",
+    "principle": "Perseverance is key to achieving goals",
+    "definition": "Continuing to work toward goals despite obstacles, setbacks, or challenges",
+    "teaching_examples": [
+      "Continuing to practice a skill even when progress seems slow",
+      "Finding alternative approaches when the first method doesn't work",
+      "Maintaining effort toward long-term goals despite short-term difficulties"
+    ],
+    "why_important": "Most worthwhile achievements require sustained effort over time",
+    "related_concepts": ["persistence", "determination", "grit"]
+  },
+  "personal_responsibility": {
+    "binary_choice": "Keep yourself and your space clean and orderly, or be careless",
+    "principle": "Personal responsibility impacts personal and community wellbeing",
+    "definition": "Taking care of your personal hygiene, belongings, and environment",
+    "teaching_examples": [
+      "Maintaining cleanliness in shared spaces",
+      "Keeping your personal workspace organized",
+      "Taking care of your health and appearance appropriately"
+    ],
+    "why_important": "Personal habits affect both your own effectiveness and the comfort of others around you",
+    "related_concepts": ["self_care", "organization", "consideration"]
+  },
+  "legal_compliance": {
+    "binary_choice": "Follow laws and rules, or disregard them",
+    "principle": "Legal compliance is essential for functioning in society",
+    "definition": "Following established laws, regulations, and rules that govern behavior in society",
+    "teaching_examples": [
+      "Following traffic laws when driving",
+      "Respecting intellectual property and copyright rules",
+      "Following workplace policies and procedures"
+    ],
+    "why_important": "Laws and rules create predictable, safe environments where everyone can function",
+    "related_concepts": ["citizenship", "compliance", "social_contract"]
+  },
+  "inclusion": {
+    "binary_choice": "Respect differences and diversity, or exclude and judge",
+    "principle": "Inclusion fosters innovation and harmony",
+    "definition": "Valuing different perspectives, backgrounds, and ways of thinking",
+    "teaching_examples": [
+      "Including different viewpoints in discussions and decisions",
+      "Avoiding assumptions based on someone's appearance or background",
+      "Creating environments where everyone feels welcome to participate"
+    ],
+    "why_important": "Diversity of thought and experience leads to better solutions and stronger communities",
+    "related_concepts": ["diversity", "acceptance", "open_mindedness"]
+  },
+  "peaceful_resolution": {
+    "binary_choice": "Resolve conflicts peacefully, or escalate problems",
+    "principle": "Peaceful conflict resolution is vital for both personal and professional life",
+    "definition": "Addressing disagreements and conflicts through communication and compromise rather than aggression",
+    "teaching_examples": [
+      "Discussing problems calmly instead of arguing",
+      "Looking for win-win solutions when interests conflict",
+      "Seeking mediation when direct resolution isn't working"
+    ],
+    "why_important": "Peaceful resolution preserves relationships and creates sustainable solutions",
+    "related_concepts": ["conflict_resolution", "negotiation", "diplomacy"]
+  },
+  "attendance_punctuality": {
+    "category": "student_success_habits",
+    "habit": "Successful students come to class every day, on time",
+    "definition": "Consistently showing up and being present when expected",
+    "teaching_examples": [
+      "Arriving to class before it starts, ready to learn",
+      "Planning your schedule to avoid conflicts with class time",
+      "Communicating in advance if you absolutely must be absent"
+    ],
+    "why_important": "Learning builds on previous lessons - missing class means missing foundation knowledge",
+    "related_concepts": ["consistency", "commitment", "preparation"]
+  },
+  "resourcefulness": {
+    "category": "student_success_habits", 
+    "habit": "Successful students know how to determine what they are supposed to do and use the tools to access their work and resources",
+    "definition": "Taking initiative to find information and understand requirements independently",
+    "teaching_examples": [
+      "Reading the syllabus and assignment instructions carefully",
+      "Learning how to navigate the learning management system",
+      "Asking specific questions when you've tried to find answers first"
+    ],
+    "why_important": "Self-directed learning skills transfer to all areas of life and work",
+    "related_concepts": ["independence", "initiative", "self_direction"]
+  },
+  "excellence_mindset": {
+    "category": "student_success_habits",
+    "habit": "Successful students do not settle for good enough, they strive to do their best work with every assignment and are constantly asking themselves if they are learning",
+    "definition": "Maintaining high personal standards and focusing on learning rather than just completion",
+    "teaching_examples": [
+      "Reviewing your work before submitting to see if you can improve it",
+      "Asking yourself 'What did I learn from this?' after each assignment",
+      "Seeking feedback to understand how to do better next time"
+    ],
+    "why_important": "Excellence becomes a habit that serves you throughout life",
+    "related_concepts": ["growth_mindset", "self_reflection", "continuous_improvement"]
+  },
+  "academic_integrity": {
+    "category": "student_success_habits",
+    "habit": "Successful students refuse to cheat or plagiarize or share their answers with other students, opting instead to redirect to the teacher or to scaffold their classmates if they are confident in their own understanding",
+    "definition": "Maintaining honesty in academic work and helping others learn rather than giving them answers",
+    "teaching_examples": [
+      "Explaining concepts to classmates rather than just giving them answers",
+      "Citing sources properly when using others' ideas",
+      "Asking the teacher for help instead of copying from others"
+    ],
+    "why_important": "Academic integrity ensures you actually learn and develops trustworthiness",
+    "related_concepts": ["honesty", "integrity", "ethical_behavior"]
+  },
+  "zero_tolerance": {
+    "category": "student_success_habits",
+    "habit": "Successful students do not plan for or accept zeros, they do all their work to the best of their ability and turn it in on time",
+    "definition": "Taking responsibility for completing all assignments and managing time effectively",
+    "teaching_examples": [
+      "Planning ahead so you have time to complete assignments well",
+      "Starting assignments early rather than waiting until the last minute",
+      "Communicating with teachers if you're struggling before the deadline"
+    ],
+    "why_important": "Consistency in effort leads to consistent learning and success",
+    "related_concepts": ["time_management", "consistency", "responsibility"]
+  },
+  "grade_awareness": {
+    "category": "student_success_habits",
+    "habit": "Successful students always are aware of their grade and know how to interpret it and how their current work affects it",
+    "definition": "Actively monitoring academic progress and understanding how grades reflect learning",
+    "teaching_examples": [
+      "Checking grades regularly and understanding what they mean",
+      "Calculating how upcoming assignments will affect your overall grade",
+      "Identifying patterns in your performance to improve study strategies"
+    ],
+    "why_important": "Self-awareness about progress enables you to make informed decisions about where to focus effort",
+    "related_concepts": ["self_monitoring", "data_analysis", "strategic_thinking"]
+  },
+  "respect_for_authority": {
+    "category": "student_success_habits",
+    "habit": "Successful students honor their teachers and other adults",
+    "definition": "Showing respect and appreciation for those who are invested in your learning and development",
+    "teaching_examples": [
+      "Listening when teachers are speaking and following instructions",
+      "Speaking respectfully even when you disagree or are frustrated",
+      "Recognizing that teachers want you to succeed and are there to help"
+    ],
+    "why_important": "Respectful relationships create better learning environments for everyone",
+    "related_concepts": ["respect", "gratitude", "relationship_building"]
+  },
+  "learning_values": {
+    "category": "student_success_habits",
+    "habit": "Successful students value learning in themselves and others and realize it to be the most important duties of children as members of a free society",
+    "definition": "Understanding that education is both a privilege and a responsibility in a democratic society",
+    "teaching_examples": [
+      "Encouraging classmates who are struggling rather than making fun of them",
+      "Understanding that your education prepares you to contribute to society",
+      "Appreciating the opportunity to learn and grow intellectually"
+    ],
+    "why_important": "Education is the foundation of personal freedom and democratic participation",
+    "related_concepts": ["civic_responsibility", "lifelong_learning", "democratic_values"]
+  }
+}
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------
+
+# File: package.json
+# Purpose: Central entry point and orchestrator for the system.
+#
+# Type: Main launcher script (not a class file, but acts as a system controller)
+#
+# Responsibilities:
+#   - Loads configuration and resolves paths for all major dependencies ([List dependencies])
+#   - Checks and manages the status of critical services (starts/stops as needed)
+#   - Launches and monitors all core services:
+#       * [Service 1] ([Tech/Port])
+#       * [Service 2] ([Tech/Port])
+#       * [Service 3] ([Tech/Port])
+#       * [Service 4] ([Tech/Port])
+#   - Provides command-line flags for status reporting and service termination ([flags])
+#   - Handles process cleanup and error reporting
+#
+# Key Functions:
+#   - main(): Orchestrates the full launch sequence and handles CLI flags
+#   - launch_service(): Starts a subprocess for a given service
+#   - stream_logs(): Streams and truncates logs from subprocesses
+#   - run_static_server(): Runs the static file server (if applicable)
+#   - is_port_in_use(): Checks if a TCP port is active
+#   - get_service_status(): Returns a dict of service statuses
+#   - check_service(): Ensures a service is running, starts if not
+#   - resolve_path(): Finds the first valid path for a dependency from config
+#   - find_dependency_path(): Locates the executable for a dependency
+#
+# Relationships:
+#   - Reads from configuration files for dependency paths
+#   - Launches and monitors other scripts and processes
+#   - Interacts with the OS for process and port management
+#
+# Usefulness & Execution Path:
+#   - main() is the required entry point and is always used.
+#   - [List of essential functions] are all actively used and essential for orchestrating the system.
+#   - [Legacy/optional functions] may become obsolete as the system evolves.
+#
+# Suggestions:
+#   - **Performance:** [Performance notes]
+#   - **Code Cleanliness:** [Code cleanliness notes]
+#   - **Location:** [Location notes]
+#   - **Function:** [Function notes]
+#   - **Legacy:** [Legacy notes]
+#   - **Config:** [Config notes]
+#   - **Error Handling:** [Error handling notes]
+#   - **Cross-Platform:** [Cross-platform notes]
+#
+# Summary:
+#   - This file is essential, well-placed, and mostly clean.
+#   - All major functions are used and support the requirements for modularity, orchestration, and portability.
+#   - Minor cleanup (removing redundant code, legacy functions) is recommended to enhance maintainability.
+#   - Overall, it effectively serves as the central controller for the system.
+#
+# CHANGE MANAGEMENT LOG
+# Date        | Initials | Description of Change                | Reason for Change
+# -----------------------------------------------------------------------------
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------

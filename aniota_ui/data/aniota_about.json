@@ -1,0 +1,23 @@
+{
+  "IX-TECH": "IX-TECH is a comprehensive educational technology suite designed to transform learning through modular, AI-powered tools. Each module serves a specific purpose while maintaining seamless integration across the entire ecosystem.",
+  "CHRYSALIX": "CHRYSALIX serves as the core interface and transformation layer for ANIOTA. It manages user interactions, learning session orchestration, and provides the foundational experience framework.",
+  "RADIX": "RADIX handles mathematical reasoning, computational logic, and analytical processing. It provides the mathematical foundation that powers ANIOTA's problem-solving capabilities.",
+  "PHONEMIX": "PHONEMIX manages language processing, linguistic analysis, and communication interfaces. It enables ANIOTA to understand, process, and generate natural language interactions.",
+  "MAQNETIX": "MAQNETIX creates immersive learning environments using magnetic field principles for spatial and interactive education. It transforms abstract concepts into tangible experiences.",
+  "SUBSCRIBIX": "SUBSCRIBIX manages subscription tiers, module access, and user journey progression. It provides the gateway to unlock ANIOTA's full educational potential.",
+  "SECURIX": "SECURIX ensures privacy protection, data security, and ethical compliance throughout the ANIOTA ecosystem. It maintains user trust through comprehensive privacy measures.",
+  "GRAPHIX": "GRAFIX provides visual design tools, interface customization, and creative expression capabilities within the learning environment.",
+  "ui_text": {
+    "welcome": "Welcome to IX-TECH and ANIOTA",
+    "discover": "Discover the modular educational ecosystem designed to transform learning. Click on any module above to learn more about its capabilities and how it contributes to your educational journey.",
+    "CHRYSALIX": "Your gateway to transformation",
+    "ANIOTA": "Your AI learning companion",
+    "SUBSCRIBIX": "Unlock your learning potential"
+  },
+  "modal_capabilities": [
+    "User interface transformation and adaptation",
+    "Learning session orchestration",
+    "Multi-modal interaction support",
+    "Cognitive architecture integration"
+  ]
+}

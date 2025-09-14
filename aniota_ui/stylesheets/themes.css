@@ -1,0 +1,501 @@
+# File: themes.css
+ * # Purpose: Central entry point and orchestrator for the system.
+ * #
+ * # Type: Main launcher script (not a class file, but acts as a system controller)
+ * #
+ * # Responsibilities:
+ * #   - Loads configuration and resolves paths for all major dependencies ([List dependencies])
+ * #   - Checks and manages the status of critical services (starts/stops as needed)
+ * #   - Launches and monitors all core services:
+ * #       * [Service 1] ([Tech/Port])
+ * #       * [Service 2] ([Tech/Port])
+ * #       * [Service 3] ([Tech/Port])
+ * #       * [Service 4] ([Tech/Port])
+ * #   - Provides command-line flags for status reporting and service termination ([flags])
+ * #   - Handles process cleanup and error reporting
+ * #
+ * # Key Functions:
+ * #   - main(): Orchestrates the full launch sequence and handles CLI flags
+ * #   - launch_service(): Starts a subprocess for a given service
+ * #   - stream_logs(): Streams and truncates logs from subprocesses
+ * #   - run_static_server(): Runs the static file server (if applicable)
+ * #   - is_port_in_use(): Checks if a TCP port is active
+ * #   - get_service_status(): Returns a dict of service statuses
+ * #   - check_service(): Ensures a service is running, starts if not
+ * #   - resolve_path(): Finds the first valid path for a dependency from config
+ * #   - find_dependency_path(): Locates the executable for a dependency
+ * #
+ * # Relationships:
+ * #   - Reads from configuration files for dependency paths
+ * #   - Launches and monitors other scripts and processes
+ * #   - Interacts with the OS for process and port management
+ * #
+ * # Usefulness & Execution Path:
+ * #   - main() is the required entry point and is always used.
+ * #   - [List of essential functions] are all actively used and essential for orchestrating the system.
+ * #   - [Legacy/optional functions] may become obsolete as the system evolves.
+ * #
+ * # Suggestions:
+ * #   - **Performance:** [Performance notes]
+ * #   - **Code Cleanliness:** [Code cleanliness notes]
+ * #   - **Location:** [Location notes]
+ * #   - **Function:** [Function notes]
+ * #   - **Legacy:** [Legacy notes]
+ * #   - **Config:** [Config notes]
+ * #   - **Error Handling:** [Error handling notes]
+ * #   - **Cross-Platform:** [Cross-platform notes]
+ * #
+ * # Summary:
+ * #   - This file is essential, well-placed, and mostly clean.
+ * #   - All major functions are used and support the requirements for modularity, orchestration, and portability.
+ * #   - Minor cleanup (removing redundant code, legacy functions) is recommended to enhance maintainability.
+ * #   - Overall, it effectively serves as the central controller for the system.
+ * #
+ * # CHANGE MANAGEMENT LOG
+ * # Date        | Initials | Description of Change                | Reason for Change
+ * # -----------------------------------------------------------------------------
+ * # 2025-09-11 | [XX]    | [Description]                        | [Reason]
+ * # -----------------------------------------------------------------------------
+ * 
+ */
+ * # 2025-09-11 | [XX]    | [Description]                        | [Reason]
+ * # -----------------------------------------------------------------------------
+ * 
+ */
+:root {
+  --font-family-sans: 'Noto Sans', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --font-family-serif: 'Georgia', 'Times New Roman', serif;
+  --font-family-mono: 'Courier New', 'monospace';
+
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --background-color: #f8f9fa;
+  --surface-color: #ffffff;
+  --text-color: #212529;
+  --border-color: #dee2e6;
+  --border-radius: 8px;
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s;
+}
+
+.theme-primary {
+  --primary-color: #ff6347; /* Tomato Red */
+  --secondary-color: #ffd700; /* Gold */
+  --background-color: #f0f8ff; /* Alice Blue */
+  --surface-color: #ffffff;
+  --text-color: #333333;
+  --border-color: #ffc0cb; /* Pink */
+  --border-radius: 16px;
+  --font-family-sans: 'Comic Sans MS', 'Chalkboard SE', 'Arial Rounded MT Bold', sans-serif;
+}
+
+/* * ============================================================================
+ * 3. Mid Level Theme (Engaging & Modern)
+ * ============================================================================
+ * For middle schoolers. Uses a vibrant but slightly more mature palette.
+ * Clean, modern sans-serif font.
+ */
+
+.theme-mid {
+  --primary-color: #1e90ff; /* Dodger Blue */
+  --secondary-color: #32cd32; /* Lime Green */
+  --background-color: #f5f5f5; /* White Smoke */
+  --surface-color: #ffffff;
+  --text-color: #2a2a2a;
+  --border-color: #e0e0e0;
+  --border-radius: 12px;
+  --font-family-sans: 'Helvetica Neue', 'Arial', sans-serif;
+}
+
+/* * ============================================================================
+ * 4. Secondary Level Theme (Focused & Clean)
+ * ============================================================================
+ * For high school students. A more focused, less distracting theme with a 
+ * professional but approachable feel.
+ */
+
+.theme-secondary {
+  --primary-color: #4682b4; /* Steel Blue */
+  --secondary-color: #9370db; /* Medium Purple */
+  --background-color: #eef2f7;
+  --surface-color: #ffffff;
+  --text-color: #333;
+  --border-color: #dcdcdc;
+  --border-radius: 8px;
+  --font-family-sans: 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* * ============================================================================
+ * 5. Post-Secondary Theme (Academic & Refined)
+ * ============================================================================
+ * For college students and higher education. Uses a serif font for readability
+ * and a muted, professional color palette.
+ */
+
+.theme-post-secondary {
+  --primary-color: #2f4f4f; /* Dark Slate Gray */
+  --secondary-color: #8b4513; /* Saddle Brown */
+  --background-color: #fafafa;
+  --surface-color: #ffffff;
+  --text-color: #1a1a1a;
+  --border-color: #ccc;
+  --border-radius: 4px;
+  --font-family-sans: 'Georgia', 'Times New Roman', serif;
+}
+
+/* * ============================================================================
+ * 6. Adult Theme (Professional & Minimalist)
+ * ============================================================================
+ * A clean, minimalist, and professional theme for adult learners or corporate
+ * environments.
+ */
+
+.theme-adult {
+  --primary-color: #343a40; /* Dark Gray */
+  --secondary-color: #6c757d; /* Gray */
+  --background-color: #ffffff;
+  --surface-color: #f8f9fa;
+  --text-color: #000000;
+  --border-color: #ced4da;
+  --border-radius: 6px;
+  --font-family-sans: 'Helvetica', 'Arial', sans-serif;
+}
+
+/* * ============================================================================
+ * 7. General Component Styling
+ * ============================================================================
+ * These rules apply the variables to common UI elements.
+ */
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-family-sans);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.container {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  margin: 20px;
+}
+
+button, .btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-family: var(--font-family-sans);
+  transition: background-color var(--transition-speed);
+}
+
+button:hover, .btn:hover {
+  opacity: 0.9;
+}
+
+h1, h2, h3 {
+  color: var(--primary-color);
+}
+
+/* ============================================================================
+ * Aniota Rainbow Theme Sets (Auto-generated from color_theme_grids.html)
+ * Each theme uses 16 colors, chosen to represent the rainbow spectrum from each set
+ * Usage: add the class to <body> or a container, e.g. <body class="theme-pastels">
+ * Variables: --theme-color1 ... --theme-color16
+ * ============================================================================ */
+
+.theme-pastels {
+  --theme-color1: #ffd1dc;
+  --theme-color2: #ffe5b4;
+  --theme-color3: #fffacd;
+  --theme-color4: #f1f0c0;
+  --theme-color5: #b5ead7;
+  --theme-color6: #e2f0cb;
+  --theme-color7: #b0e0e6;
+  --theme-color8: #c7ceea;
+  --theme-color9: #e0bbff;
+  --theme-color10: #f3c6e8;
+  --theme-color11: #e4c1f9;
+  --theme-color12: #f7cac9;
+  --theme-color13: #f6e2b3;
+  --theme-color14: #f7e1d7;
+  --theme-color15: #f6dfeb;
+  --theme-color16: #f7f7f7;
+}
+.theme-jewel-tones {
+  --theme-color1: #c2185b;
+  --theme-color2: #d32f2f;
+  --theme-color3: #fbc02d;
+  --theme-color4: #388e3c;
+  --theme-color5: #00796b;
+  --theme-color6: #0288d1;
+  --theme-color7: #1976d2;
+  --theme-color8: #512da8;
+  --theme-color9: #7b1fa2;
+  --theme-color10: #ad1457;
+  --theme-color11: #8e24aa;
+  --theme-color12: #689f38;
+  --theme-color13: #f57c00;
+  --theme-color14: #5d4037;
+  --theme-color15: #455a64;
+  --theme-color16: #fbc02d;
+}
+.theme-earth-tones {
+  --theme-color1: #a0522d;
+  --theme-color2: #cd853f;
+  --theme-color3: #deb887;
+  --theme-color4: #f4a460;
+  --theme-color5: #d2b48c;
+  --theme-color6: #bc8f8f;
+  --theme-color7: #c19a6b;
+  --theme-color8: #e97451;
+  --theme-color9: #bdb76b;
+  --theme-color10: #e1a95f;
+  --theme-color11: #c68642;
+  --theme-color12: #b87333;
+  --theme-color13: #c3b091;
+  --theme-color14: #a3987e;
+  --theme-color15: #b2beb5;
+  --theme-color16: #a9a9a9;
+}
+.theme-neons {
+  --theme-color1: #ff073a;
+  --theme-color2: #ffb300;
+  --theme-color3: #f5f500;
+  --theme-color4: #39ff14;
+  --theme-color5: #00ffcc;
+  --theme-color6: #00f0ff;
+  --theme-color7: #0288d1;
+  --theme-color8: #ff61a6;
+  --theme-color9: #f000ff;
+  --theme-color10: #ff6ec7;
+  --theme-color11: #f200ff;
+  --theme-color12: #fffd37;
+  --theme-color13: #fbff12;
+  --theme-color14: #ffb347;
+  --theme-color15: #ff2e63;
+  --theme-color16: #e900ff;
+}
+.theme-metallics {
+  --theme-color1: #ffd700;
+  --theme-color2: #d4af37;
+  --theme-color3: #b87333;
+  --theme-color4: #e5e4e2;
+  --theme-color5: #c0c0c0;
+  --theme-color6: #b0c4de;
+  --theme-color7: #a9a9a9;
+  --theme-color8: #e6be8a;
+  --theme-color9: #c9ae5d;
+  --theme-color10: #b2beb5;
+  --theme-color11: #ffd700;
+  --theme-color12: #e6be8a;
+  --theme-color13: #c9ae5d;
+  --theme-color14: #b2beb5;
+  --theme-color15: #e5e4e2;
+  --theme-color16: #c0c0c0;
+}
+.theme-primary-colors {
+  --theme-color1: #ff0000;
+  --theme-color2: #ff6666;
+  --theme-color3: #ff3333;
+  --theme-color4: #ff9999;
+  --theme-color5: #ffff00;
+  --theme-color6: #ffff66;
+  --theme-color7: #ffff33;
+  --theme-color8: #ffff99;
+  --theme-color9: #00ff00;
+  --theme-color10: #66ff66;
+  --theme-color11: #33ff33;
+  --theme-color12: #99ff99;
+  --theme-color13: #0000ff;
+  --theme-color14: #6666ff;
+  --theme-color15: #3333ff;
+  --theme-color16: #9999ff;
+}
+.theme-secondary-colors {
+  --theme-color1: #ff8000;
+  --theme-color2: #ff8080;
+  --theme-color3: #ffb84d;
+  --theme-color4: #ffcc80;
+  --theme-color5: #ffff00;
+  --theme-color6: #80ff00;
+  --theme-color7: #00ff80;
+  --theme-color8: #00ffcc;
+  --theme-color9: #00ccff;
+  --theme-color10: #0080ff;
+  --theme-color11: #8000ff;
+  --theme-color12: #ff00ff;
+  --theme-color13: #ff0080;
+  --theme-color14: #ff80ff;
+  --theme-color15: #80ffcc;
+  --theme-color16: #ccff80;
+}
+.theme-tertiary-colors {
+  --theme-color1: #ffcc00;
+  --theme-color2: #ff9933;
+  --theme-color3: #ff6600;
+  --theme-color4: #ff0066;
+  --theme-color5: #ff00cc;
+  --theme-color6: #cc00ff;
+  --theme-color7: #6600ff;
+  --theme-color8: #3399ff;
+  --theme-color9: #33ff99;
+  --theme-color10: #66ffcc;
+  --theme-color11: #66ff00;
+  --theme-color12: #ccff00;
+  --theme-color13: #99ff33;
+  --theme-color14: #b3ff80;
+  --theme-color15: #ffcc66;
+  --theme-color16: #ffcc99;
+}
+.theme-monochromes {
+  --theme-color1: #111111;
+  --theme-color2: #222222;
+  --theme-color3: #333333;
+  --theme-color4: #444444;
+  --theme-color5: #555555;
+  --theme-color6: #666666;
+  --theme-color7: #777777;
+  --theme-color8: #888888;
+  --theme-color9: #999999;
+  --theme-color10: #aaaaaa;
+  --theme-color11: #bbbbbb;
+  --theme-color12: #cccccc;
+  --theme-color13: #dddddd;
+  --theme-color14: #eeeeee;
+  --theme-color15: #f5f5f5;
+  --theme-color16: #ffffff;
+}
+.theme-muted-colors {
+  --theme-color1: #b0a8b9;
+  --theme-color2: #b8b8aa;
+  --theme-color3: #b8b8b8;
+  --theme-color4: #b8a8a8;
+  --theme-color5: #a8b8b8;
+  --theme-color6: #a8b8a8;
+  --theme-color7: #a8a8b8;
+  --theme-color8: #b8a8b8;
+  --theme-color9: #b8b0a8;
+  --theme-color10: #a8b0b8;
+  --theme-color11: #b0b8a8;
+  --theme-color12: #a8b8b0;
+  --theme-color13: #b8b8b0;
+  --theme-color14: #b0b8b8;
+  --theme-color15: #b8b0b0;
+  --theme-color16: #b0b0b8;
+}
+.theme-warm-colors {
+  --theme-color1: #ff5733;
+  --theme-color2: #ff8d1a;
+  --theme-color3: #ffc300;
+  --theme-color4: #ffd60a;
+  --theme-color5: #ff6f61;
+  --theme-color6: #ffb347;
+  --theme-color7: #ff7f50;
+  --theme-color8: #ff6347;
+  --theme-color9: #ff4500;
+  --theme-color10: #ffae42;
+  --theme-color11: #ffb6b6;
+  --theme-color12: #ffcccb;
+  --theme-color13: #ffadad;
+  --theme-color14: #ffb3b3;
+  --theme-color15: #ffcc99;
+  --theme-color16: #ff9966;
+}
+.theme-cool-colors {
+  --theme-color1: #33c1ff;
+  --theme-color2: #1a8cff;
+  --theme-color3: #00bfff;
+  --theme-color4: #00ced1;
+  --theme-color5: #20b2aa;
+  --theme-color6: #48d1cc;
+  --theme-color7: #40e0d0;
+  --theme-color8: #5f9ea0;
+  --theme-color9: #4682b4;
+  --theme-color10: #6495ed;
+  --theme-color11: #7fffd4;
+  --theme-color12: #b0e0e6;
+  --theme-color13: #afeeee;
+  --theme-color14: #e0ffff;
+  --theme-color15: #add8e6;
+  --theme-color16: #87ceeb;
+}
+.theme-neutral-colors {
+  --theme-color1: #ffffff;
+  --theme-color2: #f5f5f5;
+  --theme-color3: #e5e5e5;
+  --theme-color4: #cccccc;
+  --theme-color5: #b2b2b2;
+  --theme-color6: #999999;
+  --theme-color7: #7f7f7f;
+  --theme-color8: #666666;
+  --theme-color9: #4c4c4c;
+  --theme-color10: #333333;
+  --theme-color11: #191919;
+  --theme-color12: #000000;
+  --theme-color13: #eaeaea;
+  --theme-color14: #d6d6d6;
+  --theme-color15: #c2c2c2;
+  --theme-color16: #adadad;
+}
+.theme-vintage-retro-colors {
+  --theme-color1: #e97451;
+  --theme-color2: #f4bb44;
+  --theme-color3: #b5b682;
+  --theme-color4: #c9b29b;
+  --theme-color5: #a2a77f;
+  --theme-color6: #e1a95f;
+  --theme-color7: #c68642;
+  --theme-color8: #b87333;
+  --theme-color9: #c3b091;
+  --theme-color10: #a3987e;
+  --theme-color11: #b2beb5;
+  --theme-color12: #a9a9a9;
+  --theme-color13: #bdb76b;
+  --theme-color14: #e97451;
+  --theme-color15: #c2b280;
+  --theme-color16: #bdb76b;
+}
+.theme-fluorescent-colors {
+  --theme-color1: #39ff14;
+  --theme-color2: #ff073a;
+  --theme-color3: #fe019a;
+  --theme-color4: #f5f500;
+  --theme-color5: #0ff0fc;
+  --theme-color6: #ffb300;
+  --theme-color7: #ff61a6;
+  --theme-color8: #f000ff;
+  --theme-color9: #fffd37;
+  --theme-color10: #00ffcc;
+  --theme-color11: #ff206e;
+  --theme-color12: #fbff12;
+  --theme-color13: #00f0ff;
+  --theme-color14: #ffb347;
+  --theme-color15: #ff6ec7;
+  --theme-color16: #f200ff;
+}
+.theme-greyscale {
+  --theme-color1: #000000;
+  --theme-color2: #111111;
+  --theme-color3: #222222;
+  --theme-color4: #333333;
+  --theme-color5: #444444;
+  --theme-color6: #555555;
+  --theme-color7: #666666;
+  --theme-color8: #777777;
+  --theme-color9: #888888;
+  --theme-color10: #999999;
+  --theme-color11: #aaaaaa;
+  --theme-color12: #bbbbbb;
+  --theme-color13: #cccccc;
+  --theme-color14: #dddddd;
+  --theme-color15: #eeeeee;
+  --theme-color16: #ffffff;
+}
+# 2025-09-11 | [XX]    | [Description]                        | [Reason]
+# -----------------------------------------------------------------------------
