@@ -1,3 +1,19 @@
+import datetime
+
+# --- Git Backup Utility ---
+def git_backup(commit_message=None):
+    """Automate git add, commit, and push for safe backup."""
+    print("[GIT BACKUP] Showing git status...")
+    subprocess.run(["git", "status"])
+    print("[GIT BACKUP] Adding all changes...")
+    subprocess.run(["git", "add", "."])
+    if not commit_message:
+        commit_message = f"Auto-backup {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+    print(f"[GIT BACKUP] Committing with message: {commit_message}")
+    subprocess.run(["git", "commit", "-m", commit_message])
+    print("[GIT BACKUP] Pushing to remote...")
+    subprocess.run(["git", "push"])
+    print("[GIT BACKUP] Backup complete.")
 # =============================================
 # Unified Launcher for IX-TECH
 # This script orchestrates the startup sequence:
@@ -216,6 +232,17 @@ def check_postgres():
 
 
 def main():
+    # Git backup option
+    if "--git-backup" in sys.argv:
+        msg = None
+        if "--msg" in sys.argv:
+            try:
+                msg_index = sys.argv.index("--msg")
+                msg = sys.argv[msg_index + 1]
+            except Exception:
+                print("[GIT BACKUP] --msg provided but no message found. Using timestamp.")
+        git_backup(msg)
+        return
     # Command-line status report
     if "--status" in sys.argv:
         print("Service Status Report:")
