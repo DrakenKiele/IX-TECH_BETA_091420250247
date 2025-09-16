@@ -112,11 +112,17 @@ def get_service_status():
 def resolve_path(options, base_dir):
     """Return the first existing path from options, relative to base_dir."""
     for opt in options:
-        abs_path = os.path.abspath(os.path.join(base_dir, opt))
+        if os.path.isabs(opt):
+            abs_path = opt
+        else:
+            abs_path = os.path.abspath(os.path.join(base_dir, opt))
         if os.path.exists(abs_path):
             return abs_path
-    # If none exist, return the first as default
-    return os.path.abspath(os.path.join(base_dir, options[0]))
+    # If none exist, return the first option (absolute or relative)
+    if os.path.isabs(options[0]):
+        return options[0]
+    else:
+        return os.path.abspath(os.path.join(base_dir, options[0]))
 
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -274,8 +280,17 @@ def main():
     # 0. Check for venv and create if missing
     venv_dir = os.path.join(PROJECT_DIR, ".venv")
     venv_python = os.path.join(venv_dir, "Scripts", "python.exe")
+    print(f"[DEBUG] PROJECT_DIR: {PROJECT_DIR}")
+    print(f"[DEBUG] venv_dir: {venv_dir}")
+    print(f"[DEBUG] venv_python: {venv_python}")
+    print(f"[DEBUG] PYTHON_PATH from config: {PYTHON_PATH}")
+    print(f"[DEBUG] sys.executable: {sys.executable}")
+    print(f"[DEBUG] PATH env: {os.environ.get('PATH')}")
+    print(f"[DEBUG] PYTHONHOME env: {os.environ.get('PYTHONHOME')}")
+    print(f"[DEBUG] PYTHONPATH env: {os.environ.get('PYTHONPATH')}")
     if not os.path.exists(venv_dir):
         print("[DEBUG] .venv not found. Creating virtual environment...")
+        print(f"[DEBUG] Running: {[sys.executable, '-m', 'venv', venv_dir]}")
         subprocess.run([sys.executable, "-m", "venv", venv_dir], check=True)
         print("[DEBUG] .venv created.")
     else:
@@ -333,6 +348,10 @@ def main():
         )
         print("Launching Backend (Aniota persona)...")
         backend_main_py = os.path.join(PROJECT_DIR, "backend", "main.py")
+        print(f"[DEBUG] Launching backend with: {[venv_python, backend_main_py]}")
+        print(f"[DEBUG] Backend env PYTHONHOME: {backend_env.get('PYTHONHOME')}")
+        print(f"[DEBUG] Backend env PYTHONPATH: {backend_env.get('PYTHONPATH')}")
+        print(f"[DEBUG] Backend env PATH: {backend_env.get('PATH')}")
         backend_proc = launch_service(
             "Backend",
             [venv_python, backend_main_py],
@@ -365,6 +384,7 @@ def main():
         print(f"RootMain already running on port {root_port}. Skipping launch.")
         root_proc = None
     else:
+        print(f"[DEBUG] Launching RootMain with: {[venv_python, 'main.py']}")
         root_proc = launch_service(
             "RootMain",
             [venv_python, "main.py"],

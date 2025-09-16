@@ -6,9 +6,10 @@
   ],
   "node": ["node2218", "../../node2218"],
   "python": [
-    "H:\\DK_Softworks_LLC_Application_Projects\\Python313\\python.exe",
-    "../../Python313/python.exe"
-  ],
+  "H:\\___DK_Softworks_LLC_Application_Projects\\Python313\\python.exe",
+  "D:\\___DK_Softworks_LLC_Application_Projects\\Python313\\python.exe",
+  "../../Python313/python.exe"
+],
   "portable_postgresql": ["../../PostgreSQL"],
   "vscode": ["VSCode", "../../VSCode"],
   "git": ["PortableGit/bin/git.exe", "../../PortableGit/bin/git.exe"]
